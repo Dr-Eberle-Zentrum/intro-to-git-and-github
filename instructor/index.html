@@ -211,7 +211,34 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-git-basics.html">1. Git Basics and Single-Person Workflow</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-collaboration.html">2. Collaboration, Branching and Pull Requests</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-problems-and-safety.html">3. Problems, Safety, and GitHub Hygiene</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-publishing-and-automation.html">4. Publishing and Automation</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -259,23 +286,24 @@
         <!-- START: inst/pkgdown/templates/content-syllabus.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="../instructor/introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/01-git-basics.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="../instructor/introduction.html" rel="next">Next: Using Markdown... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/01-git-basics.html" rel="next">Next: Git Basics and... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Schedule</h1>
       
 
-<p>This is a brief introduction to version control with git and GitHub
+<p>This is a beginner workshop on version control with git and GitHub
 using GitHub Desktop.</p>
-<p>The material is suitable for beginners with no prior experience with
-git or GitHub.</p>
-<p>In the following, the basic concepts of version control are
+<p>No prior experience with git, GitHub, or programming is required. The
+workshop follows a <strong>flipped classroom</strong> format: self-study
+materials are provided as episodes, and each session focuses on hands-on
+practice.</p>
+<p>In the following episodes, the basic concepts of version control are
 introduced and practical exercises guide you through the most important
-workflows using GitHub Desktop as a graphical user interface. No prior
-programming knowledge is required.</p>
+workflows using GitHub Desktop as a graphical user interface.</p>
 <div class="overview card">
 <h2 class="card-header">Overview</h2>
 <div class="row g-0">
@@ -286,6 +314,8 @@ programming knowledge is required.</p>
 <ul><li>What is version control and why should I use it?</li>
 <li>How do I use git and GitHub for version control?</li>
 <li>How can GitHub Desktop help me manage my projects?</li>
+<li>How do I collaborate with others using branches and pull
+requests?</li>
 </ul></div>
 </div>
 </div>
@@ -295,7 +325,12 @@ programming knowledge is required.</p>
 <h3 class="card-title">Objectives</h3>
 <ul><li>Understand the basic concepts of version control with git</li>
 <li>Create and manage repositories on GitHub</li>
-<li>Use GitHub Desktop to perform common git workflows</li>
+<li>Use GitHub Desktop to perform common git workflows (commit, push,
+pull)</li>
+<li>Collaborate via branches, pull requests, and forks</li>
+<li>Recognise and resolve simple merge conflicts</li>
+<li>Publish a website with GitHub Pages and automate tasks with GitHub
+Actions</li>
 </ul></div>
 </div>
 </div>
@@ -312,13 +347,51 @@ any links that you are not going to use.
 <span class="visually-hidden">Duration: </span>00h 00m
 </td>
 <td>
- 1. <a href="introduction.html">Using Markdown</a>
+ 1. <a href="01-git-basics.html">Git Basics and Single-Person
+Workflow</a>
 </td>
 <td>
-How do you write a lesson using Markdown and <a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?
+What is version control and why should I use it?<br>What are the basic
+git concepts I need to know?<br>How do I work with a repository on my
+own?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>00h 12m
+<span class="visually-hidden">Duration: </span>01h 00m
+</td>
+<td>
+ 2. <a href="02-collaboration.html">Collaboration, Branching and Pull
+Requests</a>
+</td>
+<td>
+How can multiple people work on the same project without overwriting
+each<br>other’s changes?<br>What is a branch and why should I use
+one?<br>What is a pull request?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>02h 00m
+</td>
+<td>
+ 3. <a href="03-problems-and-safety.html">Problems, Safety, and GitHub
+Hygiene</a>
+</td>
+<td>
+What common problems will I encounter when using git?<br>How do I undo
+mistakes safely?<br>How should I organise my repository and collaborate
+with others?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>03h 00m
+</td>
+<td>
+ 4. <a href="04-publishing-and-automation.html">Publishing and
+Automation</a>
+</td>
+<td>
+How can I publish a website from my repository?<br>What are tags and
+releases?<br>How can I automate tasks with GitHub Actions?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>04h 00m
 </td>
 <td>
 Finish
@@ -331,44 +404,38 @@ any links that you are not going to use.
  --></tbody></table><p>
       The actual schedule may vary slightly depending on the topics and exercises chosen by the instructor.
       </p>
-      </section><section id="setup"><p>FIXME: Setup instructions live in this document. Please specify the
-tools and the data sets the Learner needs to have installed.</p>
-<section><h2 class="section-heading" id="data-sets">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a></h2>
-<hr class="half-width"><!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
---><p>Download the <a href="https://example.com/FIXME" class="external-link">data zip file</a>
-and unzip it to your Desktop</p>
-</section><section><h2 class="section-heading" id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h2>
-<hr class="half-width"><div id="details" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<span class="callout-header">Discussion</span>
-<div id="details" class="callout-inner">
-<h3 class="callout-title">Details</h3>
-<div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a
-<code>spoiler</code> tag. They will join to this discussion block, so
-you can give a general overview of the software used in this lesson here
-and fill out the individual operating systems (and potentially add more,
-e.g. online setup) in the solutions blocks.</p>
-</div>
-</div>
-</div>
+      </section><section id="setup"><section><h2 class="section-heading" id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a></h2>
+<hr class="half-width"><p>Before the first session, please complete the following setup steps.
+This should take about <strong>20–40 minutes</strong>.</p>
+</section><section><h2 class="section-heading" id="github-account">1. GitHub Account<a class="anchor" aria-label="anchor" href="#github-account"></a></h2>
+<hr class="half-width"><p>If you do not already have a GitHub account, register for free at <a href="https://github.com/" class="external-link">github.com</a>.</p>
+<div class="section level3">
+<h3 id="enable-two-factor-authentication-2fa">Enable Two-Factor Authentication (2FA)<a class="anchor" aria-label="anchor" href="#enable-two-factor-authentication-2fa"></a></h3>
+<p>Two-factor authentication is <strong>required</strong> for many
+organisational repositories and is strongly recommended for every
+account.</p>
+<ol style="list-style-type: decimal"><li>Go to <a href="https://github.com/settings/security" class="external-link">github.com/settings/security</a>.</li>
+<li>Under “Two-factor authentication”, click
+<strong>Enable</strong>.</li>
+<li>Follow the prompts (authenticator app or SMS).</li>
+</ol><!-- TODO: add screenshot of 2FA settings page --></div>
+</section><section><h2 class="section-heading" id="install-github-desktop">2. Install GitHub Desktop<a class="anchor" aria-label="anchor" href="#install-github-desktop"></a></h2>
+<hr class="half-width"><p>GitHub Desktop is the graphical interface we will use throughout this
+workshop.</p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
-  Windows
+  Windows / macOS
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
-<p>Use PuTTY</p>
-</div>
+<ol style="list-style-type: decimal"><li>Download GitHub Desktop from <a href="https://github.com/apps/desktop" class="external-link uri">https://github.com/apps/desktop</a>.</li>
+<li>Run the installer and follow the on-screen instructions.</li>
+<li>Open GitHub Desktop and sign in with your GitHub account.</li>
+</ol></div>
 </div>
 </div>
 </div>
@@ -377,28 +444,75 @@ e.g. online setup) in the solutions blocks.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
-  MacOS
+  Linux (Ubuntu)
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
-<p>Use Terminal.app</p>
+<p>GitHub Desktop is not officially supported on Linux, but a community
+build is available:</p>
+<ol style="list-style-type: decimal"><li>Follow the instructions at <a href="https://linuxcapable.com/how-to-install-github-desktop-on-ubuntu-linux/" class="external-link uri">https://linuxcapable.com/how-to-install-github-desktop-on-ubuntu-linux/</a>.</li>
+<li>Open GitHub Desktop and sign in with your GitHub account.</li>
+</ol></div>
 </div>
 </div>
 </div>
-</div>
-<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+</section><section><h2 class="section-heading" id="sign-in-to-github-desktop">3. Sign In to GitHub Desktop<a class="anchor" aria-label="anchor" href="#sign-in-to-github-desktop"></a></h2>
+<hr class="half-width"><ol style="list-style-type: decimal"><li>Open GitHub Desktop.</li>
+<li>Go to <strong>File → Options</strong> (Windows) or <strong>GitHub
+Desktop → Preferences</strong> (macOS).</li>
+<li>Under the <strong>Accounts</strong> tab, sign in to your GitHub.com
+account.</li>
+</ol><!-- TODO: add screenshot of the sign-in dialog in GitHub Desktop --></section><section><h2 class="section-heading" id="configure-your-identity">4. Configure Your Identity<a class="anchor" aria-label="anchor" href="#configure-your-identity"></a></h2>
+<hr class="half-width"><p>Git needs to know your name and email so it can label your
+commits.</p>
+<ol style="list-style-type: decimal"><li>In GitHub Desktop, go to <strong>File → Options → Git</strong>
+(Windows) or <strong>GitHub Desktop → Preferences → Git</strong>
+(macOS).</li>
+<li>Enter your <strong>Name</strong> and <strong>Email</strong> (use the
+same email as your GitHub account).</li>
+</ol><!-- TODO: add screenshot of the Git identity settings in GitHub Desktop --><div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
-  Linux
+  CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
-<p>Use Terminal</p>
+<p>If you prefer or need to set this via the command line:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your.email@example.com"</span>  <span class="co"># use the same email as your GitHub account</span></span></code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="verify-your-setup">5. Verify Your Setup<a class="anchor" aria-label="anchor" href="#verify-your-setup"></a></h2>
+<hr class="half-width"><ul class="task-list"><li><label><input type="checkbox">GitHub account
+registered</label></li>
+<li><label><input type="checkbox">2FA enabled</label></li>
+<li><label><input type="checkbox">GitHub Desktop
+installed</label></li>
+<li><label><input type="checkbox">Signed into GitHub
+Desktop</label></li>
+<li><label><input type="checkbox">Name and email configured in GitHub
+Desktop</label></li>
+</ul><div id="confirmation" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="confirmation" class="callout-inner">
+<h3 class="callout-title">Confirmation</h3>
+<div class="callout-content">
+<p>Take a screenshot of your GitHub Desktop main window (showing you are
+signed in) or simply confirm to your instructor that everything is
+ready.</p>
 </div>
 </div>
 </div>
@@ -407,11 +521,11 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="../instructor/introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/01-git-basics.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="../instructor/introduction.html" rel="next">Next: Using Markdown... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/01-git-basics.html" rel="next">Next: Git Basics and... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav></div>
 <!-- END  : inst/pkgdown/templates/content-syllabus.html -->

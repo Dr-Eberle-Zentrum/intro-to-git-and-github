@@ -245,7 +245,43 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-git-basics.html">1. Git Basics and Single-Person Workflow</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-collaboration.html">2. Collaboration, Branching and Pull Requests</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-problems-and-safety.html">3. Problems, Safety, and GitHub Hygiene</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-publishing-and-automation.html">4. Publishing and Automation</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -309,17 +345,51 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Using Markdown</a></h2>
+<section id="01-git-basics"><h2 class="section-heading"><a href="01-git-basics.html">Git Basics and Single-Person Workflow</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Git is a version control system that tracks changes to files over
+time.</li>
+<li>GitHub hosts git repositories in the cloud and adds collaboration
+features.</li>
+<li>The core workflow is: <strong>edit → commit → push →
+pull</strong>.</li>
+<li>Good commits are small, focused, and have clear messages.</li>
+<li>Use <code>.gitignore</code> to keep unwanted files out of your
+repository.</li>
+</ul></section><section id="02-collaboration"><h2 class="section-heading"><a href="02-collaboration.html">Collaboration, Branching and Pull Requests</a></h2>
+<hr class="half-width">
+<ul>
+<li>Git can auto-merge changes to different parts of a file.</li>
+<li>A merge conflict occurs when the same lines are changed by two
+people.</li>
+<li>Branches let you work in parallel without affecting
+<code>main</code>.</li>
+<li>Pull requests provide a review and discussion workflow before
+merging.</li>
+</ul></section><section id="03-problems-and-safety"><h2 class="section-heading"><a href="03-problems-and-safety.html">Problems, Safety, and GitHub Hygiene</a></h2>
+<hr class="half-width">
+<ul>
+<li>Git does not track empty directories — use <code>.gitkeep</code> as
+a placeholder.</li>
+<li>Use <strong>Discard changes</strong> for uncommitted edits and
+<strong>Revert</strong> for commits.</li>
+<li>Never commit secrets; rotate any that are accidentally pushed.</li>
+<li>Protected branches enforce a pull request workflow.</li>
+<li>Issues help organise work; use clear titles, descriptions, and
+labels.</li>
+</ul></section><section id="04-publishing-and-automation"><h2 class="section-heading"><a href="04-publishing-and-automation.html">Publishing and Automation</a></h2>
+<hr class="half-width">
+<ul>
+<li>GitHub Pages publishes a website directly from your repository.</li>
+<li>Tags mark specific commits; releases add notes and downloadable
+archives.</li>
+<li>Zenodo can archive GitHub releases and assign DOIs for academic
+citation.</li>
+<li>GitHub Actions automate tasks (testing, building, checking)
+triggered by repository events.</li>
+<li>A workflow is a YAML file in <code>.github/workflows/</code> that
+defines automated jobs.</li>
 </ul></section>
 </div>
     </main>

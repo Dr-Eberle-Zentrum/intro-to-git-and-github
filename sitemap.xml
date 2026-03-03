@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/01-git-basics.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/01-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/02-collaboration.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/03-problems-and-safety.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/04-publishing-and-automation.html</loc>
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/404.html</loc>
@@ -25,7 +37,19 @@
     <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/index.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/instructor/01-git-basics.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/instructor/01-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/instructor/02-collaboration.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/instructor/03-problems-and-safety.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/instructor/04-publishing-and-automation.html</loc>
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/instructor/404.html</loc>

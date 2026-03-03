@@ -68,17 +68,21 @@ contact: 'info@eberle-zentrum.uni-tuebingen.de'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- introduction.md
+episodes:
+- 01-git-basics.md
+- 02-collaboration.md
+- 03-problems-and-safety.md
+- 04-publishing-and-automation.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
+- instructor-notes.md
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #

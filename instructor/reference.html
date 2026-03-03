@@ -207,7 +207,34 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-git-basics.html">1. Git Basics and Single-Person Workflow</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-collaboration.html">2. Collaboration, Branching and Pull Requests</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-problems-and-safety.html">3. Problems, Safety, and GitHub Hygiene</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-publishing-and-automation.html">4. Publishing and Automation</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -271,7 +298,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reference</h1>
-        <p>Last updated on 2023-03-16 |
+        <p>Last updated on 2026-03-03 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/intro-to-git-and-github/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -284,13 +311,138 @@
         </div>
 
         
+
 <section><h2 class="section-heading" id="glossary">Glossary<a class="anchor" aria-label="anchor" href="#glossary"></a></h2>
-<hr class="half-width"><p>This is a placeholder file. Please add content here.</p>
-<!--
+<hr class="half-width"><dl><dt>Branch</dt>
+<dd>
+A parallel line of development within a repository. Branches allow you
+to work on new features or fixes without affecting the stable
+<code>main</code> branch. Once the work is complete, the branch is
+merged back.
+</dd>
+<dt>Clone</dt>
+<dd>
+Creating a local copy of a remote repository on your computer. Cloning
+downloads all files, history, and branches so you can work offline.
+</dd>
+<dt>Commit</dt>
+<dd>
+A saved snapshot of changes in your project. Each commit records
+<em>what</em> changed, <em>when</em>, <em>who</em> made the change, and
+a <em>message</em> describing <em>why</em>. Commits form the building
+blocks of your project’s history.
+</dd>
+<dt>Conflict (Merge Conflict)</dt>
+<dd>
+A situation that arises when two sets of changes modify the same lines
+in the same file. Git cannot resolve this automatically and asks you to
+choose which version to keep (or combine both).
+</dd>
+<dt>Diff</dt>
+<dd>
+A comparison showing exactly which lines were added, removed, or
+modified between two versions of a file.
+</dd>
+<dt>Fetch</dt>
+<dd>
+Downloading new data (commits, branches) from the remote repository
+<strong>without</strong> merging it into your local branch. Use fetch to
+see what has changed before you integrate.
+</dd>
+<dt>Fork</dt>
+<dd>
+A personal copy of someone else’s repository on GitHub. Forking lets you
+freely experiment with changes without affecting the original project.
+You can later propose your changes back via a pull request.
+</dd>
+<dt><code>.gitignore</code></dt>
+<dd>
+A special file listing patterns of files and directories that git should
+<strong>not</strong> track (e.g. build outputs, temporary files,
+credentials).
+</dd>
+<dt>History</dt>
+<dd>
+The ordered sequence of all commits in a repository, forming a timeline
+of every change ever made.
+</dd>
+<dt>Issue</dt>
+<dd>
+A GitHub feature for tracking tasks, bug reports, feature requests, and
+discussions related to a repository.
+</dd>
+<dt>Main (branch)</dt>
+<dd>
+The default primary branch of a repository (historically called
+<code>master</code>). This is typically the stable, production-ready
+version of the project.
+</dd>
+<dt>Merge</dt>
+<dd>
+Combining changes from one branch into another. If there are no
+conflicts, git performs this automatically; otherwise, a manual conflict
+resolution is needed.
+</dd>
+<dt>Origin</dt>
+<dd>
+The default name for the remote repository on GitHub that your local
+repository was cloned from. When you push or pull, you are typically
+communicating with <code>origin</code>.
+</dd>
+<dt>Pull</dt>
+<dd>
+Downloading <strong>and</strong> merging changes from the remote
+repository into your current local branch. Equivalent to a fetch
+followed by a merge.
+</dd>
+<dt>Pull Request (PR)</dt>
+<dd>
+A proposal on GitHub to merge changes from one branch into another. Pull
+requests facilitate code review, discussion, and approval before changes
+are integrated.
+</dd>
+<dt>Push</dt>
+<dd>
+Uploading your local commits to the remote repository (typically
+<code>origin</code> on GitHub) so that others can see and use your
+changes.
+</dd>
+<dt>Remote</dt>
+<dd>
+A version of your repository hosted on a server (e.g. GitHub). The most
+common remote is called <code>origin</code>.
+</dd>
+<dt>Repository (Repo)</dt>
+<dd>
+A project folder tracked by git. It contains all project files plus the
+complete history of changes. Repositories can be local (on your
+computer) or remote (on GitHub).
+</dd>
+<dt>Revert</dt>
+<dd>
+Creating a new commit that undoes the changes introduced by a previous
+commit. This is the safest way to undo work because it preserves
+history.
+</dd>
+<dt>Tag</dt>
+<dd>
+A label attached to a specific commit, typically used to mark release
+versions (e.g. <code>v1.0.0</code>).
+</dd>
+</dl></section><section><h2 class="section-heading" id="useful-links">Useful Links<a class="anchor" aria-label="anchor" href="#useful-links"></a></h2>
+<hr class="half-width"><ul><li><a href="https://docs.github.com/en/desktop" class="external-link">GitHub Desktop
+documentation</a></li>
+<li><a href="https://docs.github.com/" class="external-link">GitHub Docs</a></li>
+<li><a href="https://swcarpentry.github.io/git-novice/" class="external-link">Software
+Carpentry — Git Novice</a></li>
+<li><a href="https://git-scm.com/book/en/v2" class="external-link">Pro Git book
+(free)</a></li>
+<li><a href="https://education.github.com/git-cheat-sheet-education.pdf" class="external-link">Git
+cheat sheet (GitHub)</a></li>
+</ul><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</section></div> <!-- / div.lesson-content -->
+ --></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -350,7 +502,7 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/instructor/reference.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/instructor/reference.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2023-03-16",
+  "dateModified": "2026-03-03",
   "datePublished": "2026-03-03"
 }
 
