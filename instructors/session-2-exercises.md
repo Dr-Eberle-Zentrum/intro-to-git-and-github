@@ -52,7 +52,7 @@ conflict.
 ### Level 3 — Multiple rounds
 
 Do two more rounds of non-conflicting edits to build confidence and speed with
-the commit → push → pull → pull → commit → push cycle.
+the commit → push → pull → commit → push cycle.
 
 ---
 

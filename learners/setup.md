@@ -76,7 +76,7 @@ If you prefer or need to set this via the command line:
 
 ```bash
 git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
+git config --global user.email "your.email@example.com"  # use the same email as your GitHub account
 ```
 
 ::::::::::::::::::::::::
