@@ -23,6 +23,59 @@ exercises: 30
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+## Why bother with version control?
+
+*This section was taken from [Software Carpentry: Version Control with Git.](https://swcarpentry.github.io/git-novice/01-basics.html) by
+I. Gonzalez, D. Huang,  N. Hejazi and  Katherine Koziar (Version [04.03.2026](https://github.com/swcarpentry/git-novice/tree/d3ee3d1a6093ca86b3c9c618e2a4be1a054dfc89))
+and slightly adapted.*
+
+We'll start by exploring how version control can be used
+to keep track of what one person did and when.
+Even if you aren't collaborating with other people,
+automated version control is much better than this situation:
+
+!["notFinal.doc" by Jorge Cham, <https://www.phdcomics.com>](phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"'}
+
+We've all been in this situation before: it seems unnecessary to have
+multiple nearly-identical versions of the same document. Some word
+processors let us deal with this a little better, such as Microsoft
+Word's
+[Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a),
+Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or
+LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
+
+Version control systems start with a base version of the document and
+then record changes you make each step of the way. You can
+think of it as a recording of your progress: you can rewind to start at the base
+document and play back each change you made, eventually arriving at your
+more recent version.
+
+![](play-changes.svg){alt='A diagram demonstrating how a single document grows as the result of sequential changes' width="60%"}
+
+Once you think of changes as separate from the document itself, you
+can then think about "playing back" different sets of changes on the base document, ultimately
+resulting in different versions of that document. For example, two users can make independent
+sets of changes on the same document.
+
+![](versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document' width="40%"}
+
+Unless multiple users make changes to the same section of the document - a 
+[conflict](../learners/reference.md#conflict) - you can
+incorporate two sets of changes into the same base document.
+
+![](merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions' width="40%"}
+
+A version control system is a tool that keeps track of these changes for us,
+effectively creating different versions of our files. It allows us to decide
+which changes will be made to the next version (each record of these changes is
+called a [commit](../learners/reference.md)), and keeps useful metadata
+about them, such as who made the change. The complete history of commits for a 
+particular project and their metadata make up a [repository](../learners/reference.md).
+Repositories can be kept in sync across different computers, facilitating
+collaboration among different people.
+
+
+
 ## What Is Git?
 
 !["What is git?" by [R. Fadatare](https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4)](what-is-git.png){alt="git summary" width="80%"}
