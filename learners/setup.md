@@ -110,7 +110,7 @@ git config --global user.email "your.email@example.com"  # use the same email as
 
 Your GitHub Desktop should now be ready to use for the workshop exercises and look like this:
 
-![GitHub Desktop main window](ghd-start-screen.png){alt='GitHub Desktop main window' width='80%' }
+![GitHub Desktop main window](ghd-start-screen.png){alt='GitHub Desktop main window' width='100%' }
 
 
 ::::::::::::::::::::::::::::::::::::: callout
