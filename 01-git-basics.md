@@ -22,14 +22,21 @@ exercises: 30
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
 ## What Is Git?
 
-Git is a **version control system** — a tool that tracks changes to your files
-over time. Think of it as an "undo history" on steroids: you can go back to any
+!["What is git?" by [R. Fadatare](https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4)](what-is-git.png){alt="git summary" width="80%"}
+
+Git is a **version control system** — a tool that tracks changes to your files over time. 
+Think of it as an "undo history" on steroids: you can go back to any
 previous version, see exactly what changed, and even work on multiple versions
 in parallel.
 
-<!-- TODO: add diagram showing a timeline of commits (snapshots) -->
+The following screenshot shows a git commit history with messages and timestamps. 
+Each commit is a snapshot of the project at a point in time, allowing you to track the evolution of your work and understand the context of changes.
+
+![Git commit timeline](gh-commit-history.png){alt="Diagram of a git commit history showing a linear sequence of commits with messages and timestamps." width="60%"}
+
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -38,7 +45,7 @@ in parallel.
 - **Reproducibility:** every version of your work is saved and can be
   restored.
 - **Collaboration:** multiple people can work on the same project without
-  overwriting each other's changes.
+  annihilating each other's changes.
 - **Publishing:** share your work publicly or with a team.
 - **Archiving:** keep a permanent, citable record of your project.
 

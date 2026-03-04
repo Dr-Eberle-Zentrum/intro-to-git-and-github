@@ -2,6 +2,9 @@
 site: sandpaper::sandpaper_site
 ---
 
+
+![](episodes/git-github-ghd.png){alt="Git, GitHub, and GitHub Desktop ideas", width="80%"}
+
 This is a beginner workshop on version control with git and GitHub using
 GitHub Desktop.
 
