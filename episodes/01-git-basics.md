@@ -59,20 +59,13 @@ sets of changes on the same document.
 
 ![](versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document' width="40%"}
 
-Unless multiple users make changes to the same section of the document - a 
-[conflict](../learners/reference.md#conflict) - you can
-incorporate two sets of changes into the same base document.
+Unless multiple users make changes to the *same section* (i.e. text row) of the document - which would cause a 
+[conflict](../learners/reference.md) - versioning systems can automatically
+incorporate sets of non-conflicting changes into the same base document.
 
 ![](merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions' width="40%"}
 
-A version control system is a tool that keeps track of these changes for us,
-effectively creating different versions of our files. It allows us to decide
-which changes will be made to the next version (each record of these changes is
-called a [commit](../learners/reference.md)), and keeps useful metadata
-about them, such as who made the change. The complete history of commits for a 
-particular project and their metadata make up a [repository](../learners/reference.md).
-Repositories can be kept in sync across different computers, facilitating
-collaboration among different people.
+And this is where git comes into the game!
 
 
 
