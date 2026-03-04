@@ -13,7 +13,7 @@ README, and explore the GitHub interface.
 
 ## Task 1: Create Your First Repository
 
-### Level 1 — Basic (everyone should complete this)
+### Step 1 — Create a new repository on GitHub
 
 1. Go to [github.com](https://github.com/) and sign in.
 2. Click the **+** button in the top-right corner and select **New repository**.
@@ -30,7 +30,7 @@ You should now see your new repository page with a `README.md` file displayed.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Level 2 — Add content to your README
+### Step 2 — Alter content of your README
 
 1. Click the pencil icon (✏️) on the `README.md` file to edit it.
 2. Add a heading with your name and 2–3 bullet points about yourself, for
@@ -58,9 +58,9 @@ Your README now shows your name and personal information. You should see
 
 ### Level 3 — Explore Markdown formatting
 
-Enhance your README with additional Markdown features:
+Enhance your README with [additional Markdown features](https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet):
 
-- Add a **link** to your university or favourite website.
+- Add a **link** to this course material.
 - Add a **numbered list** of your top 3 goals for this workshop.
 - Try using **bold** and *italic* text.
 
@@ -114,13 +114,12 @@ Explore these additional features:
    description. Close it afterwards.
 2. **Pull requests tab** — Note that it is empty for now (we will use it
    later).
-3. **Settings → Collaborators** — Find where you would add a collaborator.
+3. **Settings** — Find where you would add a collaborator.
 
 ### Level 3 — Repository settings deep dive
 
-1. Find the **Danger Zone** in Settings. What options are available there?
-2. Explore the **Branches** section in Settings — this is where branch
-   protection rules are configured.
+1. Disable "Wiki" and "Projects" features in the **Features** section of the **General** Settings.
+2. Find the **Danger Zone** in Settings. What options are available there?
 3. Look at **Settings → Pages** — we will use this in a later session.
 
 ---

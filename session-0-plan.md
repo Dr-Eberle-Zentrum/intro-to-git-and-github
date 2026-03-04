@@ -34,18 +34,18 @@ hands-on practice and questions.
 
 ### 2. Check Prerequisites (10–15 min)
 
-- Walk around / ask participants to confirm:
-  - GitHub account created and 2FA enabled
-  - GitHub Desktop installed and signed in
-  - Identity (name/email) configured
+- Ask participants to confirm:
+  - GitHub account created and 2FA enabled (required for this session)
+  - GitHub Desktop installed and signed in (needed in next sessions)
 - Troubleshoot any setup issues.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Common issue
 
-Some participants may not have admin rights on their laptops. Have a backup
-plan (e.g. using the GitHub web editor only for Session 0).
+Some participants may not have admin rights on their laptops to install GitHub Desktop. 
+While no problem for the first session, this will prevent them from following along in later sessions.
+Thus, request that they ask their IT department for help installing GitHub Desktop before the next session.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -62,10 +62,13 @@ plan (e.g. using the GitHub web editor only for Session 0).
 ### 4. GitHub Tour (20 min)
 
 - Walk through the repository page together:
+  - main repository info (name, description, visibility)
   - **Code** tab (file listing)
-  - **Commits** (history)
-  - **Issues** (tracking)
-  - **Pull Requests** (collaboration)
+    - difference to local file explorer
+    - adding a new file via the web interface
+  - **Commits** (history) - next session
+  - **Issues** (tracking) - future sessions
+  - **Pull Requests** (collaboration) - future sessions
   - **Settings** (visibility, collaborators)
 - Encourage participants to explore on their own.
 
