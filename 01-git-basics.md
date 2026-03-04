@@ -27,7 +27,7 @@ exercises: 30
 
 !["What is git?" by [R. Fadatare](https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4)](what-is-git.png){alt="git summary" width="80%"}
 
-![](https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png){alt="git logo" width="70px"} is a **version control system** — a tool that tracks changes to your files over time. 
+![](Git-Logo-2Color.png){alt="git logo" width="80px"} is a **version control system** — a tool that tracks changes to your files over time. 
 Think of it as an "undo history" on steroids: you can go back to any
 previous version, see exactly what changed, and even work on multiple versions
 in parallel.
@@ -53,7 +53,7 @@ Each commit is a snapshot of the project at a point in time, allowing you to tra
 
 ## What Is GitHub?
 
-**GitHub** is a web platform that hosts git repositories online. It adds
+![](GitHub_Lockup_Black.png){alt="GitHub logo" width="110px"} is a web platform that hosts git repositories online. It adds
 collaboration features such as pull requests, issues, and project boards on
 top of git's version control.
 
