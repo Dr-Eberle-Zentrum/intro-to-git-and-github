@@ -435,18 +435,11 @@ can then think about “playing back” different sets of changes on the
 base document, ultimately resulting in different versions of that
 document. For example, two users can make independent sets of changes on
 the same document.</p>
-<figure><img src="../versions.svg" style="width:40.0%" alt="A diagram with one source document that has been modified in two different ways to produce two different versions of the document" class="figure mx-auto d-block"></figure><p>Unless multiple users make changes to the same section of the
-document - a <a href="reference.html#conflict">conflict</a> - you can
-incorporate two sets of changes into the same base document.</p>
-<figure><img src="../merge.svg" style="width:40.0%" alt="A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions" class="figure mx-auto d-block"></figure><p>A version control system is a tool that keeps track of these changes
-for us, effectively creating different versions of our files. It allows
-us to decide which changes will be made to the next version (each record
-of these changes is called a <a href="reference.html">commit</a>), and
-keeps useful metadata about them, such as who made the change. The
-complete history of commits for a particular project and their metadata
-make up a <a href="reference.html">repository</a>. Repositories can be
-kept in sync across different computers, facilitating collaboration
-among different people.</p>
+<figure><img src="../versions.svg" style="width:40.0%" alt="A diagram with one source document that has been modified in two different ways to produce two different versions of the document" class="figure mx-auto d-block"></figure><p>Unless multiple users make changes to the <em>same section</em>
+(i.e. text row) of the document - which would cause a <a href="reference.html">conflict</a> - versioning systems can
+automatically incorporate sets of non-conflicting changes into the same
+base document.</p>
+<figure><img src="../merge.svg" style="width:40.0%" alt="A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions" class="figure mx-auto d-block"></figure><p>And this is where git comes into the game!</p>
 </section><section><h2 class="section-heading" id="what-is-git">What Is Git?<a class="anchor" aria-label="anchor" href="#what-is-git"></a>
 </h2>
 <hr class="half-width">
@@ -1004,7 +997,7 @@ them directly in your editor to resolve the conflict.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1072,7 +1065,7 @@ branch.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1143,7 +1136,7 @@ review the diff.</li>
   CLI equivalent for pushing a branch
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1181,7 +1174,7 @@ interface.</p>
   Key difference
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1286,7 +1279,7 @@ file.</li>
   CLI example
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1376,7 +1369,7 @@ beginner-friendly overview:</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1462,7 +1455,7 @@ merging.</li>
   Where to configure branch protection
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Go to your repository on GitHub.</li>
@@ -1528,7 +1521,7 @@ discussed above.</p>
   Example checklist
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
