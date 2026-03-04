@@ -53,7 +53,7 @@ Each commit is a snapshot of the project at a point in time, allowing you to tra
 
 ## What Is GitHub?
 
-![](GitHub_Lockup_Black.png){alt="GitHub logo" width="110px"} is a web platform that hosts git repositories online. It adds
+![](GitHub_Lockup_Black.png){alt="GitHub logo" width="120px"} is a web platform that hosts git repositories online. It adds
 collaboration features such as pull requests, issues, and project boards on
 top of git's version control.
 
@@ -70,7 +70,7 @@ Before we start working with git, it's important to understand the difference be
 | **Local repository** | The copy of the project on *your* computer |
 | **Remote repository** | The copy hosted on GitHub (often called **origin**) |
 
-![Relationship between local and remote repositories, with arrows indicating push (local → remote) and pull (remote → local) actions.](local-remote-repo.png){alt="local and remote repositories with push and pull arrows." width="70%"}
+![Relationship between local and remote repositories, with arrows indicating push (local → remote) and pull (remote → local) actions.](local-remote-repo.png){alt="local and remote repositories with push and pull arrows." width="40%"}
 
 When you **clone** a repository, you download the remote copy of the project to your machine.
 From that point on, you will synchronise changes between the two copies using **push** (local → remote) and **pull** (remote → local) git actions.
