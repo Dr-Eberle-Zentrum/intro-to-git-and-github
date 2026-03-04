@@ -68,7 +68,7 @@ If you skipped that step, you can sign in later:
 2. Go to **File → Options** (Windows) or **GitHub Desktop → Preferences** (macOS).
   - Under the **Accounts** tab, sign in to your GitHub.com account.
 
-![GitHub Desktop login message](ghd-sign-in-msg.png){alt='GitHub Desktop sign-in message' width='50%' }
+![GitHub Desktop login message](ghd-sign-in-msg.png){alt='GitHub Desktop sign-in message' }
 
 **Note:** the sign-in process opens a browser window to authenticate with GitHub.
 During the process, you will be asked for permission to allow GitHub Desktop to access your account. This is necessary for GitHub Desktop to perform actions on your behalf, which is essential for its functionality. 
