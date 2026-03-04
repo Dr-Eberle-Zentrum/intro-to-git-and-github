@@ -217,7 +217,8 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#what-is-git">What Is Git?</a></li>
+        <ul><li><a href="#why-bother-with-version-control">Why bother with version control?</a></li>
+<li><a href="#what-is-git">What Is Git?</a></li>
 <li><a href="#what-is-github">What Is GitHub?</a></li>
 <li><a href="#local-vs-remote-repositories">Local vs Remote Repositories</a></li>
 <li><a href="#the-core-loop">The Core Loop</a></li>
@@ -357,7 +358,47 @@
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="what-is-git">What Is Git?<a class="anchor" aria-label="anchor" href="#what-is-git"></a></h2>
+<section><h2 class="section-heading" id="why-bother-with-version-control">Why bother with version control?<a class="anchor" aria-label="anchor" href="#why-bother-with-version-control"></a></h2>
+<hr class="half-width"><p><em>This section was taken from <a href="https://swcarpentry.github.io/git-novice/01-basics.html" class="external-link">Software
+Carpentry: Version Control with Git.</a> by I. Gonzalez, D. Huang, N.
+Hejazi and Katherine Koziar (Version <a href="https://github.com/swcarpentry/git-novice/tree/d3ee3d1a6093ca86b3c9c618e2a4be1a054dfc89" class="external-link">04.03.2026</a>)
+and slightly adapted.</em></p>
+<p>We’ll start by exploring how version control can be used to keep
+track of what one person did and when. Even if you aren’t collaborating
+with other people, automated version control is much better than this
+situation:</p>
+<figure><img src="../phd101212s.png" alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"' class="figure mx-auto d-block"><div class="figcaption">“notFinal.doc” by Jorge Cham, <a href="https://www.phdcomics.com" class="external-link uri">https://www.phdcomics.com</a>
+</div>
+</figure><p>We’ve all been in this situation before: it seems unnecessary to have
+multiple nearly-identical versions of the same document. Some word
+processors let us deal with this a little better, such as Microsoft
+Word’s <a href="https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a" class="external-link">Track
+Changes</a>, Google Docs’ <a href="https://support.google.com/docs/answer/190843?hl=en" class="external-link">version
+history</a>, or LibreOffice’s <a href="https://help.libreoffice.org/Common/Recording_and_Displaying_Changes" class="external-link">Recording
+and Displaying Changes</a>.</p>
+<p>Version control systems start with a base version of the document and
+then record changes you make each step of the way. You can think of it
+as a recording of your progress: you can rewind to start at the base
+document and play back each change you made, eventually arriving at your
+more recent version.</p>
+<figure><img src="../play-changes.svg" style="width:60.0%" alt="A diagram demonstrating how a single document grows as the result of sequential changes" class="figure mx-auto d-block"></figure><p>Once you think of changes as separate from the document itself, you
+can then think about “playing back” different sets of changes on the
+base document, ultimately resulting in different versions of that
+document. For example, two users can make independent sets of changes on
+the same document.</p>
+<figure><img src="../versions.svg" style="width:40.0%" alt="A diagram with one source document that has been modified in two different ways to produce two different versions of the document" class="figure mx-auto d-block"></figure><p>Unless multiple users make changes to the same section of the
+document - a <a href="reference.html#conflict">conflict</a> - you can
+incorporate two sets of changes into the same base document.</p>
+<figure><img src="../merge.svg" style="width:40.0%" alt="A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions" class="figure mx-auto d-block"></figure><p>A version control system is a tool that keeps track of these changes
+for us, effectively creating different versions of our files. It allows
+us to decide which changes will be made to the next version (each record
+of these changes is called a <a href="reference.html">commit</a>), and
+keeps useful metadata about them, such as who made the change. The
+complete history of commits for a particular project and their metadata
+make up a <a href="reference.html">repository</a>. Repositories can be
+kept in sync across different computers, facilitating collaboration
+among different people.</p>
+</section><section><h2 class="section-heading" id="what-is-git">What Is Git?<a class="anchor" aria-label="anchor" href="#what-is-git"></a></h2>
 <hr class="half-width"><figure><img src="../what-is-git.png" style="width:80.0%" alt="git summary" class="figure mx-auto d-block"><div class="figcaption">“What is git?” by <a href="https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4" class="external-link">R.
 Fadatare</a>
 </div>
@@ -512,7 +553,7 @@ origin</strong> to bring them to your local copy.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -565,7 +606,7 @@ differences (green = added, red = removed).</li>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -640,7 +681,7 @@ secrets.yaml
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -693,7 +734,7 @@ terms:</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Commit</strong> — a saved snapshot of changes in my project,
