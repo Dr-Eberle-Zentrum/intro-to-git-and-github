@@ -27,7 +27,7 @@ exercises: 30
 
 !["What is git?" by [R. Fadatare](https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4)](what-is-git.png){alt="git summary" width="80%"}
 
-Git is a **version control system** — a tool that tracks changes to your files over time. 
+![](https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png){alt="git logo" width="70px"} is a **version control system** — a tool that tracks changes to your files over time. 
 Think of it as an "undo history" on steroids: you can go back to any
 previous version, see exactly what changed, and even work on multiple versions
 in parallel.
@@ -35,7 +35,7 @@ in parallel.
 The following screenshot shows a git commit history with messages and timestamps. 
 Each commit is a snapshot of the project at a point in time, allowing you to track the evolution of your work and understand the context of changes.
 
-![Git commit timeline](gh-commit-history.png){alt="Diagram of a git commit history showing a linear sequence of commits with messages and timestamps." width="60%"}
+![Git commit timeline](gh-commit-history.png){alt="Git commit history showing a linear sequence of commits with messages and timestamps."}
 
 
 ::::::::::::::::::::::::::::::::::::: callout
@@ -60,30 +60,59 @@ top of git's version control.
 - **Git** = the version control engine (runs on your computer).
 - **GitHub** = the hosting service (stores your repository in the cloud).
 
-<!-- TODO: add screenshot of a GitHub repository page highlighting key UI elements -->
 
 ## Local vs Remote Repositories
+
+Before we start working with git, it's important to understand the difference between the **local** and **remote** repositories:
 
 | Term | Meaning |
 |------|---------|
 | **Local repository** | The copy of the project on *your* computer |
 | **Remote repository** | The copy hosted on GitHub (often called **origin**) |
 
-When you **clone** a repository, you download the remote copy to your machine.
-From that point on, you synchronise changes between the two copies.
+![Relationship between local and remote repositories, with arrows indicating push (local → remote) and pull (remote → local) actions.](local-remote-repo.png){alt="local and remote repositories with push and pull arrows." width="70%"}
 
-<!-- TODO: add diagram showing local ↔ remote relationship with arrows for push/pull -->
+When you **clone** a repository, you download the remote copy of the project to your machine.
+From that point on, you will synchronise changes between the two copies using **push** (local → remote) and **pull** (remote → local) git actions.
+The same can be done by multiple people working on the same project, allowing for collaboration based on a synchronised central remote repository.
+This is one of the major advantages of using systems like git for file management.
 
 ## The Core Loop
 
-The everyday git workflow follows four steps:
 
+::::::: callout
+
+## Repository vs Working Directory
+
+**Note:** the local repository kind of a local database of all the changes you make on all the files in your project.
+It is controlled by git not the same as the files on your computer that you edit and work with!
+In order to work with the files on your computer, git creates a **working directory** that is a copy of the project files at a specific point in time (the last commit).
+When you make changes to the files, they are not automatically saved in the local repository until you **commit** them. 
+This is an important distinction to understand as it allows you to control when and how your changes are recorded in the history of the project.
+
+::::::::::::
+
+In the end, the git workflow operates in three places:
+
+1. **Working directory** — where you edit files on your computer.
+2. **Local repository** — where your commits are stored on your computer.
+3. **Remote repository** — where your commits are stored on GitHub.
+
+The interchange between these three places can be illustrated as follows by
+relating the git operations with a similar workflow without digital tools:
+
+![Illustration of the git workflow showing the working directory, local repository, and remote repository with arrows indicating the flow of changes: edit (working directory), commit (local repository), push (remote repository), and pull (working directory).](gh-workflow-illustrated.png){alt="Diagram of the git workflow showing the working directory, local repository, and remote repository with arrows indicating the flow of changes." width="90%"}
+
+
+Therefore, the everyday git workflow follows four steps:
+
+0. **Pull** — get the latest changes from the remote repository before you start working. Note, this also updates your working directory!
 1. **Edit** — change files in your working directory.
-2. **Commit** — save a snapshot of your changes with a descriptive message.
-3. **Push** — upload your commits to the remote repository on GitHub.
-4. **Pull** — download any new commits from the remote to your local copy.
+2. **Commit** — save a snapshot of your changes with a descriptive message in your local repository.
+3. **Push** — upload your recent commits from the local to the remote repository on GitHub.
 
-<!-- TODO: add diagram of the edit → commit → push → pull cycle -->
+We strongly recommend to start your daily work by pulling the latest changes from GitHub to ensure you are working with the most up-to-date version of the project and to minimise potential conflicts later on.
+
 
 ### Making a Commit in GitHub Desktop
 
