@@ -411,15 +411,16 @@
 <figure><img src="../what-is-git.png" style="width:80.0%" alt="git summary" class="figure mx-auto d-block"><div class="figcaption">“What is git?” by <a href="https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4" class="external-link">R.
 Fadatare</a>
 </div>
-</figure><p>Git is a <strong>version control system</strong> — a tool that tracks
-changes to your files over time. Think of it as an “undo history” on
-steroids: you can go back to any previous version, see exactly what
-changed, and even work on multiple versions in parallel.</p>
+</figure><p><img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="git logo" width="70" class="figure"> is a <strong>version control
+system</strong> — a tool that tracks changes to your files over time.
+Think of it as an “undo history” on steroids: you can go back to any
+previous version, see exactly what changed, and even work on multiple
+versions in parallel.</p>
 <p>The following screenshot shows a git commit history with messages and
 timestamps. Each commit is a snapshot of the project at a point in time,
 allowing you to track the evolution of your work and understand the
 context of changes.</p>
-<figure><img src="../gh-commit-history.png" style="width:60.0%" alt="Diagram of a git commit history showing a linear sequence of commits with messages and timestamps." class="figure mx-auto d-block"><div class="figcaption">Git commit timeline</div>
+<figure><img src="../gh-commit-history.png" alt="Git commit history showing a linear sequence of commits with messages and timestamps." class="figure mx-auto d-block"><div class="figcaption">Git commit timeline</div>
 </figure><div id="why-use-version-control" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -458,10 +459,12 @@ computer).</li>
 <li>
 <strong>GitHub</strong> = the hosting service (stores your
 repository in the cloud).</li>
-</ul>
-<!-- TODO: add screenshot of a GitHub repository page highlighting key UI elements --></section><section><h2 class="section-heading" id="local-vs-remote-repositories">Local vs Remote Repositories<a class="anchor" aria-label="anchor" href="#local-vs-remote-repositories"></a>
+</ul></section><section><h2 class="section-heading" id="local-vs-remote-repositories">Local vs Remote Repositories<a class="anchor" aria-label="anchor" href="#local-vs-remote-repositories"></a>
 </h2>
 <hr class="half-width">
+<p>Before we start working with git, it’s important to understand the
+difference between the <strong>local</strong> and
+<strong>remote</strong> repositories:</p>
 <table class="table">
 <colgroup>
 <col width="40%">
@@ -483,28 +486,80 @@ repository in the cloud).</li>
 </tr>
 </tbody>
 </table>
-<p>When you <strong>clone</strong> a repository, you download the remote
-copy to your machine. From that point on, you synchronise changes
-between the two copies.</p>
-<!-- TODO: add diagram showing local ↔ remote relationship with arrows for push/pull -->
+<figure><img src="../local-remote-repo.png" style="width:70.0%" alt="local and remote repositories with push and pull arrows." class="figure mx-auto d-block"><div class="figcaption">Relationship between local and remote
+repositories, with arrows indicating push (local → remote) and pull
+(remote → local) actions.</div>
+</figure><p>When you <strong>clone</strong> a repository, you download the remote
+copy of the project to your machine. From that point on, you will
+synchronise changes between the two copies using <strong>push</strong>
+(local → remote) and <strong>pull</strong> (remote → local) git actions.
+The same can be done by multiple people working on the same project,
+allowing for collaboration based on a synchronised central remote
+repository. This is one of the major advantages of using systems like
+git for file management.</p>
 </section><section><h2 class="section-heading" id="the-core-loop">The Core Loop<a class="anchor" aria-label="anchor" href="#the-core-loop"></a>
 </h2>
 <hr class="half-width">
-<p>The everyday git workflow follows four steps:</p>
+<div id="repository-vs-working-directory" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="repository-vs-working-directory" class="callout-inner">
+<h3 class="callout-title">Repository vs Working Directory</h3>
+<div class="callout-content">
+<p><strong>Note:</strong> the local repository kind of a local database
+of all the changes you make on all the files in your project. It is
+controlled by git not the same as the files on your computer that you
+edit and work with! In order to work with the files on your computer,
+git creates a <strong>working directory</strong> that is a copy of the
+project files at a specific point in time (the last commit). When you
+make changes to the files, they are not automatically saved in the local
+repository until you <strong>commit</strong> them. This is an important
+distinction to understand as it allows you to control when and how your
+changes are recorded in the history of the project.</p>
+</div>
+</div>
+</div>
+<p>In the end, the git workflow operates in three places:</p>
 <ol style="list-style-type: decimal">
+<li>
+<strong>Working directory</strong> — where you edit files on your
+computer.</li>
+<li>
+<strong>Local repository</strong> — where your commits are stored on
+your computer.</li>
+<li>
+<strong>Remote repository</strong> — where your commits are stored
+on GitHub.</li>
+</ol>
+<p>The interchange between these three places can be illustrated as
+follows by relating the git operations with a similar workflow without
+digital tools:</p>
+<figure><img src="../gh-workflow-illustrated.png" style="width:90.0%" alt="Diagram of the git workflow showing the working directory, local repository, and remote repository with arrows indicating the flow of changes." class="figure mx-auto d-block"><div class="figcaption">Illustration of the git workflow showing the
+working directory, local repository, and remote repository with arrows
+indicating the flow of changes: edit (working directory), commit (local
+repository), push (remote repository), and pull (working
+directory).</div>
+</figure><p>Therefore, the everyday git workflow follows four steps:</p>
+<ol start="0" style="list-style-type: decimal">
+<li>
+<strong>Pull</strong> — get the latest changes from the remote
+repository before you start working. Note, this also updates your
+working directory!</li>
 <li>
 <strong>Edit</strong> — change files in your working directory.</li>
 <li>
 <strong>Commit</strong> — save a snapshot of your changes with a
-descriptive message.</li>
+descriptive message in your local repository.</li>
 <li>
-<strong>Push</strong> — upload your commits to the remote repository
-on GitHub.</li>
-<li>
-<strong>Pull</strong> — download any new commits from the remote to
-your local copy.</li>
+<strong>Push</strong> — upload your recent commits from the local to
+the remote repository on GitHub.</li>
 </ol>
-<!-- TODO: add diagram of the edit → commit → push → pull cycle --><div class="section level3">
+<p>We strongly recommend to start your daily work by pulling the latest
+changes from GitHub to ensure you are working with the most up-to-date
+version of the project and to minimise potential conflicts later on.</p>
+<div class="section level3">
 <h3 id="making-a-commit-in-github-desktop">Making a Commit in GitHub Desktop<a class="anchor" aria-label="anchor" href="#making-a-commit-in-github-desktop"></a>
 </h3>
 <ol style="list-style-type: decimal">
