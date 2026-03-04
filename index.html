@@ -362,16 +362,23 @@ This should take about <strong>20–40 minutes</strong>.</p>
 <div class="section level3">
 <h3 id="enable-two-factor-authentication-2fa">Enable Two-Factor Authentication (2FA)<a class="anchor" aria-label="anchor" href="#enable-two-factor-authentication-2fa"></a></h3>
 <p>Two-factor authentication is <strong>required</strong> for many
-organisational repositories and is strongly recommended for every
-account.</p>
-<ol style="list-style-type: decimal"><li>Go to <a href="https://github.com/settings/security" class="external-link">github.com/settings/security</a>.</li>
+organisational repositories, for security-relevant settings and is
+strongly recommended for every account.</p>
+<ol style="list-style-type: decimal"><li>After login, go to <a href="https://github.com/settings/security" class="external-link">github.com/settings/security</a>.</li>
 <li>Under “Two-factor authentication”, click
 <strong>Enable</strong>.</li>
-<li>Follow the prompts (authenticator app or SMS).</li>
-</ol><!-- TODO: add screenshot of 2FA settings page --></div>
+<li>Follow the prompts (authenticator app or SMS).
+<ul><li>We recommend using an authenticator app (e.g. Google Authenticator,
+Authy) for better security.</li>
+</ul></li>
+<li>Save your recovery codes in a safe place (e.g. password manager,
+print-out, …) in case you lose access to your 2FA device.</li>
+</ol><p>At the end, it should look like this:</p>
+<figure><img src="gh-sec-2fa.png" style="width:80.0%" alt="GitHub 2FA settings" class="figure mx-auto d-block"><div class="figcaption">Screenshot of GitHub 2FA settings page</div>
+</figure></div>
 </section><section><h2 class="section-heading" id="install-github-desktop">2. Install GitHub Desktop<a class="anchor" aria-label="anchor" href="#install-github-desktop"></a></h2>
-<hr class="half-width"><p>GitHub Desktop is the graphical interface we will use throughout this
-workshop.</p>
+<hr class="half-width"><p>GitHub Desktop is the graphical git interface we will use throughout
+this workshop.</p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
@@ -380,7 +387,7 @@ workshop.</p>
   Windows / macOS
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Download GitHub Desktop from <a href="https://github.com/apps/desktop" class="external-link uri">https://github.com/apps/desktop</a>.</li>
 <li>Run the installer and follow the on-screen instructions.</li>
@@ -397,7 +404,7 @@ workshop.</p>
   Linux (Ubuntu)
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>GitHub Desktop is not officially supported on Linux, but a community
 build is available:</p>
@@ -408,20 +415,36 @@ build is available:</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="sign-in-to-github-desktop">3. Sign In to GitHub Desktop<a class="anchor" aria-label="anchor" href="#sign-in-to-github-desktop"></a></h2>
-<hr class="half-width"><ol style="list-style-type: decimal"><li>Open GitHub Desktop.</li>
-<li>Go to <strong>File → Options</strong> (Windows) or <strong>GitHub
+<hr class="half-width"><p>Signing in allows GitHub Desktop to access your repositories and
+perform git operations on your behalf. The first time you open GitHub
+Desktop, you will be prompted to sign in to your GitHub account.</p>
+<ol style="list-style-type: decimal"><li>Open GitHub Desktop and sign in with your GitHub account on
+startup.</li>
+</ol><p>If you skipped that step, you can sign in later:</p>
+<ol start="2" style="list-style-type: decimal"><li>Go to <strong>File → Options</strong> (Windows) or <strong>GitHub
 Desktop → Preferences</strong> (macOS).</li>
-<li>Under the <strong>Accounts</strong> tab, sign in to your GitHub.com
+</ol><ul><li>Under the <strong>Accounts</strong> tab, sign in to your GitHub.com
 account.</li>
-</ol><!-- TODO: add screenshot of the sign-in dialog in GitHub Desktop --></section><section><h2 class="section-heading" id="configure-your-identity">4. Configure Your Identity<a class="anchor" aria-label="anchor" href="#configure-your-identity"></a></h2>
-<hr class="half-width"><p>Git needs to know your name and email so it can label your
-commits.</p>
+</ul><figure><img src="ghd-sign-in-msg.png" style="width:80.0%" alt="GitHub Desktop sign-in message" class="figure mx-auto d-block"><div class="figcaption">GitHub Desktop login message</div>
+</figure><p><strong>Note:</strong> the sign-in process opens a browser window to
+authenticate with GitHub. During the process, you will be asked for
+permission to allow GitHub Desktop to access your account. This is
+necessary for GitHub Desktop to perform actions on your behalf, which is
+essential for its functionality. After successful authentication, you
+need to allow the browser to return to GitHub Desktop to complete the
+sign-in process.</p>
+</section><section><h2 class="section-heading" id="configure-your-identity">4. Configure Your Identity<a class="anchor" aria-label="anchor" href="#configure-your-identity"></a></h2>
+<hr class="half-width"><p>Git needs to know your name and email so it can label your commits.
+These information are typically copied from your GitHub account, so make
+sure to use the same email address.</p>
+<p>Alternatively, you can later set and change these values in GitHub
+Desktop:</p>
 <ol style="list-style-type: decimal"><li>In GitHub Desktop, go to <strong>File → Options → Git</strong>
 (Windows) or <strong>GitHub Desktop → Preferences → Git</strong>
 (macOS).</li>
 <li>Enter your <strong>Name</strong> and <strong>Email</strong> (use the
 same email as your GitHub account).</li>
-</ol><!-- TODO: add screenshot of the Git identity settings in GitHub Desktop --><div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+</ol><div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">
@@ -429,7 +452,7 @@ same email as your GitHub account).</li>
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>If you prefer or need to set this via the command line:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -452,7 +475,10 @@ installed</label></li>
 Desktop</label></li>
 <li><label><input type="checkbox">Name and email configured in GitHub
 Desktop</label></li>
-</ul><div id="confirmation" class="callout">
+</ul><p>Your GitHub Desktop should now be ready to use for the workshop
+exercises and look like this:</p>
+<figure><img src="ghd-start-screen.png" style="width:80.0%" alt="GitHub Desktop main window" class="figure mx-auto d-block"><div class="figcaption">GitHub Desktop main window</div>
+</figure><div id="confirmation" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -460,9 +486,9 @@ Desktop</label></li>
 <div id="confirmation" class="callout-inner">
 <h3 class="callout-title">Confirmation</h3>
 <div class="callout-content">
-<p>Take a screenshot of your GitHub Desktop main window (showing you are
-signed in) or simply confirm to your instructor that everything is
-ready.</p>
+<p>Take a screenshot of your GitHub Desktop Account Settings (showing
+you are signed in) or simply confirm to your instructor that everything
+is ready.</p>
 </div>
 </div>
 </div>
@@ -521,8 +547,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/index.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/index.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2026-03-03",
-  "datePublished": "2026-03-03"
+  "dateModified": "2026-03-04",
+  "datePublished": "2026-03-04"
 }
 
   </script><script>
