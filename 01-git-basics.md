@@ -71,7 +71,7 @@ And this is where git comes into the game!
 
 ## What Is Git?
 
-!["What is git?" by [R. Fadatare](https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4)](what-is-git.png){alt="git summary" width="80%"}
+!["What is git?" ([R. Fadatare](https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4), 05.03.2026)](what-is-git.png){alt="git summary" width="80%"}
 
 ![](Git-Logo-2Color.png){alt="git logo" width="80px"} is a **version control system** — a tool that tracks changes to your files over time. 
 Think of it as an "undo history" on steroids: you can go back to any
@@ -86,7 +86,7 @@ Each commit is a snapshot of the project at a point in time, allowing you to tra
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-### Why use version control?
+# Why use version control?
 
 - **Reproducibility:** every version of your work is saved and can be
   restored.
@@ -116,7 +116,7 @@ Before we start working with git, it's important to understand the difference be
 | **Local repository** | The copy of the project on *your* computer |
 | **Remote repository** | The copy hosted on GitHub (often called **origin**) |
 
-![Relationship between local and remote repositories, with arrows indicating push (local → remote) and pull (remote → local) actions. ([D. Stearns](https://drstearns.github.io/tutorials/git/) 05.03.2026)](local-remote-repo.png){alt="local and remote repositories with push and pull arrows." width="40%"}
+![Relationship between local and remote repositories, with arrows indicating push (local → remote) and pull (remote → local) actions. ([D. Stearns](https://drstearns.github.io/tutorials/git/), 05.03.2026)](local-remote-repo.png){alt="local and remote repositories with push and pull arrows." width="40%"}
 
 When you **clone** a repository, you download the remote copy of the project to your machine.
 From that point on, you will synchronise changes between the two copies using **push** (local → remote) and **pull** (remote → local) git actions.
@@ -128,7 +128,7 @@ This is one of the major advantages of using systems like git for file managemen
 
 ::::::: callout
 
-## Repository vs Working Directory
+# Repository vs Working Directory
 
 **Note:** the local repository kind of a local database of all the changes you make on all the files in your project.
 It is controlled by git not the same as the files on your computer that you edit and work with!
@@ -163,14 +163,14 @@ Therefore, the everyday git workflow follows four steps:
 
 ::::::: callout
 
-## Staging
+# Staging
 
 Coming back to *staging* (step 2 in the list above).
 By default, git will not automatically do version control for any of your files.
 That is, *you have to explicitly tell git which files and changes you want to include into the repository!*
 In git nomenclature, this is called *staging* a file for commit and is done with the `git add` command in the CLI or by checking the files in GitHub Desktop or your IDE.
 
-![Git workflow including the staging step, showing the working directory, staging area, local repository, and remote repository with arrows indicating the flow of changes. ([i2tutorials.com](https://i2tutorials.com/git-tutorial/git-working-area/) 05.)](git-workflow-complete.png){alt="git workflow including the staging step, showing the working directory, staging area, local repository, and remote repository with arrows indicating the flow of changes."}
+![Git workflow including the staging step, showing the working directory, staging area, local repository, and remote repository with arrows indicating the flow of changes. ([i2tutorials.com](https://i2tutorials.com/git-tutorial/git-working-area/), 05.03.2026)](git-workflow-complete.png){alt="git workflow including the staging step, showing the working directory, staging area, local repository, and remote repository with arrows indicating the flow of changes."}
 
 The same holds for all changes you make to files that are already under version control: you have to stage the changes before they are included in the next commit.
 This allows you to control how your commits are structured and to create small, focused commits that are easier to understand and review than large, monolithic commits.
@@ -186,7 +186,7 @@ So far you have seen how the git workflow operates in theory, but how do you act
 Eventually, git is a command-line tool and thus all operations are done within a
 command-line interface (CLI) such as Terminal or (Git) Bash. This looks like this:
 
-![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. (by [geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/) 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." width="50%"}
+![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. ([geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/), 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." width="50%"}
 
 This is very efficient and useful when your are already comfortable with the CLI, but it can be intimidating for beginners. 
 Therefore, we will use GitHub Desktop, a graphical user interface (GUI) that allows you to perform git operations without typing commands.
@@ -247,7 +247,7 @@ There, you can
 
 :::::::::::::::: spoiler
 
-### Git workflow in Rstudio
+## Git workflow in RStudio
 
 Most programming IDEs (including RStudio) have built-in git support that allows you to perform the core workflow without leaving the IDE.
 In RStudio, you can find the git pane in the upper right corner, which shows you the status of your files (modified, new, deleted) and allows you to stage, commit, and push changes to GitHub.
@@ -327,7 +327,7 @@ Both views allow you to click on individual commits to see the exact changes mad
 
 :::::::::::::::: spoiler
 
-### RStudio and IDEs
+### RStudio and IDE views
 
 Similar views are also available in RStudio and other IDEs with git support, allowing you to browse the commit history and see diffs of changes directly within your coding environment.
 
@@ -356,7 +356,7 @@ git diff
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-### Best practices for commits
+# Best practices for commits
 
 - **Small and focused:** each commit should represent one logical change.
 - **Clear message:** start with a short summary (≤ 50 characters), optionally
