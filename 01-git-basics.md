@@ -300,13 +300,38 @@ history to see:
 - **who** made the change, and
 - **why** (the commit message).
 
+### Viewing History online in GitHub
+
+1. Navigate to your repository on GitHub.
+2. Within the **Code** view, click the **Commits** link above the file list.
+   - This shows the list of all commits within the repository, with their messages, authors, and timestamps.
+3. When selecting a single file, you can also click the **History** button in the top right corner.
+   - This shows the commit history for that specific file, allowing you to see how it evolved over time and who made changes to it.
+
+Both views allow you to click on individual commits to see the exact changes made in that commit.
+
+[![](gh-ui-commits.png){alt="Screenshot of GitHub showing the commit history with a list of commits and a diff view of a selected commit." width="70%"}](gh-ui-commits.png)
+
+[![](gh-ui-history.png){alt="Screenshot of GitHub showing the file history with a list of commits affecting that file and a diff view of a selected commit." width="70%"}](gh-ui-history.png)
+
+
 ### Viewing History in GitHub Desktop
 
 1. Click the **History** tab in the left panel.
-2. Select any commit to see the files that changed and the exact differences
-   (green = added, red = removed).
+2. Select any commit to see the files that were changed by this commit.
+3. Click on a changed file to see the diff of what was added (in green) and removed (in red) on the right
 
-<!-- TODO: add screenshot of the History tab in GitHub Desktop showing a diff -->
+[![](ghd-history.png){alt="Screenshot of GitHub Desktop showing the History tab with a list of commits and a diff view of a selected commit." width="70%"}](ghd-history.png)
+
+:::::::::::::::: spoiler
+
+### RStudio and IDEs
+
+Similar views are also available in RStudio and other IDEs with git support, allowing you to browse the commit history and see diffs of changes directly within your coding environment.
+
+[![](rstudio-git-history.png){alt="Screenshot of RStudio showing the git history pane with a list of commits and a diff view of a selected commit." width="70%"}](rstudio-git-history.png)
+
+::::::::::::::::::::
 
 :::::::::::::::: spoiler
 
@@ -354,8 +379,12 @@ git diff
 Not every file belongs in a repository. Build outputs, temporary files, and
 credentials should be excluded.
 
-Create a file called `.gitignore` in the root of your repository and list the
-patterns to ignore:
+Thus, such files should never be considered for staging and committing.
+
+In order to avoid accidentally including unwanted files in your commits, you can create a `.gitignore` file in the root of your repository (or within respective subdirectories) that lists the files to ignore.
+To reduce list length and to cope with files that are generated with different names (e.g. `file1.txt`, `file2.txt`, etc.), you can use standard wildcards patterns to ignore multiple files at once.
+
+The following shows a sample `.gitignore` file that ignores compiled files, editor backups, OS files, and credentials:
 
 ```text
 # Compiled files
@@ -382,6 +411,7 @@ secrets.yaml
 ```bash
 # Create a .gitignore file
 echo "*.exe" > .gitignore
+# Append a new line to the existing .gitignore file
 echo ".DS_Store" >> .gitignore
 
 # Check which files are ignored
@@ -390,7 +420,7 @@ git status --ignored
 
 ::::::::::::::::::::::::
 
-## Fetch vs Pull (Optional)
+## Fetch vs Pull
 
 | Command | What it does |
 |---------|-------------|
