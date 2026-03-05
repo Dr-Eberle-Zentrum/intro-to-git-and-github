@@ -732,7 +732,7 @@ repository, so you need to commit before you can push.</li>
   Git workflow in RStudio
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Most programming IDEs (including RStudio) have built-in git support
 that allows you to perform the core workflow without leaving the IDE. In
@@ -761,7 +761,7 @@ the staged changes and commit message box.</div>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -852,7 +852,7 @@ and removed (in red) on the right</li>
   RStudio and IDE views
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Similar views are also available in RStudio and other IDEs with git
 support, allowing you to browse the commit history and see diffs of
@@ -870,7 +870,7 @@ changes directly within your coding environment.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -964,7 +964,7 @@ secrets.yaml
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1036,7 +1036,7 @@ terms:</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -1220,7 +1220,7 @@ operations.</strong></p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1297,7 +1297,7 @@ same branch are connected by a line and branches are shown as diverging
 lines from a common ancestor commit. When a branch is merged into
 another, the DAG shows a merge commit that has two parent commits — one
 from the source branch and one from the target branch.</p>
-<figure><img src="git-branches.png" alt="A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main" class="figure mx-auto d-block"><div class="figcaption">An example of a DAG showing three branches (main
+<figure><img src="git-branches.png" style="width:30.0%" alt="A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main" class="figure mx-auto d-block"><div class="figcaption">An example of a DAG showing three branches (main
 in green and two development branches in blue and orange) with multiple
 commits within each branch and two merge commits that merge the
 development branches into main</div>
@@ -1388,7 +1388,7 @@ changes to avoid losing work.</strong></p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1428,18 +1428,86 @@ leave comments.</li>
 <strong>Approval:</strong> reviewers approve or request changes
 before merging.</li>
 </ul>
-<!-- TODO: add screenshot of a pull request page on GitHub showing the conversation tab --><div class="section level3">
-<h3 id="opening-a-pull-request">Opening a pull request<a class="anchor" aria-label="anchor" href="#opening-a-pull-request"></a>
+<figure><img src="pr-pull-request.png" alt="A screenshot of a pull request page on GitHub showing the conversation tab" class="figure mx-auto d-block"></figure><p>The screenshot from above shows the conversation tab of a pull
+request, where you can see the discussion and comments related to the
+PR. The <strong>Files changed</strong> tab shows the change
+visualization of the changes proposed in the PR, similar to the view
+discussed before. All commits that are part of the PR are shown in the
+<strong>Commits</strong> tab or within the time line of the conversation
+tab (here the “scale image sizes” commit is shown in the timeline). In
+the lower right, you see a list of all participants in the PR’s
+conversation, including the author and all reviewers. The upper right
+“reviewer” section allows to actively request a review from specific
+people, which is especially useful for larger teams. Labels and
+milestones can be used to organize and track PRs, especially in larger
+projects.</p>
+<p>The comments within the conversation tab are written in Markdown, so
+you can use formatting, links, images, and even code snippets to make
+your comments more clear and informative.</p>
+<p>Ensure you use a clear title (top line) and description (first text
+box) when creating a pull request, as this helps reviewers understand
+the purpose and context of your changes.</p>
+<p>Note, all additional commits to the branch after creating the PR will
+automatically be added to the PR, so you can continue working on the
+branch and pushing changes (e.g. based on reviewer comments) until the
+PR is ready to be merged. There is no need to (re)create or update a PR
+after pushing additional commits to the branch. Only a message might be
+appropriate to inform reviewers about the implemented changes and the
+status of the PR.</p>
+<p>In case your PR is not ready for review yet, you can also create a
+<strong>draft pull request</strong> that is not visible to reviewers and
+cannot be merged until you mark it as ready for review. To this end, use
+the “Convert to draft” button in the upper right of the PR page.</p>
+<div class="section level3">
+<h3 id="opening-a-pull-request-online-in-github">Opening a pull request online in GitHub<a class="anchor" aria-label="anchor" href="#opening-a-pull-request-online-in-github"></a>
 </h3>
+<p>The GitHub website typically informs about recently pushed branches
+and provides a convenient button to open a pull request directly from
+the code view.</p>
+<figure><img src="gh-start-pr.png" alt="A screenshot of the GitHub website showing a notification about a recently pushed branch with a button to open a pull request" class="figure mx-auto d-block"></figure><p>Alternatively, you can</p>
+<ul>
+<li>go to the <strong>Pull requests</strong> tab of your repository and
+click <strong>New pull request</strong>.</li>
+<li>use the <strong>Branches</strong> button in the Code tab to see all
+branches and open a PR from there.</li>
+<li>switch to the branch you want to open a PR for and click the
+<strong>Compare &amp; pull request</strong> button.</li>
+</ul>
+<p>Afterwards, you will be redirected to the PR form where you can fill
+in the title and description and submit the PR.</p>
+<figure><img src="gh-pull-request.png" alt="A screenshot of the GitHub website showing the pull request form with fields for title and description" class="figure mx-auto d-block"></figure><p>Therein, you have to define a title for your PR (e.g. “Add goals
+section”) and a description that explains the purpose and context of
+your changes. At the bottom all commits and changed files that are part
+of the branch and thus part of the PR are shown, so you can verify that
+the correct changes are included in the PR before submitting it. In the
+upper right, you can also select reviewers, add labels, etc.</p>
+<p>The gray area above the title field shows the base branch (the branch
+you want to merge into, typically <code>main</code>) and the compare
+branch (the branch you want to merge from, typically your feature
+branch) and whether the changes can be merged automatically or if there
+are conflicts that need to be resolved before merging.</p>
+<p>The <strong>Create pull request</strong> button finishes the process
+and submits the PR for review.</p>
+</div>
+<div class="section level3">
+<h3 id="opening-a-pull-request-via-github-desktop">Opening a pull request via GitHub Desktop<a class="anchor" aria-label="anchor" href="#opening-a-pull-request-via-github-desktop"></a>
+</h3>
+<p>When working locally and you are ready to share your work, you can
+open a pull request directly from GitHub Desktop.</p>
 <ol style="list-style-type: decimal">
-<li>Push your branch to GitHub (GitHub Desktop will offer a
-<strong>Publish branch</strong> button).</li>
-<li>GitHub Desktop shows a prompt: <strong>Create Pull Request</strong>.
-Click it to open the GitHub website.</li>
+<li>Push your branch’s changes to GitHub and ensure the remote
+repository is up-to-date.</li>
+<li>Use the <strong>Branch</strong> menu of GitHub Desktop and choose
+<strong>Create Pull Request</strong>.
+<ul>
+<li>This will redirect you to the GitHub website and prefill the PR form
+with the correct source and target branches.</li>
+</ul>
+</li>
 <li>Fill in a title and description, then click <strong>Create pull
 request</strong>.</li>
 </ol>
-<!-- TODO: add screenshot of the "Create pull request" form on GitHub -->
+<figure><img src="ghd-start-pr.png" alt='A screenshot of GitHub Desktop showing the "Create Pull Request" option in the Branch menu' class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
 <h3 id="reviewing-and-merging-a-pull-request">Reviewing and merging a pull request<a class="anchor" aria-label="anchor" href="#reviewing-and-merging-a-pull-request"></a>
@@ -1451,15 +1519,17 @@ review the diff.</li>
 <li>When ready, click <strong>Merge pull request</strong> and then
 <strong>Confirm merge</strong>.</li>
 </ol>
-<!-- TODO: add screenshot of the "Merge pull request" button on GitHub --><p>Note, git itself does not have the concept of pull requests — this is
+<figure><img src="gh-merge-pr.png" alt='A screenshot of a pull request page on GitHub showing the "Merge pull request" button' class="figure mx-auto d-block"></figure><p>Note, git itself does not have the concept of pull requests — this is
 a GitHub feature built on top of git’s branching and merging
 capabilities.</p>
 <p>Git itself only allows to merge branches, but it does not provide a
 review or discussion workflow before merging. Furthermore, merging is
-done directly on the local repository and does not automatically update
-the remote repository until you push the changes. Thus, a merged pull
-request on GitHub is not automatically merged in your local repository
-until you pull the changes from GitHub.</p>
+done directly on the current repository and does not automatically
+update any other (like the remote) repository until you push the
+changes.</p>
+<p><strong>Thus, a merged pull request on GitHub is not automatically
+transferring to your local repository until you pull the changes from
+GitHub.</strong></p>
 <div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
@@ -1468,7 +1538,7 @@ until you pull the changes from GitHub.</p>
   CLI equivalent for pushing a branch
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1506,7 +1576,7 @@ interface.</p>
   Key difference
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>
