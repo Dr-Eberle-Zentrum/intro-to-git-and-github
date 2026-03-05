@@ -222,6 +222,7 @@
 <li><a href="#what-is-github">What Is GitHub?</a></li>
 <li><a href="#local-vs-remote-repositories">Local vs Remote Repositories</a></li>
 <li><a href="#the-core-loop">The Core Loop</a></li>
+<li><a href="#the-core-loop-in-github-desktop">The Core Loop in GitHub Desktop</a></li>
 <li><a href="#tracking-changes-and-history">Tracking Changes and History</a></li>
 <li><a href="#what-makes-a-good-commit">What Makes a Good Commit?</a></li>
 <li><a href="#ignoring-files-with-.gitignore">Ignoring Files with <code>.gitignore</code></a></li>
@@ -317,7 +318,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Git Basics and Single-Person Workflow</h1>
-        <p>Last updated on 2026-03-04 |
+        <p>Last updated on 2026-03-05 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/intro-to-git-and-github/edit/main/episodes/01-git-basics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -359,7 +360,7 @@
 <section><h2 class="section-heading" id="why-bother-with-version-control">Why bother with version control?<a class="anchor" aria-label="anchor" href="#why-bother-with-version-control"></a></h2>
 <hr class="half-width"><p><em>This section was taken from <a href="https://swcarpentry.github.io/git-novice/01-basics.html" class="external-link">Software
 Carpentry: Version Control with Git.</a> by I. Gonzalez, D. Huang, N.
-Hejazi and Katherine Koziar (Version <a href="https://github.com/swcarpentry/git-novice/tree/d3ee3d1a6093ca86b3c9c618e2a4be1a054dfc89" class="external-link">04.03.2026</a>)
+Hejazi and K. Koziar (Version <a href="https://github.com/swcarpentry/git-novice/tree/d3ee3d1a6093ca86b3c9c618e2a4be1a054dfc89" class="external-link">04.03.2026</a>)
 and slightly adapted.</em></p>
 <p>We’ll start by exploring how version control can be used to keep
 track of what one person did and when. Even if you aren’t collaborating
@@ -502,49 +503,190 @@ directory).</div>
 </figure><p>Therefore, the everyday git workflow follows four steps:</p>
 <ol start="0" style="list-style-type: decimal"><li>
 <strong>Pull</strong> — get the latest changes from the remote
-repository before you start working. Note, this also updates your
-working directory!</li>
+(GitHub) repository before you start working. Note, this also updates
+your working directory!</li>
 <li>
-<strong>Edit</strong> — change files in your working directory.</li>
+<strong>Edit</strong> — change files in your working directory.
+<em>This is done with any tool and independent of git.</em>
+</li>
+<li>
+<strong>Stage</strong> - select which of your files/changes you want
+to include in the next commit. This is an optional step that allows you
+to control how your commits are structured.</li>
 <li>
 <strong>Commit</strong> — save a snapshot of your changes with a
-descriptive message in your local repository.</li>
+descriptive message in your local git repository.</li>
 <li>
 <strong>Push</strong> — upload your recent commits from the local to
-the remote repository on GitHub.</li>
-</ol><p>We strongly recommend to start your daily work by pulling the latest
-changes from GitHub to ensure you are working with the most up-to-date
-version of the project and to minimise potential conflicts later on.</p>
+the remote repository (on GitHub).</li>
+</ol><p><strong>We strongly recommend to start your daily work by pulling the
+latest changes from GitHub to ensure you are working with the most
+up-to-date version of the project and to minimise potential conflicts
+later on.</strong></p>
+<div id="staging" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="staging" class="callout-inner">
+<h3 class="callout-title">Staging</h3>
+<div class="callout-content">
+<p>Coming back to <em>staging</em> (step 2 in the list above). By
+default, git will not automatically do version control for any of your
+files. That is, <em>you have to explicitly tell git which files and
+changes you want to include into the repository!</em> In git
+nomenclature, this is called <em>staging</em> a file for commit and is
+done with the <code>git add</code> command in the CLI or by checking the
+files in GitHub Desktop or your IDE.</p>
+<figure><img src="git-workflow-complete.png" alt="git workflow including the staging step, showing the working directory, staging area, local repository, and remote repository with arrows indicating the flow of changes." class="figure mx-auto d-block"><div class="figcaption">Git workflow including the staging step, showing
+the working directory, staging area, local repository, and remote
+repository with arrows indicating the flow of changes.</div>
+</figure><p>The same holds for all changes you make to files that are already
+under version control: you have to stage the changes before they are
+included in the next commit. This allows you to control how your commits
+are structured and to create small, focused commits that are easier to
+understand and review than large, monolithic commits. Also you can
+“store” only some of your changes in a commit and keep the rest for
+later commits, which can be useful if you are working on multiple
+features or changes at the same time.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="the-core-loop-in-github-desktop">The Core Loop in GitHub Desktop<a class="anchor" aria-label="anchor" href="#the-core-loop-in-github-desktop"></a></h2>
+<hr class="half-width"><p>So far you have seen how the git workflow operates in theory, but how
+do you actually do these steps in practice?</p>
+<p>Eventually, git is a command-line tool and thus all operations are
+done within a command-line interface (CLI) such as Terminal or (Git)
+Bash. This looks like this:</p>
+<figure><img src="gfg-GitCommit1.jpg" style="width:70.0%" alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." class="figure mx-auto d-block"><div class="figcaption">Screenshot of a Bash terminal showing git
+commands ‘status’ and ‘commit’ being executed in the <code>$</code>
+prefixed lines. (by <a href="https://www.geeksforgeeks.org/git/what-is-git-commit/" class="external-link">geeksforgeeks</a>)</div>
+</figure><p>This is very efficient and useful when your are already comfortable
+with the CLI, but it can be intimidating for beginners. Therefore, we
+will use GitHub Desktop, a graphical user interface (GUI) that allows
+you to perform git operations without typing commands. The core loop of
+edit → stage → commit → push → pull can be done entirely within GitHub
+Desktop, which is more user-friendly for those new to git. The
+Screenshot shows the GitHub Desktop interface for a repository with some
+changes to be staged for commit.</p>
+<figure><img src="ghd-commit.png" style="width:90.0%" alt="Screenshot of GitHub Desktop showing the Changes tab with a list of modified files and options to stage them for commit." class="figure mx-auto d-block"><div class="figcaption">Screenshot of GitHub Desktop showing the Changes
+tab with a list of modified files and options to stage them for
+commit.</div>
+</figure><div class="section level3">
+<h3 id="staging-changes">(1) Staging Changes<a class="anchor" aria-label="anchor" href="#staging-changes"></a></h3>
+<p>Within the screenshot from above, you find in the upper left corner
+(highlighted by the red (1)) the <strong>Changes</strong> tab, which
+lists all the files that have been modified in your working directory
+since the last commit. To stage a file for commit, simply check the box
+next to it.</p>
+<p>The symbol on the right of the file name indicates the type of
+change:</p>
+<ul><li>a green plus means the file is new,</li>
+<li>yellow dots indicate modified files, and</li>
+<li>a red minus identifies a file that was deleted.</li>
+</ul></div>
 <div class="section level3">
-<h3 id="making-a-commit-in-github-desktop">Making a Commit in GitHub Desktop<a class="anchor" aria-label="anchor" href="#making-a-commit-in-github-desktop"></a></h3>
-<ol style="list-style-type: decimal"><li>Open GitHub Desktop and select your repository.</li>
-<li>You will see changed files listed in the left panel.</li>
-<li>Select the files you want to include in this commit.</li>
-<li>Write a short, descriptive <strong>Summary</strong> (commit
-message).</li>
-<li>Click <strong>Commit to main</strong>.</li>
-</ol><!-- TODO: add screenshot of the GitHub Desktop commit panel with changes staged --></div>
-<div class="section level3">
-<h3 id="pushing-changes">Pushing Changes<a class="anchor" aria-label="anchor" href="#pushing-changes"></a></h3>
-<p>After committing, click the <strong>Push origin</strong> button in
-the toolbar to upload your commits to GitHub.</p>
-<!-- TODO: add screenshot of the Push origin button in GitHub Desktop -->
+<h3 id="reviewing-changes">(2) Reviewing Changes<a class="anchor" aria-label="anchor" href="#reviewing-changes"></a></h3>
+<p>You can also click on modified file names to see a visualization of
+the changes you made, which is highlighted by the red (2). Therein,
+added lines are in green and removed lines in red.</p>
+<p>Note, since git works line by line, if you change a line, git will
+show the old version as removed and the new version as added, even if
+they are very similar. In that case, detailed changes are highlighted in
+dark hue within the added and removed lines to show exactly what was
+changed, as shown in the example of the modified file in the screenshot
+above.</p>
+<p><strong>It is recommended to always review your changes before
+staging and committing to ensure you are including the intended
+modifications and to catch any unintended changes.</strong></p>
 </div>
 <div class="section level3">
-<h3 id="pulling-changes">Pulling Changes<a class="anchor" aria-label="anchor" href="#pulling-changes"></a></h3>
-<p>If changes were made on GitHub (for example via the web editor),
-click <strong>Fetch origin</strong> and then <strong>Pull
-origin</strong> to bring them to your local copy.</p>
-<!-- TODO: add screenshot of the Pull origin button in GitHub Desktop -->
-<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<h3 id="committing-staged-changes">(3) Committing staged changes<a class="anchor" aria-label="anchor" href="#committing-staged-changes"></a></h3>
+<p>Once you have selected (staged) all files, you are ready to commit to
+your local repository. This is done by writing a short, descriptive
+<strong>Summary</strong> (commit message) in the box at the bottom left
+(highlighted by the red (2)) and then clicking the <strong>Commit to
+main</strong> button. The commit button itself shows the number of
+staged files for this commit as a final reminder of what you are about
+to commit.</p>
+<p>Longer descriptions can be added in the box below the Summary, but it
+is recommended to keep the Summary concise and to the point, while using
+the description for more detailed explanations if necessary.</p>
+<p>Once you click the commit button, the changes are saved in your local
+repository, along with your “commitment”, i.e. your user information,
+time stamp, commit message, etc.</p>
+</div>
+<div class="section level3">
+<h3 id="pushing-changes">(4) Pushing Changes<a class="anchor" aria-label="anchor" href="#pushing-changes"></a></h3>
+<p>After committing, your changes are still only in your local
+repository on your computer. To share them with others or to have them
+available on GitHub, you need to <strong>push</strong> them to the
+remote repository.</p>
+<p>This is done using the “remote” section in the toolbar at the top of
+GitHub Desktop, which is highlighted by the red (4) in the screenshot
+above.</p>
+<p>There, you can</p>
+<ul><li>
+<strong>Fetch origin</strong> to check if there are new commits on
+GitHub that you don’t have locally yet (for example, if you made changes
+on GitHub via the web editor or if someone else pushed changes to the
+same repository).
+<ul><li>Note: this does not change your local files within the working
+directory, it just checks for updates and shows you if there are new
+commits available on GitHub.</li>
+</ul></li>
+<li>
+<strong>Pull origin</strong> to fetch and merge those changes into
+your local repository and update your working directory with the latest
+version from GitHub.
+<ul><li>Note: this has the potential to cause merge conflicts if there are
+changes on GitHub that conflict with your local changes, so it is
+recommended to pull before you start working to minimise this risk.</li>
+</ul></li>
+<li>
+<strong>Push origin</strong> to upload your local commits to GitHub
+so they are available in the remote repository and can be seen by
+others.
+<ul><li>Note: you can only push commits that are already in your local
+repository, so you need to commit before you can push.</li>
+</ul></li>
+</ul><div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Git workflow in Rstudio
+  </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
+<p>Most programming IDEs (including RStudio) have built-in git support
+that allows you to perform the core workflow without leaving the IDE. In
+RStudio, you can find the git pane in the upper right corner, which
+shows you the status of your files (modified, new, deleted) and allows
+you to stage, commit, and push changes to GitHub.</p>
+<figure><img src="rstudio-git-pane.png" alt="Screenshot of RStudio showing the git pane with modified files and options to stage, commit, and push changes." class="figure mx-auto d-block"><div class="figcaption">Screenshot of the RStudio git pane with modified
+files and options to stage, commit, and push changes.</div>
+</figure><p>When you click on “Commit”, a new window opens where you can review
+your changes, write a commit message, and commit to your local
+repository similar to the workflow described for GitHub Desktop. After
+committing, you can push your changes to GitHub using the “Push” button
+either in the commit dialog or in the git pane.</p>
+<figure><img src="rstudio-git-commit.png" alt="Screenshot of RStudio showing the commit dialog with staged changes and commit message box." class="figure mx-auto d-block"><div class="figcaption">Screenshot of the RStudio commit dialog showing
+the staged changes and commit message box.</div>
+</figure></div>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -557,7 +699,7 @@ origin</strong> to bring them to your local copy.</p>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># Stage changes for commit</span></span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">git</span> add filename.md      <span class="co"># stage a specific file</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">git</span> add .                <span class="co"># stage all changes</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">git</span> add .                <span class="co"># stage all changes and new files</span></span>
 <span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co"># Commit with a message</span></span>
 <span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add goals section to README"</span></span>
@@ -589,15 +731,15 @@ the history to see:</p>
 <ol style="list-style-type: decimal"><li>Click the <strong>History</strong> tab in the left panel.</li>
 <li>Select any commit to see the files that changed and the exact
 differences (green = added, red = removed).</li>
-</ol><!-- TODO: add screenshot of the History tab in GitHub Desktop showing a diff --><div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+</ol><!-- TODO: add screenshot of the History tab in GitHub Desktop showing a diff --><div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
-  <h3 class="accordion-header" id="headingSpoiler2">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -664,15 +806,15 @@ Thumbs.db
 # Credentials — never commit these!
 secrets.yaml
 .env</code></pre>
-<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler4" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
-  <h3 class="accordion-header" id="headingSpoiler3">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
+  <h3 class="accordion-header" id="headingSpoiler4">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -725,7 +867,7 @@ terms:</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Commit</strong> — a saved snapshot of changes in my project,
@@ -823,7 +965,7 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/01-git-basics.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/01-git-basics.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2026-03-04",
+  "dateModified": "2026-03-05",
   "datePublished": "2026-03-05"
 }
 
