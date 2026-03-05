@@ -65,15 +65,18 @@ cd git-intro-yourname
 
 ### Checkpoint 2
 
-The commit appears in the **History** tab. Your change summary shows the added
-lines in green.
+The commit appears in the **History** tab. 
+Your change summary shows the added lines in green.
+
+Note, so far, your changes are still only known within your local repository.
+They have not been shared with GitHub or anyone else until you push them (Task 2).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Level 3 — Make multiple commits
 
-Make at least two more small edits to your README (or create a new file), each
-as a **separate** commit with a descriptive message. Practice the habit of
+Create a new file within your project and add/commit it to the local repository.
+Use a descriptive message for the new file to practice the habit of
 small, focused commits.
 
 ---
