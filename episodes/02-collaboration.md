@@ -168,7 +168,7 @@ The branching structure is typically visualized as directed acyclic graph (DAG) 
 Commits that are on the same branch are connected by a line and branches are shown as diverging lines from a common ancestor commit.
 When a branch is merged into another, the DAG shows a merge commit that has two parent commits — one from the source branch and one from the target branch.
 
-![An example of a DAG showing three branches (main in green and two development branches in blue and orange) with multiple commits within each branch and two merge commits that merge the development branches into main](git-branches.png){alt='A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main' width="30%"}
+![An example of a DAG showing three branches (main in green and two development branches in blue and orange) with multiple commits within each branch and two merge commits that merge the development branches into main](git-branches.png){alt='A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main' width="40%"}
 
 
 ### Creating a branch online in GitHub
@@ -256,7 +256,7 @@ provide a space for:
 - **Discussion:** ask questions, suggest improvements, leave comments.
 - **Approval:** reviewers approve or request changes before merging.
 
-![](gh-pull-request.png){alt='A screenshot of a pull request page on GitHub showing the conversation tab'}
+![](gh-pull-request.png){alt='A screenshot of a pull request page on GitHub showing the conversation tab.'}
 
 The screenshot from above shows the conversation tab of a pull request, where you can see the discussion and comments related to the PR.
 The **Files changed** tab shows the change visualization of the changes proposed in the PR, similar to the view discussed before.
@@ -372,9 +372,10 @@ fixing a single typo).
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- Git can auto-merge changes to different parts of a file.
+- Git can auto-merge changes to different parts of a text-based file.
 - A merge conflict occurs when the same lines are changed by two people.
-- Branches let you work in parallel without affecting `main`.
-- Pull requests provide a review and discussion workflow before merging.
+- The `main` branch typically represents the stable version of the project.
+- Branches let you work in parallel and independently without affecting `main`.
+- Pull requests provide a review and discussion workflow before merging branches.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
