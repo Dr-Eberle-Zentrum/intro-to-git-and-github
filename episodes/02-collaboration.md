@@ -36,7 +36,8 @@ git can usually merge their changes automatically. This is called an
 
 Git tracks changes line by line. When two sets of changes touch different
 lines, git can combine them without ambiguity. Binary files (images, Word
-documents) cannot be merged this way — git will always flag them as conflicts.
+documents) cannot be merged this way — git will always flag them as conflicts
+and you must choose which version to keep.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
