@@ -562,7 +562,7 @@ do you actually do these steps in practice?</p>
 <p>Eventually, git is a command-line tool and thus all operations are
 done within a command-line interface (CLI) such as Terminal or (Git)
 Bash. This looks like this:</p>
-<figure><img src="../gfg-GitCommit1.jpg" style="width:70.0%" alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." class="figure mx-auto d-block"><div class="figcaption">Screenshot of a Bash terminal showing git
+<figure><img src="../gfg-GitCommit1.jpg" style="width:50.0%" alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." class="figure mx-auto d-block"><div class="figcaption">Screenshot of a Bash terminal showing git
 commands ‘status’ and ‘commit’ being executed in the <code>$</code>
 prefixed lines. (by <a href="https://www.geeksforgeeks.org/git/what-is-git-commit/" class="external-link">geeksforgeeks.org</a>
 05.03.2026)</div>
@@ -663,7 +663,7 @@ repository, so you need to commit before you can push.</li>
   Git workflow in Rstudio
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Most programming IDEs (including RStudio) have built-in git support
 that allows you to perform the core workflow without leaving the IDE. In
@@ -691,7 +691,7 @@ the staged changes and commit message box.</div>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -733,21 +733,22 @@ the history to see:</p>
 <strong>why</strong> (the commit message).</li>
 </ul><div class="section level3">
 <h3 id="viewing-history-online-in-github">Viewing History online in GitHub<a class="anchor" aria-label="anchor" href="#viewing-history-online-in-github"></a></h3>
-<ol style="list-style-type: decimal"><li>Navigate to your repository on GitHub.</li>
-<li>Within the <strong>Code</strong> view, click the
-<strong>Commits</strong> link above the file list.
+<ol style="list-style-type: decimal"><li><p>Navigate to your repository on GitHub.</p></li>
+<li>
+<p>Within the <strong>Code</strong> view, click the
+<strong>Commits</strong> link above the file list.</p>
 <ul><li>This shows the list of all commits within the repository, with their
 messages, authors, and timestamps.</li>
 </ul></li>
-<li>When selecting a single file, you can also click the
+</ol><p><a href="../gh-ui-commits.png"><img src="../gh-ui-commits.png" alt="Screenshot of GitHub showing the commit history with a list of commits and a diff view of a selected commit." class="figure"></a></p>
+<ol start="3" style="list-style-type: decimal"><li>When selecting a single file, you can also click the
 <strong>History</strong> button in the top right corner.
 <ul><li>This shows the commit history for that specific file, allowing you
 to see how it evolved over time and who made changes to it.</li>
 </ul></li>
-</ol><p>Both views allow you to click on individual commits to see the exact
+</ol><p><a href="../gh-ui-history.png"><img src="../gh-ui-history.png" alt="Screenshot of GitHub showing the file history with a list of commits affecting that file and a diff view of a selected commit." class="figure"></a></p>
+<p>Both views allow you to click on individual commits to see the exact
 changes made in that commit.</p>
-<p><a href="../gh-ui-commits.png"><img src="../gh-ui-commits.png" style="width:70.0%" alt="Screenshot of GitHub showing the commit history with a list of commits and a diff view of a selected commit." class="figure"></a></p>
-<p><a href="../gh-ui-history.png"><img src="../gh-ui-history.png" style="width:70.0%" alt="Screenshot of GitHub showing the file history with a list of commits affecting that file and a diff view of a selected commit." class="figure"></a></p>
 </div>
 <div class="section level3">
 <h3 id="viewing-history-in-github-desktop">Viewing History in GitHub Desktop<a class="anchor" aria-label="anchor" href="#viewing-history-in-github-desktop"></a></h3>
@@ -756,7 +757,7 @@ changes made in that commit.</p>
 commit.</li>
 <li>Click on a changed file to see the diff of what was added (in green)
 and removed (in red) on the right</li>
-</ol><p><a href="../ghd-history.png"><img src="../ghd-history.png" style="width:70.0%" alt="Screenshot of GitHub Desktop showing the History tab with a list of commits and a diff view of a selected commit." class="figure"></a></p>
+</ol><p><a href="../ghd-history.png"><img src="../ghd-history.png" alt="Screenshot of GitHub Desktop showing the History tab with a list of commits and a diff view of a selected commit." class="figure"></a></p>
 <div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
@@ -765,12 +766,12 @@ and removed (in red) on the right</li>
   RStudio and IDEs
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Similar views are also available in RStudio and other IDEs with git
 support, allowing you to browse the commit history and see diffs of
 changes directly within your coding environment.</p>
-<p><a href="../rstudio-git-history.png"><img src="../rstudio-git-history.png" style="width:70.0%" alt="Screenshot of RStudio showing the git history pane with a list of commits and a diff view of a selected commit." class="figure"></a></p>
+<p><a href="../rstudio-git-history.png"><img src="../rstudio-git-history.png" alt="Screenshot of RStudio showing the git history pane with a list of commits and a diff view of a selected commit." class="figure"></a></p>
 </div>
 </div>
 </div>
@@ -783,7 +784,7 @@ changes directly within your coding environment.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -867,7 +868,7 @@ secrets.yaml
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -921,7 +922,7 @@ terms:</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Commit</strong> — a saved snapshot of changes in my project,
@@ -947,8 +948,8 @@ remote repository into my local copy so I have the latest changes.</li>
 time.</li>
 <li>GitHub hosts git repositories in the cloud and adds collaboration
 features.</li>
-<li>The core workflow is: <strong>edit → commit → push →
-pull</strong>.</li>
+<li>The core workflow is: <strong>pull → edit → commit →
+push</strong>.</li>
 <li>Good commits are small, focused, and have clear messages.</li>
 <li>Use <code>.gitignore</code> to keep unwanted files out of your
 repository.</li>
