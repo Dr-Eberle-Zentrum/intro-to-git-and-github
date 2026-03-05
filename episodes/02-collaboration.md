@@ -168,7 +168,7 @@ The branching structure is typically visualized as directed acyclic graph (DAG) 
 Commits that are on the same branch are connected by a line and branches are shown as diverging lines from a common ancestor commit.
 When a branch is merged into another, the DAG shows a merge commit that has two parent commits — one from the source branch and one from the target branch.
 
-![An example of a DAG showing three branches (main in green and two development branches in blue and orange) with multiple commits within each branch and two merge commits that merge the development branches into main](git-branches.png){alt='A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main'}
+![An example of a DAG showing three branches (main in green and two development branches in blue and orange) with multiple commits within each branch and two merge commits that merge the development branches into main](git-branches.png){alt='A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main' width="30%"}
 
 
 ### Creating a branch online in GitHub
@@ -256,17 +256,64 @@ provide a space for:
 - **Discussion:** ask questions, suggest improvements, leave comments.
 - **Approval:** reviewers approve or request changes before merging.
 
-<!-- TODO: add screenshot of a pull request page on GitHub showing the conversation tab -->
+![](pr-pull-request.png){alt='A screenshot of a pull request page on GitHub showing the conversation tab'}
 
-### Opening a pull request
+The screenshot from above shows the conversation tab of a pull request, where you can see the discussion and comments related to the PR.
+The **Files changed** tab shows the change visualization of the changes proposed in the PR, similar to the view discussed before.
+All commits that are part of the PR are shown in the **Commits** tab or within the time line of the conversation tab (here the "scale image sizes" commit is shown in the timeline).
+In the lower right, you see a list of all participants in the PR's conversation, including the author and all reviewers.
+The upper right "reviewer" section allows to actively request a review from specific people, which is especially useful for larger teams.
+Labels and milestones can be used to organize and track PRs, especially in larger projects.
 
-1. Push your branch to GitHub (GitHub Desktop will offer a **Publish branch**
-   button).
-2. GitHub Desktop shows a prompt: **Create Pull Request**. Click it to open
-   the GitHub website.
+The comments within the conversation tab are written in Markdown, so you can use formatting, links, images, and even code snippets to make your comments more clear and informative.
+
+Ensure you use a clear title (top line) and description (first text box) when creating a pull request, as this helps reviewers understand the purpose and context of your changes.
+
+Note, all additional commits to the branch after creating the PR will automatically be added to the PR, so you can continue working on the branch and pushing changes (e.g. based on reviewer comments) until the PR is ready to be merged.
+There is no need to (re)create or update a PR after pushing additional commits to the branch.
+Only a message might be appropriate to inform reviewers about the implemented changes and the status of the PR.
+
+In case your PR is not ready for review yet, you can also create a **draft pull request** that is not visible to reviewers and cannot be merged until you mark it as ready for review.
+To this end, use the "Convert to draft" button in the upper right of the PR page.
+
+
+### Opening a pull request online in GitHub
+
+The GitHub website typically informs about recently pushed branches and provides a convenient button to open a pull request directly from the code view.
+
+![](gh-start-pr.png){alt='A screenshot of the GitHub website showing a notification about a recently pushed branch with a button to open a pull request'}
+
+Alternatively, you can 
+
+- go to the **Pull requests** tab of your repository and click **New pull request**.
+- use the **Branches** button in the Code tab to see all branches and open a PR from there.
+- switch to the branch you want to open a PR for and click the **Compare & pull request** button.
+
+Afterwards, you will be redirected to the PR form where you can fill in the title and description and submit the PR.
+
+![](gh-pull-request.png){alt='A screenshot of the GitHub website showing the pull request form with fields for title and description'}
+
+Therein, you have to define a title for your PR (e.g. "Add goals section") and a description that explains the purpose and context of your changes.
+At the bottom all commits and changed files that are part of the branch and thus part of the PR are shown, so you can verify that the correct changes are included in the PR before submitting it.
+In the upper right, you can also select reviewers, add labels, etc.
+
+The gray area above the title field shows the base branch (the branch you want to merge into, typically `main`) and the compare branch (the branch you want to merge from, typically your feature branch)
+and whether the changes can be merged automatically or if there are conflicts that need to be resolved before merging.
+
+The **Create pull request** button finishes the process and submits the PR for review.
+
+
+### Opening a pull request via GitHub Desktop
+
+When working locally and you are ready to share your work, you can open a pull request directly from GitHub Desktop.
+
+1. Push your branch's changes to GitHub and ensure the remote repository is up-to-date.
+2. Use the **Branch** menu of GitHub Desktop and choose **Create Pull Request**. 
+   - This will redirect you to the GitHub website and prefill the PR form with the correct source and target branches.
 3. Fill in a title and description, then click **Create pull request**.
 
-<!-- TODO: add screenshot of the "Create pull request" form on GitHub -->
+![](ghd-start-pr.png){alt='A screenshot of GitHub Desktop showing the "Create Pull Request" option in the Branch menu'}
+
 
 ### Reviewing and merging a pull request
 
@@ -274,13 +321,14 @@ provide a space for:
 2. Add comments or approve the changes.
 3. When ready, click **Merge pull request** and then **Confirm merge**.
 
-<!-- TODO: add screenshot of the "Merge pull request" button on GitHub -->
+![](gh-merge-pr.png){alt='A screenshot of a pull request page on GitHub showing the "Merge pull request" button'}
 
 Note, git itself does not have the concept of pull requests — this is a GitHub feature built on top of git's branching and merging capabilities.
 
 Git itself only allows to merge branches, but it does not provide a review or discussion workflow before merging.
-Furthermore, merging is done directly on the local repository and does not automatically update the remote repository until you push the changes.
-Thus, a merged pull request on GitHub is not automatically merged in your local repository until you pull the changes from GitHub.
+Furthermore, merging is done directly on the current repository and does not automatically update any other (like the remote) repository until you push the changes.
+
+**Thus, a merged pull request on GitHub is not automatically transferring to your local repository until you pull the changes from GitHub.**
 
 :::::::::::::::: spoiler
 
