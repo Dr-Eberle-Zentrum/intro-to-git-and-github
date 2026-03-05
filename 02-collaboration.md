@@ -102,7 +102,7 @@ This is the other person's version.
 
 ### Resolving a conflict
 
-1. Open the file and find the conflict markers (e.g. searching for "<<<<").
+1. Open the file in an editor and find the conflict markers (e.g. searching for `<<<<`).
 2. Decide which version to keep (or combine both).
 3. Delete the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
 4. Save, commit, and push.
@@ -111,6 +111,7 @@ As stated above, in GitHub Desktop, conflicted files are highlighted and you can
 directly in your editor to resolve the conflict.
 Within IDEs like RStudio, the same markers appear and you can use the IDE's built-in editors to resolve the conflict.
 
+**Note, solving a conflict is a manual editing process that requires human judgement. It is not part of the git operations.**
 
 :::::::::::::::: spoiler
 
@@ -130,17 +131,57 @@ git push
 
 ## Branching
 
-A **branch** is a parallel line of development. Instead of committing directly
-to `main`, you create a branch, make your changes there, and merge them back
-when they are ready.
+To reduce unnecessary side-effects of concurrent work, git provides a powerful branching mechanism.
 
-<!-- TODO: add diagram showing main branch with a feature branch splitting off and merging back -->
+**In short, branching allows each person (or feature) to have their own isolated copy of the project to work on.**
+
+Thus, your git workflow (edit > commit > push) is not interrupted by other people's changes, 
+and there is no need to pull and merge until you are ready to share your work with others.
+
+
+### General branches
+
+Branching is a central concept in git and implemented from the very beginning.
+So your repository already has a **default branch** called `main` (or `master` in older repositories).
+This branch typically represents the stable version of the project that is ready for production use.
 
 ### Why use branches?
 
-- **Safety:** your work-in-progress does not affect the stable `main` branch.
-- **Collaboration:** each person (or feature) gets its own branch.
-- **Review:** branches make it easy to review changes before they are merged.
+Whenever you want to work on a new feature, fix an error, or experiment with an idea, you should create a new branch
+rather than to start editing straight away.
+
+Using branches has a couple of advantages:
+
+- If you do something wrong, you can simply delete the branch and start over without affecting `main`.
+- If you have to edit multiple files to implement your change, you are sure nobody interferes with your work until all your planned changes are implemented.
+- You don't have to finish your work in one go but can interrupt it at any time and come back to it later without worrying about the state of the `main` branch.
+- Given the latter, you can also work on multiple features in parallel by creating multiple branches. Each branch can be dedicated to a specific feature, problem, or experiment.
+- On GitHub, branches are the basis for pull requests, which provide a structured way to review and discuss changes before merging them into `main`.
+  **This is a huge advantage for team projects, as it allows for high quality standards and knowledge sharing!**
+
+Once your work on a branch is complete and ready to be shared, you can merge it back into `main` (or any other branch) via a pull request.
+Therein, the same auto-merging capabilities apply as described above — if your branch's changes do not conflict with `main`, the merge will be automatic and seamless.
+If there are conflicts, you will have to resolve them manually within your branch as described in the previous section.
+We will look at pull requests in more detail later in this section.
+
+
+### Creating a branch online in GitHub
+
+When your work is GitHub-based, you can create branches directly on the GitHub website. 
+This is useful for quick edits or when you are not working on the project locally.
+
+1. Go to your repository on GitHub.
+2. Click the **Branch** dropdown in the upper left.
+3. Select the `main` branch (or the branch you want to branch off from).
+   - typically, you will branch off from `main`, but you can also branch off from another feature branch if your work depends on it.
+4. Write a new branch name (e.g. "add-goals"")
+5. Select "Create branch: **add-goals** from **main**" from the menu below the text field.
+
+![](gh-create-branch.png){alt='A screenshot of the GitHub website showing the branch dropdown with a new branch name being entered'}![](gh-name-branch.png){alt='A screenshot of the GitHub website showing the option to create a new branch from main after entering the branch name'}
+
+
+
+
 
 ### Creating a branch in GitHub Desktop
 
