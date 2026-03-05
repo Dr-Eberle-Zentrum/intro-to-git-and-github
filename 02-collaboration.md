@@ -256,7 +256,7 @@ provide a space for:
 - **Discussion:** ask questions, suggest improvements, leave comments.
 - **Approval:** reviewers approve or request changes before merging.
 
-![](pr-pull-request.png){alt='A screenshot of a pull request page on GitHub showing the conversation tab'}
+![](gh-pull-request.png){alt='A screenshot of a pull request page on GitHub showing the conversation tab'}
 
 The screenshot from above shows the conversation tab of a pull request, where you can see the discussion and comments related to the PR.
 The **Files changed** tab shows the change visualization of the changes proposed in the PR, similar to the view discussed before.
@@ -279,7 +279,7 @@ To this end, use the "Convert to draft" button in the upper right of the PR page
 
 ### Opening a pull request online in GitHub
 
-The GitHub website typically informs about recently pushed branches and provides a convenient button to open a pull request directly from the code view.
+The GitHub website typically informs about recently pushed branches and provides a convenient **Compare & pull request** button to open a pull request directly from the code view.
 
 ![](gh-start-pr.png){alt='A screenshot of the GitHub website showing a notification about a recently pushed branch with a button to open a pull request'}
 
@@ -291,7 +291,7 @@ Alternatively, you can
 
 Afterwards, you will be redirected to the PR form where you can fill in the title and description and submit the PR.
 
-![](gh-pull-request.png){alt='A screenshot of the GitHub website showing the pull request form with fields for title and description'}
+![](gh-pr.png){alt='A screenshot of the GitHub website showing the pull request form with fields for title and description'}
 
 Therein, you have to define a title for your PR (e.g. "Add goals section") and a description that explains the purpose and context of your changes.
 At the bottom all commits and changed files that are part of the branch and thus part of the PR are shown, so you can verify that the correct changes are included in the PR before submitting it.
