@@ -354,12 +354,29 @@ each other’s changes?</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="working-together-on-the-same-project">Working Together on the Same Project<a class="anchor" aria-label="anchor" href="#working-together-on-the-same-project"></a></h2>
-<hr class="half-width"><p>When two people edit <strong>different parts</strong> of the same
-file (or different files), git can usually merge their changes
+<hr class="half-width"><p>When you are not the sole contributor to a project, multiple people
+will be making changes to the remote directory. Thus, while you are
+working on your local copy, someone else might be changing the some
+files of the project on their local copy and pushing those changes to
+the remote repository. When you are done with your changes and commited
+them to <em>your</em> local copy, your local repository will be both
+outdated and ahead of the remote repository at the same time!</p>
+<p>That is - the remote repository has changes that you don’t have
+(because someone else pushed them), and - your local repository has
+changes that the remote repository doesn’t have (because you haven’t
+pushed them yet).</p>
+<p>Therefore, git will refuse to push your changes until you have
+integrated the remote changes into your local copy. When using GitHub
+Desktop, you will see the following notification.</p>
+<figure><img src="../ghd-remote-warning.png" alt='A screenshot of GitHub Desktop showing a notification that says "Your branch is out of date with the remote branch. Please pull the latest changes before pushing."' class="figure mx-auto d-block"></figure><p>When pulling, git will try to automatically integrate the remote
+changes into your local repository. That is, all changes that are made
+to different files pose no problems. Problems can occur when two people
+edit the same file at the same time.</p>
+<p>When the two people edit <strong>different parts</strong> of the
+<strong>same file</strong>, git can usually merge their changes
 automatically. This is called an <strong>auto-merge</strong> and works
-best with plain-text files (Markdown, code, CSV).</p>
-<!-- TODO: add diagram showing two collaborators editing different parts of a file and auto-merge succeeding -->
-<div id="why-text-files-merge-well" class="callout">
+best with plain-text files (Markdown, code, CSV, XML, HTML, …).</p>
+<figure><img src="../merge.svg" style="width:40.0%" alt="A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions" class="figure mx-auto d-block"></figure><div id="why-text-files-merge-well" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -370,18 +387,29 @@ best with plain-text files (Markdown, code, CSV).</p>
 <p>Git tracks changes line by line. When two sets of changes touch
 different lines, git can combine them without ambiguity. Binary files
 (images, Word documents) cannot be merged this way — git will always
-flag them as conflicts and you must choose which version you want to
+flag them as conflicts and you must manually choose which version to
 keep.</p>
+<p><strong>So whenever possible, use text-based file formats for your
+files to take advantage of git’s powerful merging
+capabilities.</strong></p>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="merge-conflicts">Merge Conflicts<a class="anchor" aria-label="anchor" href="#merge-conflicts"></a></h2>
-<hr class="half-width"><p>A <strong>merge conflict</strong> happens when two people change the
+<hr class="half-width"><p>In case the remote repository’s changes overlap with your local
+changes, git cannot automatically merge them. Thus, GitHub Desktop will
+show a notification that says “This branch has conflicts that must be
+resolved” as follows.</p>
+<figure><img src="../ghd-conflict-warning.png" alt='A screenshot of GitHub Desktop showing a notification that says "This branch has conflicts that must be resolved"' class="figure mx-auto d-block"></figure><p>In that case, a so called <strong>merge conflict</strong> occurs.</p>
+<p>A <strong>merge conflict</strong> happens when two people change the
 <strong>same line(s)</strong> of the same file. Git cannot decide which
 version to keep, so it asks <em>you</em> to choose.</p>
-<div class="section level3">
+<figure><img src="../conflict.svg" style="width:60.0%" alt="A diagram that shows two different document versions that both change the same line, resulting in a conflict that cannot be automatically resolved" class="figure mx-auto d-block"></figure><div class="section level3">
 <h3 id="what-a-conflict-looks-like">What a conflict looks like<a class="anchor" aria-label="anchor" href="#what-a-conflict-looks-like"></a></h3>
-<p>When a conflict occurs, git marks the affected section in the
+<p>The dialog from above allows you to use an external editor to resolve
+the conflict. This is possible because git marks the conflicting
+sections in the file with special markers.</p>
+<figure><img src="../conflict-example.png" alt="A screenshot of a text editor showing a merge conflict with the conflict markers highlighted" class="figure mx-auto d-block"></figure><p>When a conflict occurs, git marks each affected section in the
 file:</p>
 <pre class="text"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 This is my version of the line.
@@ -396,15 +424,17 @@ change.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="resolving-a-conflict">Resolving a conflict<a class="anchor" aria-label="anchor" href="#resolving-a-conflict"></a></h3>
-<ol style="list-style-type: decimal"><li>Open the file and find the conflict markers.</li>
+<ol style="list-style-type: decimal"><li>Open the file and find the conflict markers (e.g. searching for
+“&lt;&lt;&lt;&lt;”).</li>
 <li>Decide which version to keep (or combine both).</li>
 <li>Delete the conflict markers
 (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>,
 <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>).</li>
 <li>Save, commit, and push.</li>
-</ol><!-- TODO: add screenshot of a merge conflict in a text editor with conflict markers highlighted --><p>In GitHub Desktop, conflicted files are highlighted and you can open
-them directly in your editor to resolve the conflict.</p>
-<!-- TODO: add screenshot of GitHub Desktop showing a merge conflict notification -->
+</ol><p>As stated above, in GitHub Desktop, conflicted files are highlighted
+and you can open them directly in your editor to resolve the conflict.
+Within IDEs like RStudio, the same markers appear and you can use the
+IDE’s built-in editors to resolve the conflict.</p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
