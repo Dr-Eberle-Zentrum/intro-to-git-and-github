@@ -226,7 +226,7 @@
 <li><a href="#tracking-changes-and-history">Tracking Changes and History</a></li>
 <li><a href="#what-makes-a-good-commit">What Makes a Good Commit?</a></li>
 <li><a href="#ignoring-files-with-.gitignore">Ignoring Files with <code>.gitignore</code></a></li>
-<li><a href="#fetch-vs-pull-optional">Fetch vs Pull (Optional)</a></li>
+<li><a href="#fetch-vs-pull">Fetch vs Pull</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -663,7 +663,7 @@ repository, so you need to commit before you can push.</li>
   Git workflow in Rstudio
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Most programming IDEs (including RStudio) have built-in git support
 that allows you to perform the core workflow without leaving the IDE. In
@@ -691,7 +691,7 @@ the staged changes and commit message box.</div>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -732,19 +732,58 @@ the history to see:</p>
 <li>
 <strong>why</strong> (the commit message).</li>
 </ul><div class="section level3">
+<h3 id="viewing-history-online-in-github">Viewing History online in GitHub<a class="anchor" aria-label="anchor" href="#viewing-history-online-in-github"></a></h3>
+<ol style="list-style-type: decimal"><li>Navigate to your repository on GitHub.</li>
+<li>Within the <strong>Code</strong> view, click the
+<strong>Commits</strong> link above the file list.
+<ul><li>This shows the list of all commits within the repository, with their
+messages, authors, and timestamps.</li>
+</ul></li>
+<li>When selecting a single file, you can also click the
+<strong>History</strong> button in the top right corner.
+<ul><li>This shows the commit history for that specific file, allowing you
+to see how it evolved over time and who made changes to it.</li>
+</ul></li>
+</ol><p>Both views allow you to click on individual commits to see the exact
+changes made in that commit.</p>
+<p><a href="../gh-ui-commits.png"><img src="../gh-ui-commits.png" style="width:70.0%" alt="Screenshot of GitHub showing the commit history with a list of commits and a diff view of a selected commit." class="figure"></a></p>
+<p><a href="../gh-ui-history.png"><img src="../gh-ui-history.png" style="width:70.0%" alt="Screenshot of GitHub showing the file history with a list of commits affecting that file and a diff view of a selected commit." class="figure"></a></p>
+</div>
+<div class="section level3">
 <h3 id="viewing-history-in-github-desktop">Viewing History in GitHub Desktop<a class="anchor" aria-label="anchor" href="#viewing-history-in-github-desktop"></a></h3>
 <ol style="list-style-type: decimal"><li>Click the <strong>History</strong> tab in the left panel.</li>
-<li>Select any commit to see the files that changed and the exact
-differences (green = added, red = removed).</li>
-</ol><!-- TODO: add screenshot of the History tab in GitHub Desktop showing a diff --><div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<li>Select any commit to see the files that were changed by this
+commit.</li>
+<li>Click on a changed file to see the diff of what was added (in green)
+and removed (in red) on the right</li>
+</ol><p><a href="../ghd-history.png"><img src="../ghd-history.png" style="width:70.0%" alt="Screenshot of GitHub Desktop showing the History tab with a list of commits and a diff view of a selected commit." class="figure"></a></p>
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  RStudio and IDEs
+  </h3>
+</button>
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div class="accordion-body">
+<p>Similar views are also available in RStudio and other IDEs with git
+support, allowing you to browse the commit history and see diffs of
+changes directly within your coding environment.</p>
+<p><a href="../rstudio-git-history.png"><img src="../rstudio-git-history.png" style="width:70.0%" alt="Screenshot of RStudio showing the git history pane with a list of commits and a diff view of a selected commit." class="figure"></a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler4" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
+  <h3 class="accordion-header" id="headingSpoiler4">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -794,8 +833,17 @@ understand and undo than rare large ones.</li>
 <a class="anchor" aria-label="anchor" href="#ignoring-files-with--gitignore"></a></h2>
 <hr class="half-width"><p>Not every file belongs in a repository. Build outputs, temporary
 files, and credentials should be excluded.</p>
-<p>Create a file called <code>.gitignore</code> in the root of your
-repository and list the patterns to ignore:</p>
+<p>Thus, such files should never be considered for staging and
+committing.</p>
+<p>In order to avoid accidentally including unwanted files in your
+commits, you can create a <code>.gitignore</code> file in the root of
+your repository (or within respective subdirectories) that lists the
+files to ignore. To reduce list length and to cope with files that are
+generated with different names (e.g. <code>file1.txt</code>,
+<code>file2.txt</code>, etc.), you can use standard wildcards patterns
+to ignore multiple files at once.</p>
+<p>The following shows a sample <code>.gitignore</code> file that
+ignores compiled files, editor backups, OS files, and credentials:</p>
 <pre class="text"><code># Compiled files
 *.exe
 *.o
@@ -811,31 +859,32 @@ Thumbs.db
 # Credentials — never commit these!
 secrets.yaml
 .env</code></pre>
-<div id="accordionSpoiler4" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler5" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
-  <h3 class="accordion-header" id="headingSpoiler4">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
+  <h3 class="accordion-header" id="headingSpoiler5">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Create a .gitignore file</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"*.exe"</span> <span class="op">&gt;</span> .gitignore</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="bu">echo</span> <span class="st">".DS_Store"</span> <span class="op">&gt;&gt;</span> .gitignore</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co"># Check which files are ignored</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="fu">git</span> status <span class="at">--ignored</span></span></code></pre>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co"># Append a new line to the existing .gitignore file</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="bu">echo</span> <span class="st">".DS_Store"</span> <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># Check which files are ignored</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="fu">git</span> status <span class="at">--ignored</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="fetch-vs-pull-optional">Fetch vs Pull (Optional)<a class="anchor" aria-label="anchor" href="#fetch-vs-pull-optional"></a></h2>
+</section><section><h2 class="section-heading" id="fetch-vs-pull">Fetch vs Pull<a class="anchor" aria-label="anchor" href="#fetch-vs-pull"></a></h2>
 <hr class="half-width"><table class="table"><colgroup><col width="40%"><col width="59%"></colgroup><thead><tr><th>Command</th>
 <th>What it does</th>
 </tr></thead><tbody><tr><td><strong>Fetch</strong></td>
@@ -872,7 +921,7 @@ terms:</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Commit</strong> — a saved snapshot of changes in my project,
