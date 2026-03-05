@@ -116,7 +116,7 @@ Before we start working with git, it's important to understand the difference be
 | **Local repository** | The copy of the project on *your* computer |
 | **Remote repository** | The copy hosted on GitHub (often called **origin**) |
 
-![Relationship between local and remote repositories, with arrows indicating push (local → remote) and pull (remote → local) actions.](local-remote-repo.png){alt="local and remote repositories with push and pull arrows." width="40%"}
+![Relationship between local and remote repositories, with arrows indicating push (local → remote) and pull (remote → local) actions. ([D. Stearns](https://drstearns.github.io/tutorials/git/) 05.03.2026)](local-remote-repo.png){alt="local and remote repositories with push and pull arrows." width="40%"}
 
 When you **clone** a repository, you download the remote copy of the project to your machine.
 From that point on, you will synchronise changes between the two copies using **push** (local → remote) and **pull** (remote → local) git actions.
@@ -170,7 +170,7 @@ By default, git will not automatically do version control for any of your files.
 That is, *you have to explicitly tell git which files and changes you want to include into the repository!*
 In git nomenclature, this is called *staging* a file for commit and is done with the `git add` command in the CLI or by checking the files in GitHub Desktop or your IDE.
 
-![Git workflow including the staging step, showing the working directory, staging area, local repository, and remote repository with arrows indicating the flow of changes.](git-workflow-complete.png){alt="git workflow including the staging step, showing the working directory, staging area, local repository, and remote repository with arrows indicating the flow of changes."}
+![Git workflow including the staging step, showing the working directory, staging area, local repository, and remote repository with arrows indicating the flow of changes. ([i2tutorials.com](https://i2tutorials.com/git-tutorial/git-working-area/) 05.)](git-workflow-complete.png){alt="git workflow including the staging step, showing the working directory, staging area, local repository, and remote repository with arrows indicating the flow of changes."}
 
 The same holds for all changes you make to files that are already under version control: you have to stage the changes before they are included in the next commit.
 This allows you to control how your commits are structured and to create small, focused commits that are easier to understand and review than large, monolithic commits.
@@ -186,7 +186,7 @@ So far you have seen how the git workflow operates in theory, but how do you act
 Eventually, git is a command-line tool and thus all operations are done within a
 command-line interface (CLI) such as Terminal or (Git) Bash. This looks like this:
 
-![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. (by [geeksforgeeks](https://www.geeksforgeeks.org/git/what-is-git-commit/))](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." width="70%"}
+![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. (by [geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/) 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." width="70%"}
 
 This is very efficient and useful when your are already comfortable with the CLI, but it can be intimidating for beginners. 
 Therefore, we will use GitHub Desktop, a graphical user interface (GUI) that allows you to perform git operations without typing commands.
