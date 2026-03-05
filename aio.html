@@ -1197,8 +1197,8 @@ change.</li>
 <h3 id="resolving-a-conflict">Resolving a conflict<a class="anchor" aria-label="anchor" href="#resolving-a-conflict"></a>
 </h3>
 <ol style="list-style-type: decimal">
-<li>Open the file and find the conflict markers (e.g. searching for
-“&lt;&lt;&lt;&lt;”).</li>
+<li>Open the file in an editor and find the conflict markers
+(e.g. searching for <code>&lt;&lt;&lt;&lt;</code>).</li>
 <li>Decide which version to keep (or combine both).</li>
 <li>Delete the conflict markers
 (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>,
@@ -1209,6 +1209,9 @@ change.</li>
 and you can open them directly in your editor to resolve the conflict.
 Within IDEs like RStudio, the same markers appear and you can use the
 IDE’s built-in editors to resolve the conflict.</p>
+<p><strong>Note, solving a conflict is a manual editing process that
+requires human judgement. It is not part of the git
+operations.</strong></p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
@@ -1217,7 +1220,7 @@ IDE’s built-in editors to resolve the conflict.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1238,24 +1241,79 @@ IDE’s built-in editors to resolve the conflict.</p>
 </section><section><h2 class="section-heading" id="branching">Branching<a class="anchor" aria-label="anchor" href="#branching"></a>
 </h2>
 <hr class="half-width">
-<p>A <strong>branch</strong> is a parallel line of development. Instead
-of committing directly to <code>main</code>, you create a branch, make
-your changes there, and merge them back when they are ready.</p>
-<!-- TODO: add diagram showing main branch with a feature branch splitting off and merging back -->
+<p>To reduce unnecessary side-effects of concurrent work, git provides a
+powerful branching mechanism.</p>
+<p><strong>In short, branching allows each person (or feature) to have
+their own isolated copy of the project to work on.</strong></p>
+<p>Thus, your git workflow (edit &gt; commit &gt; push) is not
+interrupted by other people’s changes, and there is no need to pull and
+merge until you are ready to share your work with others.</p>
+<div class="section level3">
+<h3 id="general-branches">General branches<a class="anchor" aria-label="anchor" href="#general-branches"></a>
+</h3>
+<p>Branching is a central concept in git and implemented from the very
+beginning. So your repository already has a <strong>default
+branch</strong> called <code>main</code> (or <code>master</code> in
+older repositories). This branch typically represents the stable version
+of the project that is ready for production use.</p>
+</div>
 <div class="section level3">
 <h3 id="why-use-branches">Why use branches?<a class="anchor" aria-label="anchor" href="#why-use-branches"></a>
 </h3>
+<p>Whenever you want to work on a new feature, fix an error, or
+experiment with an idea, you should create a new branch rather than to
+start editing straight away.</p>
+<p>Using branches has a couple of advantages:</p>
 <ul>
-<li>
-<strong>Safety:</strong> your work-in-progress does not affect the
-stable <code>main</code> branch.</li>
-<li>
-<strong>Collaboration:</strong> each person (or feature) gets its
-own branch.</li>
-<li>
-<strong>Review:</strong> branches make it easy to review changes
-before they are merged.</li>
+<li>If you do something wrong, you can simply delete the branch and
+start over without affecting <code>main</code>.</li>
+<li>If you have to edit multiple files to implement your change, you are
+sure nobody interferes with your work until all your planned changes are
+implemented.</li>
+<li>You don’t have to finish your work in one go but can interrupt it at
+any time and come back to it later without worrying about the state of
+the <code>main</code> branch.</li>
+<li>Given the latter, you can also work on multiple features in parallel
+by creating multiple branches. Each branch can be dedicated to a
+specific feature, problem, or experiment.</li>
+<li>On GitHub, branches are the basis for pull requests, which provide a
+structured way to review and discuss changes before merging them into
+<code>main</code>. <strong>This is a huge advantage for team projects,
+as it allows for high quality standards and knowledge
+sharing!</strong>
+</li>
 </ul>
+<p>Once your work on a branch is complete and ready to be shared, you
+can merge it back into <code>main</code> (or any other branch) via a
+pull request. Therein, the same auto-merging capabilities apply as
+described above — if your branch’s changes do not conflict with
+<code>main</code>, the merge will be automatic and seamless. If there
+are conflicts, you will have to resolve them manually within your branch
+as described in the previous section. We will look at pull requests in
+more detail later in this section.</p>
+</div>
+<div class="section level3">
+<h3 id="creating-a-branch-online-in-github">Creating a branch online in GitHub<a class="anchor" aria-label="anchor" href="#creating-a-branch-online-in-github"></a>
+</h3>
+<p>When your work is GitHub-based, you can create branches directly on
+the GitHub website. This is useful for quick edits or when you are not
+working on the project locally.</p>
+<ol style="list-style-type: decimal">
+<li>Go to your repository on GitHub.</li>
+<li>Click the <strong>Branch</strong> dropdown in the upper left.</li>
+<li>Select the <code>main</code> branch (or the branch you want to
+branch off from).
+<ul>
+<li>typically, you will branch off from <code>main</code>, but you can
+also branch off from another feature branch if your work depends on
+it.</li>
+</ul>
+</li>
+<li>Write a new branch name (e.g. “add-goals”“)</li>
+<li>Select “Create branch: <strong>add-goals</strong> from
+<strong>main</strong>” from the menu below the text field.</li>
+</ol>
+<p><img src="gh-create-branch.png" alt="A screenshot of the GitHub website showing the branch dropdown with a new branch name being entered" class="figure"><img src="gh-name-branch.png" alt="A screenshot of the GitHub website showing the option to create a new branch from main after entering the branch name" class="figure"></p>
 </div>
 <div class="section level3">
 <h3 id="creating-a-branch-in-github-desktop">Creating a branch in GitHub Desktop<a class="anchor" aria-label="anchor" href="#creating-a-branch-in-github-desktop"></a>
@@ -1285,7 +1343,7 @@ branch.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1356,7 +1414,7 @@ review the diff.</li>
   CLI equivalent for pushing a branch
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1394,7 +1452,7 @@ interface.</p>
   Key difference
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1498,7 +1556,7 @@ file.</li>
   CLI example
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1588,7 +1646,7 @@ beginner-friendly overview:</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1674,7 +1732,7 @@ merging.</li>
   Where to configure branch protection
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Go to your repository on GitHub.</li>
@@ -1740,7 +1798,7 @@ discussed above.</p>
   Example checklist
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -1907,7 +1965,7 @@ right sidebar).</li>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2099,7 +2157,7 @@ Marketplace</a>.</p>
   Where to place the workflow file
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2154,7 +2212,7 @@ Marketplace</a>.</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>A <strong>workflow</strong> is an automated process defined in a
