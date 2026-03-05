@@ -186,7 +186,7 @@ So far you have seen how the git workflow operates in theory, but how do you act
 Eventually, git is a command-line tool and thus all operations are done within a
 command-line interface (CLI) such as Terminal or (Git) Bash. This looks like this:
 
-![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. (by [geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/) 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." width="70%"}
+![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. (by [geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/) 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." width="50%"}
 
 This is very efficient and useful when your are already comfortable with the CLI, but it can be intimidating for beginners. 
 Therefore, we will use GitHub Desktop, a graphical user interface (GUI) that allows you to perform git operations without typing commands.
@@ -303,16 +303,18 @@ history to see:
 ### Viewing History online in GitHub
 
 1. Navigate to your repository on GitHub.
+
 2. Within the **Code** view, click the **Commits** link above the file list.
    - This shows the list of all commits within the repository, with their messages, authors, and timestamps.
+
+[![(Click to enlarge)](gh-ui-commits.png){alt="Screenshot of GitHub showing the commit history with a list of commits and a diff view of a selected commit."}](gh-ui-commits.png)
+
 3. When selecting a single file, you can also click the **History** button in the top right corner.
    - This shows the commit history for that specific file, allowing you to see how it evolved over time and who made changes to it.
 
+[![(Click to enlarge)](gh-ui-history.png){alt="Screenshot of GitHub showing the file history with a list of commits affecting that file and a diff view of a selected commit."}](gh-ui-history.png)
+
 Both views allow you to click on individual commits to see the exact changes made in that commit.
-
-[![](gh-ui-commits.png){alt="Screenshot of GitHub showing the commit history with a list of commits and a diff view of a selected commit." width="70%"}](gh-ui-commits.png)
-
-[![](gh-ui-history.png){alt="Screenshot of GitHub showing the file history with a list of commits affecting that file and a diff view of a selected commit." width="70%"}](gh-ui-history.png)
 
 
 ### Viewing History in GitHub Desktop
@@ -321,7 +323,7 @@ Both views allow you to click on individual commits to see the exact changes mad
 2. Select any commit to see the files that were changed by this commit.
 3. Click on a changed file to see the diff of what was added (in green) and removed (in red) on the right
 
-[![](ghd-history.png){alt="Screenshot of GitHub Desktop showing the History tab with a list of commits and a diff view of a selected commit." width="70%"}](ghd-history.png)
+[![(Click to enlarge)](ghd-history.png){alt="Screenshot of GitHub Desktop showing the History tab with a list of commits and a diff view of a selected commit."}](ghd-history.png)
 
 :::::::::::::::: spoiler
 
@@ -329,7 +331,7 @@ Both views allow you to click on individual commits to see the exact changes mad
 
 Similar views are also available in RStudio and other IDEs with git support, allowing you to browse the commit history and see diffs of changes directly within your coding environment.
 
-[![](rstudio-git-history.png){alt="Screenshot of RStudio showing the git history pane with a list of commits and a diff view of a selected commit." width="70%"}](rstudio-git-history.png)
+[![(Click to enlarge)](rstudio-git-history.png){alt="Screenshot of RStudio showing the git history pane with a list of commits and a diff view of a selected commit."}](rstudio-git-history.png)
 
 ::::::::::::::::::::
 
@@ -462,7 +464,7 @@ Write one or two sentences explaining each of the following terms:
 
 - Git is a version control system that tracks changes to files over time.
 - GitHub hosts git repositories in the cloud and adds collaboration features.
-- The core workflow is: **edit → commit → push → pull**.
+- The core workflow is: **pull → edit → commit → push**.
 - Good commits are small, focused, and have clear messages.
 - Use `.gitignore` to keep unwanted files out of your repository.
 
