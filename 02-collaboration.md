@@ -24,11 +24,32 @@ exercises: 30
 
 ## Working Together on the Same Project
 
-When two people edit **different parts** of the same file (or different files),
-git can usually merge their changes automatically. This is called an
-**auto-merge** and works best with plain-text files (Markdown, code, CSV).
+When you are not the sole contributor to a project, multiple people will be making
+changes to the remote directory.
+Thus, while you are working on your local copy, 
+someone else might be changing the some files of the project on their local copy 
+and pushing those changes to the remote repository.
+When you are done with your changes and commited them to *your* local copy,
+your local repository will be both outdated and ahead of the remote repository at the same time!
 
-<!-- TODO: add diagram showing two collaborators editing different parts of a file and auto-merge succeeding -->
+That is
+- the remote repository has changes that you don't have (because someone else pushed them), and
+- your local repository has changes that the remote repository doesn't have (because you haven't pushed them yet).
+
+Therefore, git will refuse to push your changes until you have integrated the remote changes into your local copy.
+When using GitHub Desktop, you will see the following notification.
+
+![](ghd-remote-warning.png){alt='A screenshot of GitHub Desktop showing a notification that says "Your branch is out of date with the remote branch. Please pull the latest changes before pushing."'}
+
+When pulling, git will try to automatically integrate the remote changes into your local repository.
+That is, all changes that are made to different files pose no problems.
+Problems can occur when two people edit the same file at the same time.
+
+When the two people edit **different parts** of the **same file**,
+git can usually merge their changes automatically. This is called an
+**auto-merge** and works best with plain-text files (Markdown, code, CSV, XML, HTML, ...).
+
+![](merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions' width="40%"}
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -37,18 +58,36 @@ git can usually merge their changes automatically. This is called an
 Git tracks changes line by line. When two sets of changes touch different
 lines, git can combine them without ambiguity. Binary files (images, Word
 documents) cannot be merged this way — git will always flag them as conflicts
-and you must choose which version you want to keep.
+and you must manually choose which version to keep.
+
+**So whenever possible, use text-based file formats for your files to take advantage of git's powerful merging capabilities.**
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
 ## Merge Conflicts
+
+In case the remote repository's changes overlap with your local changes, git cannot automatically merge them. 
+Thus, GitHub Desktop will show a notification that says "This branch has conflicts that must be resolved" as follows.
+
+![](ghd-conflict-warning.png){alt='A screenshot of GitHub Desktop showing a notification that says "This branch has conflicts that must be resolved"'}
+
+In that case, a so called **merge conflict** occurs.
 
 A **merge conflict** happens when two people change the **same line(s)** of the
 same file. Git cannot decide which version to keep, so it asks *you* to choose.
 
+![](conflict.svg){alt='A diagram that shows two different document versions that both change the same line, resulting in a conflict that cannot be automatically resolved' width="60%"}
+
+
 ### What a conflict looks like
 
-When a conflict occurs, git marks the affected section in the file:
+The dialog from above allows you to use an external editor to resolve the conflict.
+This is possible because git marks the conflicting sections in the file with special markers.
+
+![](conflict-example.png){alt='A screenshot of a text editor showing a merge conflict with the conflict markers highlighted'}
+
+When a conflict occurs, git marks each affected section in the file:
 
 ```text
 <<<<<<< HEAD
@@ -63,17 +102,15 @@ This is the other person's version.
 
 ### Resolving a conflict
 
-1. Open the file and find the conflict markers.
+1. Open the file and find the conflict markers (e.g. searching for "<<<<").
 2. Decide which version to keep (or combine both).
 3. Delete the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
 4. Save, commit, and push.
 
-<!-- TODO: add screenshot of a merge conflict in a text editor with conflict markers highlighted -->
-
-In GitHub Desktop, conflicted files are highlighted and you can open them
+As stated above, in GitHub Desktop, conflicted files are highlighted and you can open them
 directly in your editor to resolve the conflict.
+Within IDEs like RStudio, the same markers appear and you can use the IDE's built-in editors to resolve the conflict.
 
-<!-- TODO: add screenshot of GitHub Desktop showing a merge conflict notification -->
 
 :::::::::::::::: spoiler
 
