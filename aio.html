@@ -1220,7 +1220,7 @@ operations.</strong></p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1291,13 +1291,26 @@ described above — if your branch’s changes do not conflict with
 are conflicts, you will have to resolve them manually within your branch
 as described in the previous section. We will look at pull requests in
 more detail later in this section.</p>
+<p>The branching structure is typically visualized as directed acyclic
+graph (DAG) where each node represents a commit. Commits that are on the
+same branch are connected by a line and branches are shown as diverging
+lines from a common ancestor commit. When a branch is merged into
+another, the DAG shows a merge commit that has two parent commits — one
+from the source branch and one from the target branch.</p>
+<figure><img src="dag.png" alt="A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main" class="figure mx-auto d-block"><div class="figcaption">An example of a DAG showing three branches (main
+in green and two development branches in blue and orange) with multiple
+commits within each branch and two merge commits that merge the
+development branches into main</div>
+</figure>
 </div>
 <div class="section level3">
 <h3 id="creating-a-branch-online-in-github">Creating a branch online in GitHub<a class="anchor" aria-label="anchor" href="#creating-a-branch-online-in-github"></a>
 </h3>
 <p>When your work is GitHub-based, you can create branches directly on
 the GitHub website. This is useful for quick edits or when you are not
-working on the project locally.</p>
+working on the project locally. <strong>Note, the created branch exists
+first only on GitHub in the remote repository.</strong> You (or anybody)
+can later pull it to a local repository to work on it there.</p>
 <ol style="list-style-type: decimal">
 <li>Go to your repository on GitHub.</li>
 <li>Click the <strong>Branch</strong> dropdown in the upper left.</li>
@@ -1313,28 +1326,60 @@ it.</li>
 <li>Select “Create branch: <strong>add-goals</strong> from
 <strong>main</strong>” from the menu below the text field.</li>
 </ol>
-<p><img src="gh-create-branch.png" alt="A screenshot of the GitHub website showing the branch dropdown with a new branch name being entered" class="figure"><img src="gh-name-branch.png" alt="A screenshot of the GitHub website showing the option to create a new branch from main after entering the branch name" class="figure"></p>
+<figure><img src="gh-create-branch.png" alt="A screenshot of the GitHub website showing the branch dropdown with a new branch name being entered" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
 <h3 id="creating-a-branch-in-github-desktop">Creating a branch in GitHub Desktop<a class="anchor" aria-label="anchor" href="#creating-a-branch-in-github-desktop"></a>
 </h3>
+<p>A similar workflow and interface is provided directly in GitHub
+Desktop for your local repository. <strong>Thus, the created branch
+exists first only on your local copy</strong> and you can work on it
+without affecting the <code>main</code> branch until you are ready to
+share it by pushing it to GitHub. Pushing will automatically create the
+branch on GitHub in the remote repository if it doesn’t exist yet.</p>
 <ol style="list-style-type: decimal">
-<li>Click the <strong>Current branch</strong> dropdown in the
+<li>Click the <strong>Current branch</strong> dropdown in the top
 toolbar.</li>
 <li>Click <strong>New branch</strong>.</li>
-<li>Enter a descriptive name (e.g. <code>add-goals-section</code>).</li>
+<li>Enter a descriptive name (e.g. <code>add-goals</code>).</li>
 <li>Click <strong>Create branch</strong>.</li>
 </ol>
-<p>You are now working on the new branch. All commits you make will go
-here instead of <code>main</code>.</p>
-<!-- TODO: add screenshot of the "New branch" dialog in GitHub Desktop -->
+<figure><img src="ghd-create-branch.png" alt='A screenshot of GitHub Desktop showing the "Create a branch" dialog with a new branch name being entered' class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
 <h3 id="switching-branches">Switching branches<a class="anchor" aria-label="anchor" href="#switching-branches"></a>
 </h3>
-<p>Use the <strong>Current branch</strong> dropdown to switch between
-branches. GitHub Desktop will update your files to match the selected
-branch.</p>
+<p>When working with multiple branches, you have to be careful to switch
+to the correct branch before you start editing.</p>
+<p><strong>Always check which branch you are on before you start
+working!</strong></p>
+<p>Within GitHub Desktop, the current branch is shown in the top
+toolbar. You can click it to see all available branches and switch
+between them.</p>
+<p>The same applies to the GitHub website — the current branch is shown
+in the upper left and you can click it to switch branches - or any IDE
+with git integration (e.g. RStudio) — the current branch is usually
+shown in the status bar and you can switch branches via a dropdown
+menu.</p>
+<p>Switching to another branch has several consequences on the working
+directory:</p>
+<ul>
+<li>The files in the working directory will be updated to reflect the
+state of the branch you switched to. This means that if you switch from
+<code>main</code> to <code>add-goals</code>, the files will change to
+show the version of the project as it exists on the
+<code>add-goals</code> branch. Thus, some files might be added, removed,
+or modified depending on the differences between the branches.</li>
+<li>If you have uncommitted changes in your working directory, git will
+try to keep them when switching branches. However, if the changes
+conflict with the target branch (e.g. you have modified a file that is
+also modified in the target branch), git will prevent you from switching
+and show a warning that says “Your changes would be lost by switching
+branches. Commit or stash your changes before switching branches.”</li>
+</ul>
+<p><strong>So when switching branches, ensure to update your editor view
+to reflect the new branch’s files and commit or stash any uncommitted
+changes to avoid losing work.</strong></p>
 <div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
@@ -1343,13 +1388,13 @@ branch.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Create and switch to a new branch</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> add-goals-section</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> add-goals</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># List all branches</span></span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">git</span> branch</span>
@@ -1359,7 +1404,7 @@ branch.</p>
 <span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co"># Merge a branch into main</span></span>
 <span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="fu">git</span> merge add-goals-section</span></code></pre>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="fu">git</span> merge add-goals</span></code></pre>
 </div>
 </div>
 </div>
@@ -1406,7 +1451,16 @@ review the diff.</li>
 <li>When ready, click <strong>Merge pull request</strong> and then
 <strong>Confirm merge</strong>.</li>
 </ol>
-<!-- TODO: add screenshot of the "Merge pull request" button on GitHub --><div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<!-- TODO: add screenshot of the "Merge pull request" button on GitHub --><p>Note, git itself does not have the concept of pull requests — this is
+a GitHub feature built on top of git’s branching and merging
+capabilities.</p>
+<p>Git itself only allows to merge branches, but it does not provide a
+review or discussion workflow before merging. Furthermore, merging is
+done directly on the local repository and does not automatically update
+the remote repository until you push the changes. Thus, a merged pull
+request on GitHub is not automatically merged in your local repository
+until you pull the changes from GitHub.</p>
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">
@@ -1414,7 +1468,7 @@ review the diff.</li>
   CLI equivalent for pushing a branch
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1452,7 +1506,7 @@ interface.</p>
   Key difference
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1965,7 +2019,7 @@ right sidebar).</li>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2157,7 +2211,7 @@ Marketplace</a>.</p>
   Where to place the workflow file
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2212,7 +2266,7 @@ Marketplace</a>.</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>A <strong>workflow</strong> is an automated process defined in a
