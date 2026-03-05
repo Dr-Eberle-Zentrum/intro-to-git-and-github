@@ -193,7 +193,7 @@ Therefore, we will use GitHub Desktop, a graphical user interface (GUI) that all
 The core loop of edit → stage → commit → push → pull can be done entirely within GitHub Desktop, which is more user-friendly for those new to git.
 The Screenshot shows the GitHub Desktop interface for a repository with some changes to be staged for commit.
 
-![Screenshot of GitHub Desktop showing the Changes tab with a list of modified files and options to stage them for commit.](ghd-commit.png){alt="Screenshot of GitHub Desktop showing the Changes tab with a list of modified files and options to stage them for commit." width="90%"}
+![Screenshot of GitHub Desktop showing the Changes tab with a list of modified files and options to stage them for commit.](ghd-commit.png){alt="Screenshot of GitHub Desktop showing the Changes tab with a list of modified files and options to stage them for commit."}
 
 ### (1) Staging Changes
 
