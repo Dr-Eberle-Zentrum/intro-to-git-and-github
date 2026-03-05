@@ -168,7 +168,7 @@ The branching structure is typically visualized as directed acyclic graph (DAG) 
 Commits that are on the same branch are connected by a line and branches are shown as diverging lines from a common ancestor commit.
 When a branch is merged into another, the DAG shows a merge commit that has two parent commits — one from the source branch and one from the target branch.
 
-![An example of a DAG showing three branches (main in green and two development branches in blue and orange) with multiple commits within each branch and two merge commits that merge the development branches into main](dag.png){alt='A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main'}
+![An example of a DAG showing three branches (main in green and two development branches in blue and orange) with multiple commits within each branch and two merge commits that merge the development branches into main](git-branches.png){alt='A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main'}
 
 
 ### Creating a branch online in GitHub
