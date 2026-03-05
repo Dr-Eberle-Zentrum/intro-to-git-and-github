@@ -39,7 +39,7 @@ That is
 Therefore, git will refuse to push your changes until you have integrated the remote changes into your local copy.
 When using GitHub Desktop, you will see the following notification.
 
-![](ghd-remote-warnding.png){alt='A screenshot of GitHub Desktop showing a notification that says "Your branch is out of date with the remote branch. Please pull the latest changes before pushing."'}
+![](ghd-remote-warning.png){alt='A screenshot of GitHub Desktop showing a notification that says "Your branch is out of date with the remote branch. Please pull the latest changes before pushing."'}
 
 When pulling, git will try to automatically integrate the remote changes into your local repository.
 That is, all changes that are made to different files pose no problems.
