@@ -164,11 +164,19 @@ Therein, the same auto-merging capabilities apply as described above — if your
 If there are conflicts, you will have to resolve them manually within your branch as described in the previous section.
 We will look at pull requests in more detail later in this section.
 
+The branching structure is typically visualized as directed acyclic graph (DAG) where each node represents a commit.
+Commits that are on the same branch are connected by a line and branches are shown as diverging lines from a common ancestor commit.
+When a branch is merged into another, the DAG shows a merge commit that has two parent commits — one from the source branch and one from the target branch.
+
+![An example of a DAG showing three branches (main in green and two development branches in blue and orange) with multiple commits within each branch and two merge commits that merge the development branches into main](dag.png){alt='A diagram showing a directed acyclic graph (DAG) of commits with three branches (main in green and two development branches in blue and orange) with several commits on each branch and a merge commit that merges the blue branch into main'}
+
 
 ### Creating a branch online in GitHub
 
 When your work is GitHub-based, you can create branches directly on the GitHub website. 
 This is useful for quick edits or when you are not working on the project locally.
+**Note, the created branch exists first only on GitHub in the remote repository.**
+You (or anybody) can later pull it to a local repository to work on it there.
 
 1. Go to your repository on GitHub.
 2. Click the **Branch** dropdown in the upper left.
@@ -177,28 +185,45 @@ This is useful for quick edits or when you are not working on the project locall
 4. Write a new branch name (e.g. "add-goals"")
 5. Select "Create branch: **add-goals** from **main**" from the menu below the text field.
 
-![](gh-create-branch.png){alt='A screenshot of the GitHub website showing the branch dropdown with a new branch name being entered'}![](gh-name-branch.png){alt='A screenshot of the GitHub website showing the option to create a new branch from main after entering the branch name'}
-
-
-
+![](gh-create-branch.png){alt='A screenshot of the GitHub website showing the branch dropdown with a new branch name being entered'}
 
 
 ### Creating a branch in GitHub Desktop
 
-1. Click the **Current branch** dropdown in the toolbar.
+A similar workflow and interface is provided directly in GitHub Desktop for your local repository.
+**Thus, the created branch exists first only on your local copy** and you can work on it without affecting the `main` branch until you are ready to share it by pushing it to GitHub.
+Pushing will automatically create the branch on GitHub in the remote repository if it doesn't exist yet.
+
+1. Click the **Current branch** dropdown in the top toolbar.
 2. Click **New branch**.
-3. Enter a descriptive name (e.g. `add-goals-section`).
+3. Enter a descriptive name (e.g. `add-goals`).
 4. Click **Create branch**.
 
-You are now working on the new branch. All commits you make will go here
-instead of `main`.
+![](ghd-create-branch.png){alt='A screenshot of GitHub Desktop showing the "Create a branch" dialog with a new branch name being entered'}
 
-<!-- TODO: add screenshot of the "New branch" dialog in GitHub Desktop -->
 
 ### Switching branches
 
-Use the **Current branch** dropdown to switch between branches. GitHub Desktop
-will update your files to match the selected branch.
+When working with multiple branches, you have to be careful to switch to the correct branch before you start editing.
+
+**Always check which branch you are on before you start working!**
+
+Within GitHub Desktop, the current branch is shown in the top toolbar. 
+You can click it to see all available branches and switch between them.
+
+The same applies to the GitHub website — the current branch is shown in the upper left and you can click it to switch branches - or any IDE with git integration (e.g. RStudio) — the current branch is usually shown in the status bar and you can switch branches via a dropdown menu.
+
+Switching to another branch has several consequences on the working directory:
+
+- The files in the working directory will be updated to reflect the state of the branch you switched to. 
+  This means that if you switch from `main` to `add-goals`, the files will change to show the version of the project as it exists on the `add-goals` branch.
+  Thus, some files might be added, removed, or modified depending on the differences between the branches.
+- If you have uncommitted changes in your working directory, git will try to keep them when switching branches. 
+  However, if the changes conflict with the target branch (e.g. you have modified a file that is also modified 
+  in the target branch), git will prevent you from switching and show a warning that says 
+  "Your changes would be lost by switching branches. Commit or stash your changes before switching branches."
+  
+**So when switching branches, ensure to update your editor view to reflect the new branch's files and commit or stash any uncommitted changes to avoid losing work.**
 
 :::::::::::::::: spoiler
 
@@ -206,7 +231,7 @@ will update your files to match the selected branch.
 
 ```bash
 # Create and switch to a new branch
-git checkout -b add-goals-section
+git checkout -b add-goals
 
 # List all branches
 git branch
@@ -216,7 +241,7 @@ git checkout main
 
 # Merge a branch into main
 git checkout main
-git merge add-goals-section
+git merge add-goals
 ```
 
 ::::::::::::::::::::::::
@@ -250,6 +275,12 @@ provide a space for:
 3. When ready, click **Merge pull request** and then **Confirm merge**.
 
 <!-- TODO: add screenshot of the "Merge pull request" button on GitHub -->
+
+Note, git itself does not have the concept of pull requests — this is a GitHub feature built on top of git's branching and merging capabilities.
+
+Git itself only allows to merge branches, but it does not provide a review or discussion workflow before merging.
+Furthermore, merging is done directly on the local repository and does not automatically update the remote repository until you push the changes.
+Thus, a merged pull request on GitHub is not automatically merged in your local repository until you pull the changes from GitHub.
 
 :::::::::::::::: spoiler
 
