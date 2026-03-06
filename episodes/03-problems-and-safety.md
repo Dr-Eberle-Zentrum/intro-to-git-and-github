@@ -149,6 +149,7 @@ This prevents accidental breakage on the stable branch.
 
 ::::::::::::::::::::::::
 
+
 ## Collaborators and Permissions
 
 To give someone access to your **private** repository (or push access to a
@@ -171,6 +172,15 @@ Issues are used to track tasks, report bugs, and discuss ideas. Good practices:
 - **Linking:** reference issues in commit messages or PRs using `#123` syntax.
 
 <!-- TODO: add screenshot of a well-formatted GitHub issue with labels -->
+
+<!--- issue on missing README file ... -->
+
+## Documentation and README files
+
+<!-- TODO -->
+
+
+
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
