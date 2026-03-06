@@ -83,6 +83,14 @@ Each commit is a snapshot of the project at a point in time, allowing you to tra
 
 ![Git commit timeline](gh-commit-history.png){alt="Git commit history showing a linear sequence of commits with messages and timestamps."}
 
+An important aspect of git is that it is managing not single files but entire **repositories** (or "repos" for short).
+A repository is eventually a directory that contain all your project files, subdirectories, and the complete history of changes therein.
+Thus, version control with git is not just about tracking changes to individual files, but about managing the entire project as a cohesive unit.
+
+Given this, the first step in using git is to *think in terms of **projects** rather than individual files*.
+A project can be anything from a collection of scripts, data, and documentation for a research study, to a website, to a software application.
+All the files that belong to the project should be organised within a single repository, which git will then manage as a whole.
+
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -102,6 +110,8 @@ Each commit is a snapshot of the project at a point in time, allowing you to tra
 ![](GitHub_Lockup_Black.png){alt="GitHub logo" width="120px"} is a web platform that hosts git repositories online. It adds
 collaboration features such as pull requests, issues, and project boards on
 top of git's version control.
+So GitHub is not git itself, but a service that uses git to manage repositories in the cloud.
+Its collaborative features bring git's power to the next level, making it easier for teams to work together on projects and for individuals to share their work with the world.
 
 - **Git** = the version control engine (runs on your computer).
 - **GitHub** = the hosting service (stores your repository in the cloud).
@@ -123,16 +133,80 @@ From that point on, you will synchronise changes between the two copies using **
 The same can be done by multiple people working on the same project, allowing for collaboration based on a synchronised central remote repository.
 This is one of the major advantages of using systems like git for file management.
 
+
+## Creating a Repository
+
+To start using git, you need to create a repository for your project. This can be done in several ways.
+
+### Starting in GitHub
+
+One way to start a project is to directly create a new repository on GitHub. 
+This is useful if you want to start with a clean slate and have your project hosted online from the beginning.
+
+To this end, you can go and log-in to GitHub, click on the "New" button in the repositories section, and follow the prompts to set up your repository.
+
+![](gh-new-repo.png){alt="Screenshot of GitHub showing the 'New Repository' button." width="60%"}
+
+In the subsequent form, you can  
+
+- choose a name for your repository (without blanks or special characters), 
+- add an optional description, and 
+- select the visibility (public or private).
+
+The latter depends on whether you want to share your project with the world (public) or keep it private (private) and can be changed later on if needed.
+
+**Note: We recommend to start with a `README` file, i.e. you can check the box "Add a README file" in the form.**
+This will create a `README.md` file in your repository with some default content that you can edit later on.
+Documenting your project (folders) with `README` files is a good practice as it provides an introduction and overview of your project or respective information for others (and for yourself in the future).
+
+After creating the repository in GitHub, you can start working on it via the GitHub web interface.
+But to have the full power of git and to work with your files on your computer, you need to clone the repository to your local machine, which can be done using GitHub Desktop, an IDE or the command line as dicussed later.
+
+### Starting locally using GitHub Desktop
+
+Similarly, you can start by creating a local repository on your computer and then push it to GitHub later on.
+
+To this end, you can open GitHub Desktop, click on "File" → "New Repository", and follow the prompts to set up your local repository.
+The subsequent form also allows you to choose a name for your repository, select a local path where it will be created, and optionally add a `README` file etc.
+
+![](ghd-new-repo.png){alt="Screenshot of GitHub Desktop showing the 'New Repository' button."}
+
+In contrast to the "GitHub online way", this will create a **local repository** on your computer, but it will **not be connected to GitHub yet**.
+In order to connect it to GitHub, you need to click on "Publish repository" in the toolbar at the top of GitHub Desktop, which will upload your local repository to GitHub and create a remote copy there.
+
+### Taking care of existing local git repositories with GitHub Desktop
+
+If you are already using git on your computer and have existing repositories, you can also add them to GitHub Desktop to manage them with the GUI.
+To this end, you can click on "File" → "Add Local Repository" and select the folder of your existing repository.
+
+This is possible, since the whole information of the local repository is stored within a hidden `.git` folder within the project directory.
+The stored information is independent from the tool you used to create the repository, so GitHub Desktop can read and manage any repository created with any tool as long as it is a valid git repository (i.e. it has a `.git` folder with the necessary information).
+
+
+::::::::: callout
+
+## Moving repositories
+
+Since the whole local repository information is stored within the `.git` folder and is related to the "inner layout" of your project folder, you can move the project folder around on your computer without affecting the repository information, as long as you keep the `.git` folder intact within the project directory.
+
+::::::::::::::::::
+
 ## The Core Loop
 
+Now that you have a repository set up, you can start working with it.
+
+On the surface, your project directory doesn't look different from any other folder on your computer, but it is now under version control with git.
+That is, it is now a **working directory** that is connected to a local repository (and potentially a remote repository on GitHub) and all changes you make to the files within this directory can be tracked and managed with git.
+The major difference is: you will find different things within the project directory dependent on the things you do with git.
+For instance, you can check the content of your project folder at different time points in your projects history... Cool, right?
 
 ::::::: callout
 
 # Repository vs Working Directory
 
-**Note:** the local repository kind of a local database of all the changes you make on all the files in your project.
-It is controlled by git not the same as the files on your computer that you edit and work with!
-In order to work with the files on your computer, git creates a **working directory** that is a copy of the project files at a specific point in time (the last commit).
+**Note:** the **local repository** is kind of a local database of all the changes you make on all the files in your project.
+It is stored within a hidden `.git` folder in your project and controlled by git not the same as the files on your computer that you edit and work with!
+In order to work with the files on your computer, git treats the project's directory as its **working directory** that is a copy of the project files at a specific point in time (and its respective commit).
 When you make changes to the files, they are not automatically saved in the local repository until you **commit** them. 
 This is an important distinction to understand as it allows you to control when and how your changes are recorded in the history of the project.
 
