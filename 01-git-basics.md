@@ -145,7 +145,7 @@ This is useful if you want to start with a clean slate and have your project hos
 
 To this end, you can go and log-in to GitHub, click on the "New" button in the repositories section, and follow the prompts to set up your repository.
 
-![](gh-new-repo.png){alt="Screenshot of GitHub showing the 'New Repository' button." width="60%"}
+![](gh-new-repo.png){alt="Screenshot of GitHub showing the 'New Repository' button."}
 
 In the subsequent form, you can  
 
