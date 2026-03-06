@@ -221,6 +221,7 @@
 <li><a href="#what-is-git">What Is Git?</a></li>
 <li><a href="#what-is-github">What Is GitHub?</a></li>
 <li><a href="#local-vs-remote-repositories">Local vs Remote Repositories</a></li>
+<li><a href="#creating-a-repository">Creating a Repository</a></li>
 <li><a href="#the-core-loop">The Core Loop</a></li>
 <li><a href="#the-core-loop-in-github-desktop">The Core Loop in GitHub Desktop</a></li>
 <li><a href="#tracking-changes-and-history">Tracking Changes and History</a></li>
@@ -318,7 +319,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Git Basics and Single-Person Workflow</h1>
-        <p>Last updated on 2026-03-05 |
+        <p>Last updated on 2026-03-06 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/intro-to-git-and-github/edit/main/episodes/01-git-basics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -403,7 +404,20 @@ timestamps. Each commit is a snapshot of the project at a point in time,
 allowing you to track the evolution of your work and understand the
 context of changes.</p>
 <figure><img src="gh-commit-history.png" alt="Git commit history showing a linear sequence of commits with messages and timestamps." class="figure mx-auto d-block"><div class="figcaption">Git commit timeline</div>
-</figure><div id="why-use-version-control" class="callout">
+</figure><p>An important aspect of git is that it is managing not single files
+but entire <strong>repositories</strong> (or “repos” for short). A
+repository is eventually a directory that contain all your project
+files, subdirectories, and the complete history of changes therein.
+Thus, version control with git is not just about tracking changes to
+individual files, but about managing the entire project as a cohesive
+unit.</p>
+<p>Given this, the first step in using git is to <em>think in terms of
+<strong>projects</strong> rather than individual files</em>. A project
+can be anything from a collection of scripts, data, and documentation
+for a research study, to a website, to a software application. All the
+files that belong to the project should be organised within a single
+repository, which git will then manage as a whole.</p>
+<div id="why-use-version-control" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -430,7 +444,11 @@ project.</li>
 <hr class="half-width"><p><img src="GitHub_Lockup_Black.png" alt="GitHub logo" width="120" class="figure">
 is a web platform that hosts git repositories online. It adds
 collaboration features such as pull requests, issues, and project boards
-on top of git’s version control.</p>
+on top of git’s version control. So GitHub is not git itself, but a
+service that uses git to manage repositories in the cloud. Its
+collaborative features bring git’s power to the next level, making it
+easier for teams to work together on projects and for individuals to
+share their work with the world.</p>
 <ul><li>
 <strong>Git</strong> = the version control engine (runs on your
 computer).</li>
@@ -460,8 +478,99 @@ The same can be done by multiple people working on the same project,
 allowing for collaboration based on a synchronised central remote
 repository. This is one of the major advantages of using systems like
 git for file management.</p>
+</section><section><h2 class="section-heading" id="creating-a-repository">Creating a Repository<a class="anchor" aria-label="anchor" href="#creating-a-repository"></a></h2>
+<hr class="half-width"><p>To start using git, you need to create a repository for your project.
+This can be done in several ways.</p>
+<div class="section level3">
+<h3 id="starting-in-github">Starting in GitHub<a class="anchor" aria-label="anchor" href="#starting-in-github"></a></h3>
+<p>One way to start a project is to directly create a new repository on
+GitHub. This is useful if you want to start with a clean slate and have
+your project hosted online from the beginning.</p>
+<p>To this end, you can go and log-in to GitHub, click on the “New”
+button in the repositories section, and follow the prompts to set up
+your repository.</p>
+<figure><img src="gh-new-repo.png" style="width:60.0%" alt="Screenshot of GitHub showing the 'New Repository' button." class="figure mx-auto d-block"></figure><p>In the subsequent form, you can</p>
+<ul><li>choose a name for your repository (without blanks or special
+characters),</li>
+<li>add an optional description, and</li>
+<li>select the visibility (public or private).</li>
+</ul><p>The latter depends on whether you want to share your project with the
+world (public) or keep it private (private) and can be changed later on
+if needed.</p>
+<p><strong>Note: We recommend to start with a <code>README</code> file,
+i.e. you can check the box “Add a README file” in the form.</strong>
+This will create a <code>README.md</code> file in your repository with
+some default content that you can edit later on. Documenting your
+project (folders) with <code>README</code> files is a good practice as
+it provides an introduction and overview of your project or respective
+information for others (and for yourself in the future).</p>
+<p>After creating the repository in GitHub, you can start working on it
+via the GitHub web interface. But to have the full power of git and to
+work with your files on your computer, you need to clone the repository
+to your local machine, which can be done using GitHub Desktop, an IDE or
+the command line as dicussed later.</p>
+</div>
+<div class="section level3">
+<h3 id="starting-locally-using-github-desktop">Starting locally using GitHub Desktop<a class="anchor" aria-label="anchor" href="#starting-locally-using-github-desktop"></a></h3>
+<p>Similarly, you can start by creating a local repository on your
+computer and then push it to GitHub later on.</p>
+<p>To this end, you can open GitHub Desktop, click on “File” → “New
+Repository”, and follow the prompts to set up your local repository. The
+subsequent form also allows you to choose a name for your repository,
+select a local path where it will be created, and optionally add a
+<code>README</code> file etc.</p>
+<figure><img src="ghd-new-repo.png" alt="Screenshot of GitHub Desktop showing the 'New Repository' button." class="figure mx-auto d-block"></figure><p>In contrast to the “GitHub online way”, this will create a
+<strong>local repository</strong> on your computer, but it will
+<strong>not be connected to GitHub yet</strong>. In order to connect it
+to GitHub, you need to click on “Publish repository” in the toolbar at
+the top of GitHub Desktop, which will upload your local repository to
+GitHub and create a remote copy there.</p>
+</div>
+<div class="section level3">
+<h3 id="taking-care-of-existing-local-git-repositories-with-github-desktop">Taking care of existing local git repositories with GitHub
+Desktop<a class="anchor" aria-label="anchor" href="#taking-care-of-existing-local-git-repositories-with-github-desktop"></a></h3>
+<p>If you are already using git on your computer and have existing
+repositories, you can also add them to GitHub Desktop to manage them
+with the GUI. To this end, you can click on “File” → “Add Local
+Repository” and select the folder of your existing repository.</p>
+<p>This is possible, since the whole information of the local repository
+is stored within a hidden <code>.git</code> folder within the project
+directory. The stored information is independent from the tool you used
+to create the repository, so GitHub Desktop can read and manage any
+repository created with any tool as long as it is a valid git repository
+(i.e. it has a <code>.git</code> folder with the necessary
+information).</p>
+<div id="moving-repositories" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="moving-repositories" class="callout-inner">
+<h3 class="callout-title">Moving repositories</h3>
+<div class="callout-content">
+<p>Since the whole local repository information is stored within the
+<code>.git</code> folder and is related to the “inner layout” of your
+project folder, you can move the project folder around on your computer
+without affecting the repository information, as long as you keep the
+<code>.git</code> folder intact within the project directory.</p>
+</div>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="the-core-loop">The Core Loop<a class="anchor" aria-label="anchor" href="#the-core-loop"></a></h2>
-<hr class="half-width"><div id="repository-vs-working-directory" class="callout">
+<hr class="half-width"><p>Now that you have a repository set up, you can start working with
+it.</p>
+<p>On the surface, your project directory doesn’t look different from
+any other folder on your computer, but it is now under version control
+with git. That is, it is now a <strong>working directory</strong> that
+is connected to a local repository (and potentially a remote repository
+on GitHub) and all changes you make to the files within this directory
+can be tracked and managed with git. The major difference is: you will
+find different things within the project directory dependent on the
+things you do with git. For instance, you can check the content of your
+project folder at different time points in your projects history… Cool,
+right?</p>
+<div id="repository-vs-working-directory" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -469,16 +578,18 @@ git for file management.</p>
 <div id="repository-vs-working-directory" class="callout-inner">
 <h3 class="callout-title">Repository vs Working Directory</h3>
 <div class="callout-content">
-<p><strong>Note:</strong> the local repository kind of a local database
-of all the changes you make on all the files in your project. It is
-controlled by git not the same as the files on your computer that you
-edit and work with! In order to work with the files on your computer,
-git creates a <strong>working directory</strong> that is a copy of the
-project files at a specific point in time (the last commit). When you
-make changes to the files, they are not automatically saved in the local
-repository until you <strong>commit</strong> them. This is an important
-distinction to understand as it allows you to control when and how your
-changes are recorded in the history of the project.</p>
+<p><strong>Note:</strong> the <strong>local repository</strong> is kind
+of a local database of all the changes you make on all the files in your
+project. It is stored within a hidden <code>.git</code> folder in your
+project and controlled by git not the same as the files on your computer
+that you edit and work with! In order to work with the files on your
+computer, git treats the project’s directory as its <strong>working
+directory</strong> that is a copy of the project files at a specific
+point in time (and its respective commit). When you make changes to the
+files, they are not automatically saved in the local repository until
+you <strong>commit</strong> them. This is an important distinction to
+understand as it allows you to control when and how your changes are
+recorded in the history of the project.</p>
 </div>
 </div>
 </div>
@@ -660,7 +771,7 @@ repository, so you need to commit before you can push.</li>
   Git workflow in RStudio
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Most programming IDEs (including RStudio) have built-in git support
 that allows you to perform the core workflow without leaving the IDE. In
@@ -688,7 +799,7 @@ the staged changes and commit message box.</div>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -763,7 +874,7 @@ and removed (in red) on the right</li>
   RStudio and IDE views
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Similar views are also available in RStudio and other IDEs with git
 support, allowing you to browse the commit history and see diffs of
@@ -781,7 +892,7 @@ changes directly within your coding environment.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -865,7 +976,7 @@ secrets.yaml
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -919,7 +1030,7 @@ terms:</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Commit</strong> — a saved snapshot of changes in my project,
@@ -1017,8 +1128,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/01-git-basics.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/01-git-basics.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2026-03-05",
-  "datePublished": "2026-03-05"
+  "dateModified": "2026-03-06",
+  "datePublished": "2026-03-06"
 }
 
   </script><script>
