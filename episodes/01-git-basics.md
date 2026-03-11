@@ -260,7 +260,7 @@ So far you have seen how the git workflow operates in theory, but how do you act
 Eventually, git is a command-line tool and thus all operations are done within a
 command-line interface (CLI) such as Terminal or (Git) Bash. This looks like this:
 
-![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. ([geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/), 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." width="50%"}
+![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. ([geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/), 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed."}
 
 This is very efficient and useful when your are already comfortable with the CLI, but it can be intimidating for beginners. 
 Therefore, we will use GitHub Desktop, a graphical user interface (GUI) that allows you to perform git operations without typing commands.
