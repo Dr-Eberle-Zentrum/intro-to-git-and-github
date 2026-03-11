@@ -181,7 +181,9 @@ problems for collaborators. Stick with **merge** for now.
 Choose **private** for sensitive or unfinished work. Choose **public** when you
 want to share your project with the world.
 
-<!-- TODO: add screenshot of the repository visibility setting on GitHub (Settings → Danger Zone) -->
+The visibility setting is configured when you create a repository, 
+but you can also change it later in the *General* repository settings on GitHub.
+
 
 ## Protected Branches
 
@@ -192,8 +194,17 @@ Teams often **protect** the `main` branch so that:
 - Pull requests require at least one approving review before merging.
 
 This prevents accidental breakage on the stable branch.
+Furthermore, it encourages code review and discussion before changes are integrated.
 
-<!-- TODO: add screenshot of branch protection rules on GitHub -->
+Reviewing can be bypassed by administrators for simple changes, 
+but it's good practice to follow the process even if you have admin rights.
+
+Branch protection can be set up in the repository settings on GitHub (see below). 
+
+If you encounter an error when trying to push to `main`, 
+it's likely that the branch is protected and you need to create a new branch and 
+open a pull request instead.
+
 
 :::::::::::::::: spoiler
 
@@ -201,7 +212,7 @@ This prevents accidental breakage on the stable branch.
 
 1. Go to your repository on GitHub.
 2. Click **Settings → Branches**.
-3. Under "Branch protection rules", click **Add rule**.
+3. Under "Branch protection rules", click **Add branch ruleset**.
 4. Enter `main` as the branch name pattern.
 5. Check **Require a pull request before merging** and other options as needed.
 
@@ -217,25 +228,57 @@ public one):
 2. Click **Add people** and search for their GitHub username.
 3. Choose a permission level (Read, Write, or Admin).
 
-<!-- TODO: add screenshot of the "Add collaborator" dialog on GitHub -->
+That way, they can clone the repository, push changes, and collaborate with you.
+Furthermore, you have full control over who can access your private repositories and what they can do.
 
 ## GitHub Issues
 
-Issues are used to track tasks, report bugs, and discuss ideas. Good practices:
+Issues are used to track tasks, report bugs, and discuss ideas. 
+
+Good practices are:
 
 - **Clear title:** summarise the problem or request in a few words.
 - **Description:** explain the context, steps to reproduce (for bugs), and
-  expected behaviour.
+  expected behaviour. You can also add screenshots or code snippets if relevant.
+  It is also possible to [reference lines of code](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet) or specific commits.
 - **Labels:** use labels like `bug`, `enhancement`, `question` to categorise.
 - **Linking:** reference issues in commit messages or PRs using `#123` syntax.
 
-<!-- TODO: add screenshot of a well-formatted GitHub issue with labels -->
+Each issue gets a unique number (e.g. #1) and can be assigned to milestones, projects, or specific people.
+The latter is especially useful in team projects to indicate who is responsible for addressing the issue.
 
-<!--- issue on missing README file ... -->
+This number can be used to link the issue to commits and pull requests, which helps to keep track of what work is being done to resolve the issue.
+Thus, if your commit is solving a specific issue, you can write `Closes #1` in the commit message or PR description, and GitHub will automatically close the issue when the commit is merged.
+Furthermore, respective information about the linked issue will be visible in the PR, which helps reviewers to understand the context of the changes.
+
+
 
 ## Documentation and README files
 
-<!-- TODO -->
+As already hinted at above, `README.md` README files are a great way to provide documentation for your project.
+They are written in Markdown and rendered as HTML on GitHub.
+Eventually, you may want to create a README file within each directory to explain its purpose and contents.
+This is especially helpful for collaborators who are new to the project and may not be familiar with the structure.
+A well-structured README can serve as a guide for navigating the repository and understanding the overall project.
+It can also include instructions and guidelines for respective directories, which can be very helpful for onboarding new contributors and ensuring that everyone is on the same page regarding the project's structure and organization.
+
+Generally, a `README.md` file should
+
+- Provide an overview of the project/directory and its purpose.
+- Explain how to use the project or its components.
+- Include any necessary setup instructions or dependencies.
+- Be kept up to date as the project evolves.
+
+The central README file in the root directory can also 
+
+- include links to other README files in subdirectories, creating a clear and navigable documentation structure for the entire project.
+- provide documentation for dependencies, data sources, or other external resources that are relevant to the project.
+- serve as a central hub for all project-related information, making it easier for collaborators to find what they need and understand the project's structure and goals.
+
+Typically, the project's central `README.md` also serves as the landing page 
+when exporting the repository to GitHub Pages, so it is a good place to provide an introduction and overview of the project for visitors.
+This process will be discussed in more detail in the next episode on publishing and automation.
+
 
 
 
@@ -252,11 +295,11 @@ Include at least five items covering the scenarios discussed above.
 ### Example checklist
 
 1. **Unwanted changes to a file?** → Discard changes in GitHub Desktop.
-2. **Wrong commit (not yet pushed)?** → Revert the commit in GitHub Desktop.
+2. **Wrong commit (not yet pushed)?** → Undo the commit in GitHub Desktop.
 3. **Wrong commit (already pushed)?** → Revert and push the revert commit.
 4. **Committed a secret?** → Rotate the credential immediately. Remove from
    history if possible.
-5. **Empty directory not showing up?** → Add a `.gitkeep` file.
+5. **Empty directory not showing up?** → Add a `README.md` or `.gitkeep` file.
 6. **Merge conflict?** → Open the file, resolve the markers, commit, and push.
 7. **Cannot push to main?** → The branch is probably protected. Create a
    branch and open a pull request instead.
@@ -272,5 +315,6 @@ Include at least five items covering the scenarios discussed above.
 - Never commit secrets; rotate any that are accidentally pushed.
 - Protected branches enforce a pull request workflow.
 - Issues help organise work; use clear titles, descriptions, and labels.
+- README files provide essential documentation and should be kept up to date.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
