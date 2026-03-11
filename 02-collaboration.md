@@ -100,12 +100,16 @@ This is the other person's version.
 - Everything between `<<<<<<< HEAD` and `=======` is **your** change.
 - Everything between `=======` and `>>>>>>>` is the **other** change.
 
-### Resolving a conflict
+:::::: testimonial
+
+## Resolving a conflict
 
 1. Open the file in an editor and find the conflict markers (e.g. searching for `<<<<`).
 2. Decide which version to keep (or combine both).
 3. Delete the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
 4. Save, commit, and push.
+
+:::::::::::::::::::
 
 As stated above, in GitHub Desktop, conflicted files are highlighted and you can open them
 directly in your editor to resolve the conflict.
