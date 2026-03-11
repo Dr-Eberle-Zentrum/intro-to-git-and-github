@@ -480,6 +480,21 @@ secrets.yaml
 .env
 ```
 
+### Ignore files via GitHub Desktop
+
+In GitHub Desktop, ignoring files (and creating/updating a respective `.gitignore` file)
+can be done by right-clicking on a file in the Changes tab and selecting "Ignore this file" from the context menu.
+This will automatically add the file name to a `.gitignore` file in the root of your repository (or create one if it doesn't exist yet) and thus ignore it for future staging and committing
+
+![Screenshot of GitHub Desktop showing the context menu with the 'Ignore this file' option.](ghd-ignore-file.png){alt="Screenshot of GitHub Desktop showing the context menu with the 'Ignore this file' option."}
+
+Note, the context menu also allows you to ignore all files with the same extension by selecting "Ignore all .png files" (here to ignore all PNG images), 
+which is a convenient way to ignore multiple files at once without having to edit the `.gitignore` file manually or the need to explicitely ignore each file one by one.
+
+Ignoring the folder ("Ignore folder" option) will add the folder name to the `.gitignore` file with a trailing slash (e.g. `data/`), which tells git to ignore all files within that folder and its subfolders.
+
+
+
 :::::::::::::::: spoiler
 
 ### CLI equivalent

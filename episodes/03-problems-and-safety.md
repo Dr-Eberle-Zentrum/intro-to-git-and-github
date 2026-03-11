@@ -24,24 +24,37 @@ exercises: 30
 
 ## Common Problems
 
-### Empty Directories
+In the following, we will discuss some common issues that beginners encounter 
+when using git and GitHub, along with practical solutions.
+
+## Empty Directories
 
 Git tracks **files**, not directories. If you create an empty folder, git will
 ignore it.
 
 **Workarounds:**
 
-- Add a placeholder file called `.gitkeep` inside the directory.
-- Make sure every directory contains at least one meaningful file.
+Thus, if you really want to keep an empty directory in your repository, 
+e.g. to indicate where data files should go, you can:
 
-<!-- TODO: add screenshot of a .gitkeep file inside an otherwise empty folder in a file explorer -->
+- Create a "hidden" **placeholder file** called `.gitkeep` inside the directory.
+  - Can be empty
+  - The name `.gitkeep` is a convention (not a special git feature) to indicate
+    that the file exists solely to keep the directory in version control.
+  - Ensure to add and commit the `.gitkeep` file so that the directory is tracked.
+- Make sure every directory contains at least **one meaningful file**.
+  - For example, you could add a `README.md` inside the directory with instructions or
+    descriptions.
+  - This is often a better practice than using `.gitkeep`, as it provides context for
+    collaborators.
+
 
 :::::::::::::::: spoiler
 
 ### CLI example
 
 ```bash
-# Create a directory with a placeholder
+# Create a directory with a placeholder file
 mkdir data
 touch data/.gitkeep
 git add data/.gitkeep
@@ -50,54 +63,99 @@ git commit -m "Add empty data directory with .gitkeep"
 
 ::::::::::::::::::::::::
 
-### Accidentally Committed the Wrong File
 
-If you committed a file by mistake (for example a large data file or
-credentials):
+## Undoing Changes
+
+It happens again and again that you make a change to a file and then realise that you made a mistake, or that you changed the wrong file. 
+Or you accidentally commit a file that should not be tracked (e.g. a large data file or credentials).
+
+In that case, you want to undo your work and restore the file to the last committed state that is clean or safe.
+
+There are several ways to undo work in git. Here is a beginner-friendly compact
+overview to be discussed subsequently.
+
+| Situation | Action in GitHub Desktop | What happens |
+|-----------|--------------------------|-------------|
+| Changed a file but have not committed | In "Changes" right-click the file → **Discard changes** | File returns to the last committed state |
+| Committed but have not pushed | Right-click the commit → **Undo Commit** | The commit is removed from the local repository, changes are kept in the working directory |
+| Already pushed | Use **Revert Commit** and push again | A new "revert"" commit is added that undoes the commit's changes. |
+
+### Undo Uncommitted Changes
+
+If you have changed a file wrongly but not used git so far, things are easy.
+You can simply either undo the changes (with any tool) or use the 
+**Discard changes** option in the *Changes* view in GitHub Desktop.
+This will restore the file to the last committed state from your local repository,
+*discarding all changes* since then.
+
+We are crossing fingers that you have not made any important changes to the file since the last commit, because they will be lost.
+
+### Undo Committed but Local Changes
+
+If you committed a file or changes by mistake (for example a large data file or
+credentials or just nonesense changes), but have not yet pushed to GitHub, 
+you can undo the commit and keep the changes in your working directory. 
+This allows you to fix the mistake and then commit again.
 
 1. **Don't panic.** The commit is only local until you push.
 2. In GitHub Desktop, right-click the commit in History and choose
-   **Revert this Commit**.
-3. Add the file pattern to `.gitignore` so it is not tracked in the future.
+   [**Undo commit**](https://docs.github.com/en/desktop/managing-commits/undoing-a-commit-in-github-desktop).
+   - This removes the commit but keeps the changes in your working directory, 
+     allowing you to fix the mistake.
+3. Add the file (pattern) to `.gitignore` so it is not tracked in the future.
 
-<!-- TODO: add screenshot of the "Revert this Commit" option in GitHub Desktop -->
+![](ghd-undo-commit.png){alt="Screenshot of the 'Undo commit' option in GitHub Desktop"}
+
+**Note:** This is only possible for commits that are not yet pushed to the
+remote repository (GitHub). Such "local" commits are indicated with a small
+"UP"-arrow icon in GitHub Desktop. 
+
+
 
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Credentials and secrets
 
 **Never** commit passwords, API keys, or other secrets. If you accidentally
-push a secret to GitHub, consider it compromised — rotate the credential
+push a secret to GitHub, consider it compromised — rotate/change the credential
 immediately and remove it from the repository history.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Undoing Changes
 
-There are several ways to undo work in git. Here is a beginner-friendly
-overview:
+### Undo Already Pushed Changes
 
-| Situation | Action in GitHub Desktop | What happens |
-|-----------|--------------------------|-------------|
-| Changed a file but have not committed | Right-click the file → **Discard changes** | File returns to the last committed state |
-| Committed but have not pushed | Right-click the commit → **Revert this Commit** | A new commit is created that undoes the changes |
-| Already pushed | Use **Revert this Commit** and push again | A new revert commit is added to the remote |
+If you have already pushed a commit to the remote repository (e.g. GitHub) 
+and want to undo it, you should not try to remove it from history 
+(e.g. with `git reset --hard` or `git rebase`) because that can cause problems 
+for collaborators who have already pulled the commit.
+Instead you should push a new commit that **reverts** the changes of the previous commit.
+This way, the history remains intact and collaborators can see that a change was made and then undone.
 
-<!-- TODO: add screenshot of the "Discard changes" context menu in GitHub Desktop -->
+1. In GitHub Desktop, right-click the respective commit in *History* view
+2. Choose **Revert changes in commit**.
+   - This creates a new commit that undoes the changes introduced by the original commit.
+3. Push the new revert commit to GitHub.
+
+![](ghd-revert-commit.png){alt="Screenshot of the 'Revert changes in commit' option in GitHub Desktop"}
+
+In case you need to undo multiple commits, you can revert them one by one starting from the most recent one.
+This way, you avoid merge conflicts that can arise when reverting multiple commits at once.
+
 
 :::::::::::::::: spoiler
 
 ### CLI equivalents
 
 ```bash
-# Discard changes to a file (before commit)
+# Situation 1: Discard changes to a file (before commit)
 git checkout -- filename.md
 
-# Revert the last commit (creates a new commit)
-git revert HEAD
-
-# Unstage a file (keep changes but remove from staging)
+# Situation 2: Unstage a file (keep changes but remove from staging)
 git reset HEAD filename.md
+
+# Situation 3: Revert the last commit (creates a new commit)
+git revert HEAD
 ```
 
 ::::::::::::::::::::::::
