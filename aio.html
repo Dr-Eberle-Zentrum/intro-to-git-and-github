@@ -345,7 +345,7 @@
         
 <section id="aio-01-git-basics"><p>Content from <a href="01-git-basics.html">Git Basics and Single-Person Workflow</a></p>
 <hr>
-<p>Last updated on 2026-03-06 |
+<p>Last updated on 2026-03-11 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/intro-to-git-and-github/edit/main/episodes/01-git-basics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -734,7 +734,7 @@ do you actually do these steps in practice?</p>
 <p>Eventually, git is a command-line tool and thus all operations are
 done within a command-line interface (CLI) such as Terminal or (Git)
 Bash. This looks like this:</p>
-<figure><img src="gfg-GitCommit1.jpg" style="width:50.0%" alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." class="figure mx-auto d-block"><div class="figcaption">Screenshot of a Bash terminal showing git
+<figure><img src="gfg-GitCommit1.jpg" alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." class="figure mx-auto d-block"><div class="figcaption">Screenshot of a Bash terminal showing git
 commands ‘status’ and ‘commit’ being executed in the <code>$</code>
 prefixed lines. (<a href="https://www.geeksforgeeks.org/git/what-is-git-commit/" class="external-link">geeksforgeeks.org</a>,
 05.03.2026)</div>
@@ -1197,7 +1197,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-collaboration"><p>Content from <a href="02-collaboration.html">Collaboration, Branching and Pull Requests</a></p>
 <hr>
-<p>Last updated on 2026-03-05 |
+<p>Last updated on 2026-03-11 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/intro-to-git-and-github/edit/main/episodes/02-collaboration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1309,10 +1309,14 @@ and <code>=======</code> is <strong>your</strong> change.</li>
 <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> is the <strong>other</strong>
 change.</li>
 </ul>
+<div id="resolving-a-conflict" class="callout testimonial">
+<div class="callout-square">
+<i class="callout-icon" data-feather="heart"></i>
 </div>
-<div class="section level3">
-<h3 id="resolving-a-conflict">Resolving a conflict<a class="anchor" aria-label="anchor" href="#resolving-a-conflict"></a>
-</h3>
+<span class="callout-header">Testimonial</span>
+<div id="resolving-a-conflict" class="callout-inner">
+<h3 class="callout-title">Resolving a conflict</h3>
+<div class="callout-content">
 <ol style="list-style-type: decimal">
 <li>Open the file in an editor and find the conflict markers
 (e.g. searching for <code>&lt;&lt;&lt;&lt;</code>).</li>
@@ -1322,6 +1326,9 @@ change.</li>
 <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>).</li>
 <li>Save, commit, and push.</li>
 </ol>
+</div>
+</div>
+</div>
 <p>As stated above, in GitHub Desktop, conflicted files are highlighted
 and you can open them directly in your editor to resolve the conflict.
 Within IDEs like RStudio, the same markers appear and you can use the
@@ -1337,7 +1344,7 @@ operations.</strong></p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1505,7 +1512,7 @@ changes to avoid losing work.</strong></p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1655,7 +1662,7 @@ GitHub.</strong></p>
   CLI equivalent for pushing a branch
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1693,7 +1700,7 @@ interface.</p>
   Key difference
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1800,7 +1807,7 @@ file.</li>
   CLI example
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1890,7 +1897,7 @@ beginner-friendly overview:</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1976,7 +1983,7 @@ merging.</li>
   Where to configure branch protection
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Go to your repository on GitHub.</li>
@@ -2045,7 +2052,7 @@ discussed above.</p>
   Example checklist
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -2212,7 +2219,7 @@ right sidebar).</li>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2404,7 +2411,7 @@ Marketplace</a>.</p>
   Where to place the workflow file
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2459,7 +2466,7 @@ Marketplace</a>.</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>A <strong>workflow</strong> is an automated process defined in a
@@ -2550,8 +2557,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/aio.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2026-03-10",
-  "datePublished": "2026-03-10"
+  "dateModified": "2026-03-11",
+  "datePublished": "2026-03-11"
 }
 
   </script><script>
