@@ -771,7 +771,7 @@ repository, so you need to commit before you can push.</li>
   Git workflow in RStudio
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Most programming IDEs (including RStudio) have built-in git support
 that allows you to perform the core workflow without leaving the IDE. In
@@ -799,7 +799,7 @@ the staged changes and commit message box.</div>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -874,7 +874,7 @@ and removed (in red) on the right</li>
   RStudio and IDE views
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Similar views are also available in RStudio and other IDEs with git
 support, allowing you to browse the commit history and see diffs of
@@ -892,7 +892,7 @@ changes directly within your coding environment.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -968,6 +968,25 @@ Thumbs.db
 # Credentials — never commit these!
 secrets.yaml
 .env</code></pre>
+<div class="section level3">
+<h3 id="ignore-files-via-github-desktop">Ignore files via GitHub Desktop<a class="anchor" aria-label="anchor" href="#ignore-files-via-github-desktop"></a></h3>
+<p>In GitHub Desktop, ignoring files (and creating/updating a respective
+<code>.gitignore</code> file) can be done by right-clicking on a file in
+the Changes tab and selecting “Ignore this file” from the context menu.
+This will automatically add the file name to a <code>.gitignore</code>
+file in the root of your repository (or create one if it doesn’t exist
+yet) and thus ignore it for future staging and committing</p>
+<figure><img src="ghd-ignore-file.png" alt="Screenshot of GitHub Desktop showing the context menu with the 'Ignore this file' option." class="figure mx-auto d-block"><div class="figcaption">Screenshot of GitHub Desktop showing the context
+menu with the ‘Ignore this file’ option.</div>
+</figure><p>Note, the context menu also allows you to ignore all files with the
+same extension by selecting “Ignore all .png files” (here to ignore all
+PNG images), which is a convenient way to ignore multiple files at once
+without having to edit the <code>.gitignore</code> file manually or the
+need to explicitely ignore each file one by one.</p>
+<p>Ignoring the folder (“Ignore folder” option) will add the folder name
+to the <code>.gitignore</code> file with a trailing slash
+(e.g. <code>data/</code>), which tells git to ignore all files within
+that folder and its subfolders.</p>
 <div id="accordionSpoiler5" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
@@ -976,7 +995,7 @@ secrets.yaml
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -988,6 +1007,7 @@ secrets.yaml
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># Check which files are ignored</span></span>
 <span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="fu">git</span> status <span class="at">--ignored</span></span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1030,7 +1050,7 @@ terms:</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Commit</strong> — a saved snapshot of changes in my project,

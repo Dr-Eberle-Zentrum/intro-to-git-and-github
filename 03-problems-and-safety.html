@@ -236,6 +236,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#common-problems">Common Problems</a></li>
+<li><a href="#empty-directories">Empty Directories</a></li>
 <li><a href="#undoing-changes">Undoing Changes</a></li>
 <li><a href="#repository-visibility">Repository Visibility</a></li>
 <li><a href="#protected-branches">Protected Branches</a></li>
@@ -315,7 +316,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Problems, Safety, and GitHub Hygiene</h1>
-        <p>Last updated on 2026-03-06 |
+        <p>Last updated on 2026-03-11 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/intro-to-git-and-github/edit/main/episodes/03-problems-and-safety.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -356,16 +357,31 @@ others?</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="common-problems">Common Problems<a class="anchor" aria-label="anchor" href="#common-problems"></a></h2>
-<hr class="half-width"><div class="section level3">
-<h3 id="empty-directories">Empty Directories<a class="anchor" aria-label="anchor" href="#empty-directories"></a></h3>
-<p>Git tracks <strong>files</strong>, not directories. If you create an
+<hr class="half-width"><p>In the following, we will discuss some common issues that beginners
+encounter when using git and GitHub, along with practical solutions.</p>
+</section><section><h2 class="section-heading" id="empty-directories">Empty Directories<a class="anchor" aria-label="anchor" href="#empty-directories"></a></h2>
+<hr class="half-width"><p>Git tracks <strong>files</strong>, not directories. If you create an
 empty folder, git will ignore it.</p>
 <p><strong>Workarounds:</strong></p>
-<ul><li>Add a placeholder file called <code>.gitkeep</code> inside the
-directory.</li>
-<li>Make sure every directory contains at least one meaningful
-file.</li>
-</ul><!-- TODO: add screenshot of a .gitkeep file inside an otherwise empty folder in a file explorer --><div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<p>Thus, if you really want to keep an empty directory in your
+repository, e.g. to indicate where data files should go, you can:</p>
+<ul><li>Create a “hidden” <strong>placeholder file</strong> called
+<code>.gitkeep</code> inside the directory.
+<ul><li>Can be empty</li>
+<li>The name <code>.gitkeep</code> is a convention (not a special git
+feature) to indicate that the file exists solely to keep the directory
+in version control.</li>
+<li>Ensure to add and commit the <code>.gitkeep</code> file so that the
+directory is tracked.</li>
+</ul></li>
+<li>Make sure every directory contains at least <strong>one meaningful
+file</strong>.
+<ul><li>For example, you could add a <code>README.md</code> inside the
+directory with instructions or descriptions.</li>
+<li>This is often a better practice than using <code>.gitkeep</code>, as
+it provides context for collaborators.</li>
+</ul></li>
+</ul><div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">
@@ -373,12 +389,12 @@ file.</li>
   CLI example
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Create a directory with a placeholder</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Create a directory with a placeholder file</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">mkdir</span> data</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">touch</span> data/.gitkeep</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">git</span> add data/.gitkeep</span>
@@ -388,19 +404,64 @@ file.</li>
 </div>
 </div>
 </div>
+</section><section><h2 class="section-heading" id="undoing-changes">Undoing Changes<a class="anchor" aria-label="anchor" href="#undoing-changes"></a></h2>
+<hr class="half-width"><p>It happens again and again that you make a change to a file and then
+realise that you made a mistake, or that you changed the wrong file. Or
+you accidentally commit a file that should not be tracked (e.g. a large
+data file or credentials).</p>
+<p>In that case, you want to undo your work and restore the file to the
+last committed state that is clean or safe.</p>
+<p>There are several ways to undo work in git. Here is a
+beginner-friendly compact overview to be discussed subsequently.</p>
+<table class="table"><colgroup><col width="22%"><col width="52%"><col width="26%"></colgroup><thead><tr><th>Situation</th>
+<th>Action in GitHub Desktop</th>
+<th>What happens</th>
+</tr></thead><tbody><tr><td>Changed a file but have not committed</td>
+<td>In “Changes” right-click the file → <strong>Discard
+changes</strong>
+</td>
+<td>File returns to the last committed state</td>
+</tr><tr><td>Committed but have not pushed</td>
+<td>Right-click the commit → <strong>Undo Commit</strong>
+</td>
+<td>The commit is removed from the local repository, changes are kept in
+the working directory</td>
+</tr><tr><td>Already pushed</td>
+<td>Use <strong>Revert Commit</strong> and push again</td>
+<td>A new “revert”” commit is added that undoes the commit’s
+changes.</td>
+</tr></tbody></table><div class="section level3">
+<h3 id="undo-uncommitted-changes">Undo Uncommitted Changes<a class="anchor" aria-label="anchor" href="#undo-uncommitted-changes"></a></h3>
+<p>If you have changed a file wrongly but not used git so far, things
+are easy. You can simply either undo the changes (with any tool) or use
+the <strong>Discard changes</strong> option in the <em>Changes</em> view
+in GitHub Desktop. This will restore the file to the last committed
+state from your local repository, <em>discarding all changes</em> since
+then.</p>
+<p>We are crossing fingers that you have not made any important changes
+to the file since the last commit, because they will be lost.</p>
 </div>
 <div class="section level3">
-<h3 id="accidentally-committed-the-wrong-file">Accidentally Committed the Wrong File<a class="anchor" aria-label="anchor" href="#accidentally-committed-the-wrong-file"></a></h3>
-<p>If you committed a file by mistake (for example a large data file or
-credentials):</p>
+<h3 id="undo-committed-but-local-changes">Undo Committed but Local Changes<a class="anchor" aria-label="anchor" href="#undo-committed-but-local-changes"></a></h3>
+<p>If you committed a file or changes by mistake (for example a large
+data file or credentials or just nonesense changes), but have not yet
+pushed to GitHub, you can undo the commit and keep the changes in your
+working directory. This allows you to fix the mistake and then commit
+again.</p>
 <ol style="list-style-type: decimal"><li>
 <strong>Don’t panic.</strong> The commit is only local until you
 push.</li>
-<li>In GitHub Desktop, right-click the commit in History and choose
-<strong>Revert this Commit</strong>.</li>
-<li>Add the file pattern to <code>.gitignore</code> so it is not tracked
-in the future.</li>
-</ol><!-- TODO: add screenshot of the "Revert this Commit" option in GitHub Desktop --><div id="credentials-and-secrets" class="callout">
+<li>In GitHub Desktop, right-click the commit in History and choose <a href="https://docs.github.com/en/desktop/managing-commits/undoing-a-commit-in-github-desktop" class="external-link"><strong>Undo
+commit</strong></a>.
+<ul><li>This removes the commit but keeps the changes in your working
+directory, allowing you to fix the mistake.</li>
+</ul></li>
+<li>Add the file (pattern) to <code>.gitignore</code> so it is not
+tracked in the future.</li>
+</ol><figure><img src="ghd-undo-commit.png" alt="Screenshot of the 'Undo commit' option in GitHub Desktop" class="figure mx-auto d-block"></figure><p><strong>Note:</strong> This is only possible for commits that are not
+yet pushed to the remote repository (GitHub). Such “local” commits are
+indicated with a small “UP”-arrow icon in GitHub Desktop.</p>
+<div id="credentials-and-secrets" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -410,30 +471,33 @@ in the future.</li>
 <div class="callout-content">
 <p><strong>Never</strong> commit passwords, API keys, or other secrets.
 If you accidentally push a secret to GitHub, consider it compromised —
-rotate the credential immediately and remove it from the repository
-history.</p>
+rotate/change the credential immediately and remove it from the
+repository history.</p>
 </div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="undoing-changes">Undoing Changes<a class="anchor" aria-label="anchor" href="#undoing-changes"></a></h2>
-<hr class="half-width"><p>There are several ways to undo work in git. Here is a
-beginner-friendly overview:</p>
-<table class="table"><colgroup><col width="22%"><col width="52%"><col width="26%"></colgroup><thead><tr><th>Situation</th>
-<th>Action in GitHub Desktop</th>
-<th>What happens</th>
-</tr></thead><tbody><tr><td>Changed a file but have not committed</td>
-<td>Right-click the file → <strong>Discard changes</strong>
-</td>
-<td>File returns to the last committed state</td>
-</tr><tr><td>Committed but have not pushed</td>
-<td>Right-click the commit → <strong>Revert this Commit</strong>
-</td>
-<td>A new commit is created that undoes the changes</td>
-</tr><tr><td>Already pushed</td>
-<td>Use <strong>Revert this Commit</strong> and push again</td>
-<td>A new revert commit is added to the remote</td>
-</tr></tbody></table><!-- TODO: add screenshot of the "Discard changes" context menu in GitHub Desktop --><div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="section level3">
+<h3 id="undo-already-pushed-changes">Undo Already Pushed Changes<a class="anchor" aria-label="anchor" href="#undo-already-pushed-changes"></a></h3>
+<p>If you have already pushed a commit to the remote repository
+(e.g. GitHub) and want to undo it, you should not try to remove it from
+history (e.g. with <code>git reset --hard</code> or
+<code>git rebase</code>) because that can cause problems for
+collaborators who have already pulled the commit. Instead you should
+push a new commit that <strong>reverts</strong> the changes of the
+previous commit. This way, the history remains intact and collaborators
+can see that a change was made and then undone.</p>
+<ol style="list-style-type: decimal"><li>In GitHub Desktop, right-click the respective commit in
+<em>History</em> view</li>
+<li>Choose <strong>Revert changes in commit</strong>.
+<ul><li>This creates a new commit that undoes the changes introduced by the
+original commit.</li>
+</ul></li>
+<li>Push the new revert commit to GitHub.</li>
+</ol><figure><img src="ghd-revert-commit.png" alt="Screenshot of the 'Revert changes in commit' option in GitHub Desktop" class="figure mx-auto d-block"></figure><p>In case you need to undo multiple commits, you can revert them one by
+one starting from the most recent one. This way, you avoid merge
+conflicts that can arise when reverting multiple commits at once.</p>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">
@@ -441,19 +505,19 @@ beginner-friendly overview:</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Discard changes to a file (before commit)</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Situation 1: Discard changes to a file (before commit)</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--</span> filename.md</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Revert the last commit (creates a new commit)</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">git</span> revert HEAD</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Situation 2: Unstage a file (keep changes but remove from staging)</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">git</span> reset HEAD filename.md</span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># Unstage a file (keep changes but remove from staging)</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">git</span> reset HEAD filename.md</span></code></pre>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># Situation 3: Revert the last commit (creates a new commit)</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">git</span> revert HEAD</span></code></pre>
 </div>
 </div>
 </div>
@@ -472,6 +536,7 @@ tutorials. Rebasing rewrites commit history and is an advanced
 technique. <strong>Do not use rebase</strong> on shared branches unless
 you fully understand the implications — it can cause serious problems
 for collaborators. Stick with <strong>merge</strong> for now.</p>
+</div>
 </div>
 </div>
 </div>
@@ -506,7 +571,7 @@ merging.</li>
   Where to configure branch protection
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Go to your repository on GitHub.</li>
 <li>Click <strong>Settings → Branches</strong>.</li>
@@ -563,7 +628,7 @@ discussed above.</p>
   Example checklist
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Unwanted changes to a file?</strong> → Discard changes in
@@ -672,7 +737,7 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/03-problems-and-safety.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/03-problems-and-safety.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2026-03-06",
+  "dateModified": "2026-03-11",
   "datePublished": "2026-03-11"
 }
 
