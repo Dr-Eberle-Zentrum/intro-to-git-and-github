@@ -73,7 +73,9 @@ And this is where git comes into the game!
 
 ## What Is Git?
 
+<!-- spell-checker:disable -->
 !["What is git?" ([R. Fadatare](https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4), 05.03.2026)](what-is-git.png){alt="git summary" width="80%"}
+<!-- spell-checker:enable -->
 
 ![](Git-Logo-2Color.png){alt="git logo" width="80px"} is a **version control system** — a tool that tracks changes to your files over time. 
 Think of it as an "undo history" on steroids: you can go back to any
@@ -163,7 +165,7 @@ This will create a `README.md` file in your repository with some default content
 Documenting your project (folders) with `README` files is a good practice as it provides an introduction and overview of your project or respective information for others (and for yourself in the future).
 
 After creating the repository in GitHub, you can start working on it via the GitHub web interface.
-But to have the full power of git and to work with your files on your computer, you need to clone the repository to your local machine, which can be done using GitHub Desktop, an IDE or the command line as dicussed later.
+But to have the full power of git and to work with your files on your computer, you need to clone the repository to your local machine, which can be done using GitHub Desktop, an IDE or the command line as discussed later.
 
 ### Starting locally using GitHub Desktop
 
@@ -263,7 +265,9 @@ So far you have seen how the git workflow operates in theory, but how do you act
 Eventually, git is a command-line tool and thus all operations are done within a
 command-line interface (CLI) such as Terminal or (Git) Bash. This looks like this:
 
+<!-- spell-checker:disable -->
 ![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. ([geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/), 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed."}
+<!-- spell-checker:enable -->
 
 This is very efficient and useful when your are already comfortable with the CLI, but it can be intimidating for beginners. 
 Therefore, we will use GitHub Desktop, a graphical user interface (GUI) that allows you to perform git operations without typing commands.
@@ -416,6 +420,7 @@ Similar views are also available in RStudio and other IDEs with git support, all
 
 ### CLI equivalents
 
+<!-- spell-checker:disable -->
 ```bash
 # View commit history
 git log --oneline
@@ -426,6 +431,7 @@ git show abc1234
 # Compare working directory with last commit
 git diff
 ```
+<!-- spell-checker:enable -->
 
 ::::::::::::::::::::::::
 
