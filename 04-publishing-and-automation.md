@@ -130,7 +130,8 @@ Workflows are triggered by **events**, such as:
 ### Example: spell-checking with GitHub Actions
 
 A simple spell-check workflow using [cspell-action](https://github.com/streetsidesoftware/cspell-action) 
-can catch typos automatically:
+can catch typos automatically.
+To this end, you would create a YAML workflow file like `.github/workflows/spellcheck.yml` with the following content:
 
 ```yaml
 # Workflow to enable spell-checking on pull requests to main
@@ -160,14 +161,21 @@ This workflow:
    spelling errors.
 4. Reports any issues directly in the pull request, making it easy to fix typos before merging.
 
-For more actions, browse the
-[GitHub Marketplace](https://github.com/marketplace?type=actions).
+Whether or not a workflow passes or fails is visible in the pull request's checks section
+or in the *Actions* tab of the repository. 
 
-<!-- TODO: add screenshot of a passing GitHub Actions run on the Actions tab -->
+![](gh-actions.png){alt="Screenshot of the 'Actions' tab in a GitHub repository, showing a list of workflow runs with their status (passed or failed)."}
+
+A passing workflow will show a green checkmark, while a failing workflow will show a red cross, along with logs to help you diagnose the issue.
+
+![](gh-spellcheck-error.png){alt="Screenshot of a failed spell-check workflow, showing the error message and logs."}
+
+There is a wide variety of pre-built actions available in the [GitHub Marketplace](https://github.com/marketplace?type=actions) that you can use to automate different tasks, such as testing, linting, deployment, and more.
+
 
 :::::::::::::::: spoiler
 
-### Where to place the workflow file
+### CLI equivalent
 
 ```bash
 # Create the workflows directory
