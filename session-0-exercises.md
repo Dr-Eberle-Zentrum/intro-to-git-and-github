@@ -15,6 +15,8 @@ README, and explore the GitHub interface.
 
 ### Step 1 — Create a new repository on GitHub
 
+<!-- spell-checker:ignore yourname -->
+
 1. Go to [github.com](https://github.com/) and sign in.
 2. Click the **+** button in the top-right corner and select **New repository**.
 3. Name your repository `git-intro-<yourname>` (replace `<yourname>` with your
