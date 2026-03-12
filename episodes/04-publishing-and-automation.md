@@ -320,7 +320,7 @@ Git and GitHub support several principles that are important in research:
 
 | Platform | Notes |
 |----------|-------|
-| [GitLab](https://gitlab.com/) | Self-hostable, integrated CI/CD |
+| [GitLab](https://gitlab.com/) | Self-hosting possible, integrated CI/CD |
 | [Bitbucket](https://bitbucket.org/) | Atlassian ecosystem integration |
 | [Codeberg](https://codeberg.org/) | Non-profit, community-driven |
 | [SourceHut](https://sourcehut.org/) | Minimalist, email-driven workflow |

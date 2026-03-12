@@ -5,7 +5,11 @@ words:
   - Carpentries
   - Zenodo
   - inclusivity
+  - GitLab
+  - Bitbucket
+  - Codeberg
+  - SourceHut
 
 ignoreRegExpList:
   - >-
-    /^:::.*$/g
+    /^:::*.*$/g
