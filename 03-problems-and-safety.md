@@ -93,7 +93,7 @@ We are crossing fingers that you have not made any important changes to the file
 ### Undo Committed but Local Changes
 
 If you committed a file or changes by mistake (for example a large data file or
-credentials or just nonesense changes), but have not yet pushed to GitHub, 
+credentials or just nonsense changes), but have not yet pushed to GitHub, 
 you can undo the commit and keep the changes in your working directory. 
 This allows you to fix the mistake and then commit again.
 
