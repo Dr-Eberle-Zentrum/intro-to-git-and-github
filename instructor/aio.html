@@ -2467,7 +2467,9 @@ tab on GitHub.</li>
 <h3 id="example-spell-checking-with-github-actions">Example: spell-checking with GitHub Actions<a class="anchor" aria-label="anchor" href="#example-spell-checking-with-github-actions"></a>
 </h3>
 <p>A simple spell-check workflow using <a href="https://github.com/streetsidesoftware/cspell-action" class="external-link">cspell-action</a>
-can catch typos automatically:</p>
+can catch typos automatically. To this end, you would create a YAML
+workflow file like <code>.github/workflows/spellcheck.yml</code> with
+the following content:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2498,18 +2500,29 @@ spelling errors.</li>
 <li>Reports any issues directly in the pull request, making it easy to
 fix typos before merging.</li>
 </ol>
-<p>For more actions, browse the <a href="https://github.com/marketplace?type=actions" class="external-link">GitHub
-Marketplace</a>.</p>
-<!-- TODO: add screenshot of a passing GitHub Actions run on the Actions tab -->
+<p>To <strong>enable the workflow</strong>, you only have to commit and
+push the workflow file to your repository. As soon as present, GitHub
+will automatically run the workflow whenever a pull request is opened or
+updated against the <code>main</code> branch, and report the results in
+the PR’s checks section.</p>
+<p>Whether or not a workflow passes or fails is visible in the pull
+request’s checks section or in the <em>Actions</em> tab of the
+repository.</p>
+<figure><img src="../gh-actions.png" alt="Screenshot of the 'Actions' tab in a GitHub repository, showing a list of workflow runs with their status (passed or failed)." class="figure mx-auto d-block"></figure><p>A passing workflow will show a green checkmark, while a failing
+workflow will show a red cross, along with logs to help you diagnose the
+issue.</p>
+<figure><img src="../gh-spellcheck-error.png" alt="Screenshot of a failed spell-check workflow, showing the error message and logs." class="figure mx-auto d-block"></figure><p>There is a wide variety of pre-built actions available in the <a href="https://github.com/marketplace?type=actions" class="external-link">GitHub
+Marketplace</a> that you can use to automate different tasks, such as
+testing, linting, deployment, and more.</p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
-  Where to place the workflow file
+  CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2564,7 +2577,7 @@ Marketplace</a>.</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>A <strong>workflow</strong> is an automated process defined in a
@@ -2599,7 +2612,7 @@ commit, typically used to mark version numbers
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
