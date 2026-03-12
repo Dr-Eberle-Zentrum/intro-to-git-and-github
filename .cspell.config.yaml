@@ -5,7 +5,6 @@ words:
   - Carpentries
   - Zenodo
   - inclusivity
-  - keypoints
 
 ignoreRegExpList:
   - /^:::.*$/g
