@@ -316,7 +316,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Problems, Safety, and GitHub Hygiene</h1>
-        <p>Last updated on 2026-03-11 |
+        <p>Last updated on 2026-03-12 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/intro-to-git-and-github/edit/main/episodes/03-problems-and-safety.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -553,7 +553,9 @@ for collaborators. Stick with <strong>merge</strong> for now.</p>
 </tr></tbody></table><p>Choose <strong>private</strong> for sensitive or unfinished work.
 Choose <strong>public</strong> when you want to share your project with
 the world.</p>
-<!-- TODO: add screenshot of the repository visibility setting on GitHub (Settings → Danger Zone) -->
+<p>The visibility setting is configured when you create a repository,
+but you can also change it later in the <em>General</em> repository
+settings on GitHub.</p>
 </section><section><h2 class="section-heading" id="protected-branches">Protected Branches<a class="anchor" aria-label="anchor" href="#protected-branches"></a></h2>
 <hr class="half-width"><p>Teams often <strong>protect</strong> the <code>main</code> branch so
 that:</p>
@@ -561,8 +563,17 @@ that:</p>
 <li>All changes must go through a pull request.</li>
 <li>Pull requests require at least one approving review before
 merging.</li>
-</ul><p>This prevents accidental breakage on the stable branch.</p>
-<!-- TODO: add screenshot of branch protection rules on GitHub -->
+</ul><p>This prevents accidental breakage on the stable branch. Furthermore,
+it encourages code review and discussion before changes are
+integrated.</p>
+<p>Reviewing can be bypassed by administrators for simple changes, but
+it’s good practice to follow the process even if you have admin
+rights.</p>
+<p>Branch protection can be set up in the repository settings on GitHub
+(see below).</p>
+<p>If you encounter an error when trying to push to <code>main</code>,
+it’s likely that the branch is protected and you need to create a new
+branch and open a pull request instead.</p>
 <div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
@@ -575,8 +586,8 @@ merging.</li>
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Go to your repository on GitHub.</li>
 <li>Click <strong>Settings → Branches</strong>.</li>
-<li>Under “Branch protection rules”, click <strong>Add
-rule</strong>.</li>
+<li>Under “Branch protection rules”, click <strong>Add branch
+ruleset</strong>.</li>
 <li>Enter <code>main</code> as the branch name pattern.</li>
 <li>Check <strong>Require a pull request before merging</strong> and
 other options as needed.</li>
@@ -591,23 +602,70 @@ other options as needed.</li>
 <li>Click <strong>Add people</strong> and search for their GitHub
 username.</li>
 <li>Choose a permission level (Read, Write, or Admin).</li>
-</ol><!-- TODO: add screenshot of the "Add collaborator" dialog on GitHub --></section><section><h2 class="section-heading" id="github-issues">GitHub Issues<a class="anchor" aria-label="anchor" href="#github-issues"></a></h2>
-<hr class="half-width"><p>Issues are used to track tasks, report bugs, and discuss ideas. Good
-practices:</p>
+</ol><p>That way, they can clone the repository, push changes, and
+collaborate with you. Furthermore, you have full control over who can
+access your private repositories and what they can do.</p>
+</section><section><h2 class="section-heading" id="github-issues">GitHub Issues<a class="anchor" aria-label="anchor" href="#github-issues"></a></h2>
+<hr class="half-width"><p>Issues are used to track tasks, report bugs, and discuss ideas.</p>
+<p>Good practices are:</p>
 <ul><li>
 <strong>Clear title:</strong> summarise the problem or request in a
 few words.</li>
 <li>
 <strong>Description:</strong> explain the context, steps to
-reproduce (for bugs), and expected behaviour.</li>
+reproduce (for bugs), and expected behaviour. You can also add
+screenshots or code snippets if relevant. It is also possible to <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet" class="external-link">reference
+lines of code</a> or specific commits.</li>
 <li>
 <strong>Labels:</strong> use labels like <code>bug</code>,
 <code>enhancement</code>, <code>question</code> to categorise.</li>
 <li>
 <strong>Linking:</strong> reference issues in commit messages or PRs
 using <code>#123</code> syntax.</li>
-</ul><!-- TODO: add screenshot of a well-formatted GitHub issue with labels --><!--- issue on missing README file ... --></section><section><h2 class="section-heading" id="documentation-and-readme-files">Documentation and README files<a class="anchor" aria-label="anchor" href="#documentation-and-readme-files"></a></h2>
-<hr class="half-width"><!-- TODO --><div id="exercise-your-troubleshooting-checklist" class="callout challenge">
+</ul><p>Each issue gets a unique number (e.g. #1) and can be assigned to
+milestones, projects, or specific people. The latter is especially
+useful in team projects to indicate who is responsible for addressing
+the issue.</p>
+<p>This number can be used to link the issue to commits and pull
+requests, which helps to keep track of what work is being done to
+resolve the issue. Thus, if your commit is solving a specific issue, you
+can write <code>Closes #1</code> in the commit message or PR
+description, and GitHub will automatically close the issue when the
+commit is merged. Furthermore, respective information about the linked
+issue will be visible in the PR, which helps reviewers to understand the
+context of the changes.</p>
+</section><section><h2 class="section-heading" id="documentation-and-readme-files">Documentation and README files<a class="anchor" aria-label="anchor" href="#documentation-and-readme-files"></a></h2>
+<hr class="half-width"><p>As already hinted at above, <code>README.md</code> README files are a
+great way to provide documentation for your project. They are written in
+Markdown and rendered as HTML on GitHub. Eventually, you may want to
+create a README file within each directory to explain its purpose and
+contents. This is especially helpful for collaborators who are new to
+the project and may not be familiar with the structure. A
+well-structured README can serve as a guide for navigating the
+repository and understanding the overall project. It can also include
+instructions and guidelines for respective directories, which can be
+very helpful for onboarding new contributors and ensuring that everyone
+is on the same page regarding the project’s structure and
+organization.</p>
+<p>Generally, a <code>README.md</code> file should</p>
+<ul><li>Provide an overview of the project/directory and its purpose.</li>
+<li>Explain how to use the project or its components.</li>
+<li>Include any necessary setup instructions or dependencies.</li>
+<li>Be kept up to date as the project evolves.</li>
+</ul><p>The central README file in the root directory can also</p>
+<ul><li>include links to other README files in subdirectories, creating a
+clear and navigable documentation structure for the entire project.</li>
+<li>provide documentation for dependencies, data sources, or other
+external resources that are relevant to the project.</li>
+<li>serve as a central hub for all project-related information, making
+it easier for collaborators to find what they need and understand the
+project’s structure and goals.</li>
+</ul><p>Typically, the project’s central <code>README.md</code> also serves
+as the landing page when exporting the repository to GitHub Pages, so it
+is a good place to provide an introduction and overview of the project
+for visitors. This process will be discussed in more detail in the next
+episode on publishing and automation.</p>
+<div id="exercise-your-troubleshooting-checklist" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -634,8 +692,8 @@ discussed above.</p>
 <strong>Unwanted changes to a file?</strong> → Discard changes in
 GitHub Desktop.</li>
 <li>
-<strong>Wrong commit (not yet pushed)?</strong> → Revert the commit
-in GitHub Desktop.</li>
+<strong>Wrong commit (not yet pushed)?</strong> → Undo the commit in
+GitHub Desktop.</li>
 <li>
 <strong>Wrong commit (already pushed)?</strong> → Revert and push
 the revert commit.</li>
@@ -644,7 +702,7 @@ the revert commit.</li>
 immediately. Remove from history if possible.</li>
 <li>
 <strong>Empty directory not showing up?</strong> → Add a
-<code>.gitkeep</code> file.</li>
+<code>README.md</code> or <code>.gitkeep</code> file.</li>
 <li>
 <strong>Merge conflict?</strong> → Open the file, resolve the
 markers, commit, and push.</li>
@@ -670,6 +728,8 @@ a placeholder.</li>
 <li>Protected branches enforce a pull request workflow.</li>
 <li>Issues help organise work; use clear titles, descriptions, and
 labels.</li>
+<li>README files provide essential documentation and should be kept up
+to date.</li>
 </ul></div>
 </div>
 </div>
@@ -737,8 +797,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/03-problems-and-safety.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/03-problems-and-safety.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2026-03-11",
-  "datePublished": "2026-03-11"
+  "dateModified": "2026-03-12",
+  "datePublished": "2026-03-12"
 }
 
   </script><script>
