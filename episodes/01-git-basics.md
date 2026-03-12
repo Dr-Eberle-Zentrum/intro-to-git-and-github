@@ -25,16 +25,18 @@ exercises: 30
 
 ## Why bother with version control?
 
+<!-- spell-checker:disable -->
 *This section was taken from [Software Carpentry: Version Control with Git.](https://swcarpentry.github.io/git-novice/01-basics.html) by
 I. Gonzalez, D. Huang,  N. Hejazi and  K. Koziar (Version [04.03.2026](https://github.com/swcarpentry/git-novice/tree/d3ee3d1a6093ca86b3c9c618e2a4be1a054dfc89))
 and slightly adapted.*
+<!-- spell-checker:enable -->
 
 We'll start by exploring how version control can be used
 to keep track of what one person did and when.
 Even if you aren't collaborating with other people,
 automated version control is much better than this situation:
 
-!["notFinal.doc" by Jorge Cham, <https://www.phdcomics.com>](phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"'}
+!["notFinal.doc" by Jorge Cham, <https://www.phdcomics.com>](phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named crazily"'}
 
 We've all been in this situation before: it seems unnecessary to have
 multiple nearly-identical versions of the same document. Some word
@@ -126,6 +128,7 @@ Before we start working with git, it's important to understand the difference be
 | **Local repository** | The copy of the project on *your* computer |
 | **Remote repository** | The copy hosted on GitHub (often called **origin**) |
 
+<!-- spell-checker:ignore Stearns -->
 ![Relationship between local and remote repositories, with arrows indicating push (local → remote) and pull (remote → local) actions. ([D. Stearns](https://drstearns.github.io/tutorials/git/), 05.03.2026)](local-remote-repo.png){alt="local and remote repositories with push and pull arrows." width="40%"}
 
 When you **clone** a repository, you download the remote copy of the project to your machine.
