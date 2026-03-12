@@ -455,7 +455,7 @@ git diff
 **Bad examples:**
 
 - `Update files`
-- `asdfgh`
+- `abc`
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -498,7 +498,7 @@ This will automatically add the file name to a `.gitignore` file in the root of 
 ![Screenshot of GitHub Desktop showing the context menu with the 'Ignore this file' option.](ghd-ignore-file.png){alt="Screenshot of GitHub Desktop showing the context menu with the 'Ignore this file' option."}
 
 Note, the context menu also allows you to ignore all files with the same extension by selecting "Ignore all .png files" (here to ignore all PNG images), 
-which is a convenient way to ignore multiple files at once without having to edit the `.gitignore` file manually or the need to explicitely ignore each file one by one.
+which is a convenient way to ignore multiple files at once without having to edit the `.gitignore` file manually or the need to explicitly ignore each file one by one.
 
 Ignoring the folder ("Ignore folder" option) will add the folder name to the `.gitignore` file with a trailing slash (e.g. `data/`), which tells git to ignore all files within that folder and its subfolders.
 

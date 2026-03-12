@@ -29,7 +29,7 @@ changes to the remote directory.
 Thus, while you are working on your local copy, 
 someone else might be changing the some files of the project on their local copy 
 and pushing those changes to the remote repository.
-When you are done with your changes and commited them to *your* local copy,
+When you are done with your changes and committed them to *your* local copy,
 your local repository will be both outdated and ahead of the remote repository at the same time!
 
 That is
