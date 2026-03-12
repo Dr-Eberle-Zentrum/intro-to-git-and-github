@@ -161,6 +161,9 @@ This workflow:
    spelling errors.
 4. Reports any issues directly in the pull request, making it easy to fix typos before merging.
 
+To **enable the workflow**, you only have to commit and push the workflow file to your repository.
+As soon as present, GitHub will automatically run the workflow whenever a pull request is opened or updated against the `main` branch, and report the results in the PR's checks section.
+
 Whether or not a workflow passes or fails is visible in the pull request's checks section
 or in the *Actions* tab of the repository. 
 
