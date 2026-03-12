@@ -12,4 +12,4 @@ words:
 
 ignoreRegExpList:
   - >-
-    /^:::*.*$/g
+    /:::*\s*[^\s]*/g

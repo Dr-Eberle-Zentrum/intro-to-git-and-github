@@ -113,12 +113,14 @@ can see it in the Code tab under `.github/workflows/`.
 
 ### Level 2 — Trigger the workflow
 
+<!-- spell-checker:disable -->
 1. Create a new branch (e.g. `test-spellcheck`).
 2. Edit any file and intentionally introduce a spelling error (e.g.
    "Tihs is a tset").
 3. Commit and push the branch.
 4. Open a **Pull Request** from `test-spellcheck` to `main`.
 5. Go to the **Actions** tab and watch the spell-check workflow run.
+<!-- spell-checker:enable -->
 
 ::::::::::::::::::::::::::::::::::::: callout
 
