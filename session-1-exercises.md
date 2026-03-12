@@ -15,6 +15,8 @@ pull, and explore the commit history using GitHub Desktop.
 
 ### Level 1 — Clone your repository
 
+<!-- spell-checker:ignore yourname -->
+
 1. Open **GitHub Desktop**.
 2. Click **File → Clone repository** (or the **Clone a repository** button on
    the start screen).
