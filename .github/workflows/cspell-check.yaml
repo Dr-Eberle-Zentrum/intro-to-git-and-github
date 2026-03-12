@@ -15,5 +15,5 @@ jobs:
         with:
           files: |
             **/*.md
-        suggestions: true
-        incremental_files_only: false
+          suggestions: true
+          incremental_files_only: false
