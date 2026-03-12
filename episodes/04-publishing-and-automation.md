@@ -274,6 +274,7 @@ A release typically provides a ZIP or tarball archive of the whole repository at
 Furthermore, release information can be accessed via respective URLs making it easier to share specific versions of the project with others.
 
 
+<!-- spell-checker:ignore zenodo Zenodo -->
 ## Zenodo Archiving and DOI
 
 [Zenodo](https://zenodo.org/) is a research data repository that integrates

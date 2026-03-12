@@ -12,3 +12,8 @@ jobs:
         with:
           persist-credentials: false
       - uses: streetsidesoftware/cspell-action@v8
+        with:
+          files: |
+            **/*.md
+        suggestions: true
+        incremental_files_only: false
