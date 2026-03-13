@@ -1,19 +1,12 @@
 name: "01 Maintain: Build and Deploy Site"
 description: "Build and deploy the lesson site using the carpentries/workbench-docker container"
 on:
-  push:
-    branches:
-      - 'main'
-      - 'l10n_main'
-    paths-ignore:
-      - '.github/workflows/**.yaml'
-      - '.github/workbench-docker-version.txt'
-  schedule:
-    - cron: '0 0 * * 2'
   workflow_run:
-    workflows: ["03 Maintain: Apply Package Cache"]
+    workflows: ["Check spelling", "03 Maintain: Apply Package Cache"]
     types:
       - completed
+  schedule:
+    - cron: '0 0 * * 2'
   workflow_dispatch:
     inputs:
       name:
@@ -44,6 +37,17 @@ jobs:
   preflight:
     name: "Preflight: Schedule, Push, or PR?"
     runs-on: ubuntu-latest
+    if: |
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.name == '03 Maintain: Apply Package Cache' ||
+      (
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.event == 'push' &&
+        (
+          github.event.workflow_run.head_branch == 'main' ||
+          github.event.workflow_run.head_branch == 'l10n_main'
+        )
+      )
     outputs:
       do-build: ${{ steps.build-check.outputs.do-build }}
       renv-needed: ${{ steps.build-check.outputs.renv-needed }}
