@@ -1,5 +1,5 @@
 ---
-title: "Problems, Safety, and GitHub Hygiene"
+title: "Problems, Safety, and Best Practise"
 teaching: 30
 exercises: 30
 ---
