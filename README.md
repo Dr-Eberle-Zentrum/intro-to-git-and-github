@@ -18,7 +18,7 @@ practice.
 
 | Self-Study Material | Session |
 |---------------------|---------|
-| [Setup](learners/setup.md) | Session 0 — Kick-off and Orientation |
+| Setup & Preliminaries | Session 0 — Kick-off and Orientation |
 | Episode 1 — Git Basics | Session 1 — First Workflow with GitHub Desktop |
 | Episode 2 — Collaboration | Session 2 — Merge, Conflict, and PR |
 | Episode 3 — Problems & Safety | Session 3 — Fork, PR, and Issues |
