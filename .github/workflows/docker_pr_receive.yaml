@@ -69,8 +69,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [[ "${{ github.event_name }}" == "workflow_run" ]] ; then
-            # For same-repo PRs, pull_requests[0].number is populated.
-            # For fork PRs it is empty, so fall back to querying the API by SHA.
             PR_NUMBER="${{ github.event.workflow_run.pull_requests[0].number }}"
             if [[ -z "$PR_NUMBER" ]]; then
               PR_NUMBER=$(gh api /repos/${{ github.repository }}/commits/${{ github.event.workflow_run.head_sha }}/pulls --jq '.[0].number')
