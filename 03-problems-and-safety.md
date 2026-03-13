@@ -281,6 +281,71 @@ This process will be discussed in more detail in the next episode on publishing 
 
 
 
+## General Recommendations
+
+When working project-centered supported by git, it is good to keep some general ideas in mind.
+
+### Git from the Start
+
+Start using git from the very beginning of your project, even if you are working alone.
+This way, you can track your changes, revert to previous versions if needed, and have a clear history of your work.
+It also makes it easier to collaborate with others later on, as you will already be familiar with the workflow and have a well-organised repository.
+The latter brings us the next point.
+
+### Organise Your Repository
+
+Organise your repository in a clear and logical way from the start.
+Use directories to separate different components of your project (e.g. `src` for source code, `data` for datasets, `docs` for documentation).
+This makes it easier to navigate and understand the structure of your project, especially for collaborators who may be new to it.
+Furthermore, it helps to keep your work organised and manageable as the project grows in size and complexity.
+
+Here some ideas what to put under git-version control:
+
+- *image sources* (e.g. InkScape or Gimp files, scripts for generating figures, ...)
+- *raw data* files (e.g. CSV, Excel, ...), best compressed as `.zip` or `.tar.gz` to avoid large diffs
+- *code* (e.g. Python scripts, R scripts, Jupyter notebooks, ...)
+- *documentation* (e.g. `README.md`, `docs/`, ...)
+- *manuscript* (e.g. LaTeX files, Word documents, ...)
+
+Things you should *not* put under git-version control (using `.gitignore`):
+
+- *large data files* (e.g. raw video, audio, large datasets, ...) — use a data repository or storage service instead and link to it from your README
+- *credentials* (e.g. API keys, passwords, ...) — use environment variables or a secrets manager instead and add them to `.gitignore` so they are not tracked
+- *build outputs* (e.g. compiled code, generated figures, ...) — these can be generated from the source files and do not need to be tracked
+- *temporary files* (e.g. logs, caches, ...) — these are not part of the project and can be ignored
+
+### Documentation
+
+Most important is to keep your documentation up to date. 
+Whenever you add a new directory, file, or component to your project, consider adding a README file to explain its purpose and contents.
+Update the central README file to reflect the overall structure and any new dependencies or instructions.
+This way, you ensure that your project remains understandable and navigable for yourself and others, even as it evolves over time.
+
+Markdown and `README.md` files are really a fast an efficient way to provide documentation for your project.
+
+### Synchronise Often
+
+Make it a habit to commit and push your changes regularly. 
+This way, you have a clear history of your work and can easily revert to previous versions if needed.
+It also makes it easier to collaborate with others, as they can see your changes and provide feedback in a timely manner.
+Regular commits also help to break down your work into manageable chunks, making it easier to track your progress and identify any issues that may arise.
+
+### Use Issues for Task Management
+
+Use GitHub Issues to track tasks, bugs, and feature requests.
+Whenever something comes up that you need to address, create an issue with a clear title and description.
+This way, you can keep track of what needs to be done and prioritise your work effectively.
+Issues also facilitate collaboration, as others can comment on them, offer help, or take ownership of specific tasks.
+
+
+## Never Duplicate Again
+
+Most important, never duplicate work again, as done in the comic in one of the last episodes.
+Once files are under (git) version control, never create ".._v1", ".._final", or ".._final_final" copies of files again.
+This is a common mistake that leads to confusion and a messy repository.
+Instead, use git to track changes and maintain a clear history of your work.
+If you need to experiment with changes, create a new branch and work there, then merge back when you are ready.
+This way, you can keep your repository clean and organised, and avoid the pitfalls of manual file duplication.
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
