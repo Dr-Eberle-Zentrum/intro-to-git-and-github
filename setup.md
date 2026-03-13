@@ -4,7 +4,7 @@ teaching: 10
 exercises: 20
 ---
 
-## Overview
+## Setup and Preliminaries
 
 Before the first session, please complete the following setup steps.
 This should take about **20–40 minutes**.
