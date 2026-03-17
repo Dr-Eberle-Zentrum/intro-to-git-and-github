@@ -52,20 +52,20 @@ think of it as a recording of your progress: you can rewind to start at the base
 document and play back each change you made, eventually arriving at your
 more recent version.
 
-![](play-changes.svg){alt='A diagram demonstrating how a single document grows as the result of sequential changes' width="60%"}
+![](play-changes.svg){alt='A diagram demonstrating how a single document grows as the result of sequential changes' width="60%" style="filter:invert(0);"}
 
 Once you think of changes as separate from the document itself, you
 can then think about "playing back" different sets of changes on the base document, ultimately
 resulting in different versions of that document. For example, two users can make independent
 sets of changes on the same document.
 
-![](versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document' width="40%""}
+![](versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document' width="40%" style="filter:invert(0);"}
 
 Unless multiple users make changes to the *same section* (i.e. text row) of the document - which would cause a 
 [conflict](../learners/reference.md) - versioning systems can automatically
 incorporate sets of non-conflicting changes into the same base document.
 
-![](merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions' width="40%"}
+![](merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions' width="40%" style="filter:invert(0);"}
 
 And this is where git comes into the game!
 
@@ -74,7 +74,7 @@ And this is where git comes into the game!
 ## What Is Git?
 
 <!-- spell-checker:disable -->
-!["What is git?" ([R. Fadatare](https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4), 05.03.2026)](what-is-git.png){alt="git summary" width="80%"}
+!["What is git?" ([R. Fadatare](https://medium.com/javaguides/git-explained-how-git-works-in-3-minutes-960404135fc4), 05.03.2026)](what-is-git.png){alt="git summary" width="80%" style="filter:invert(0);"}
 <!-- spell-checker:enable -->
 
 ![](Git-Logo-2Color.png){alt="git logo" width="80px"} is a **version control system** — a tool that tracks changes to your files over time. 
@@ -266,7 +266,7 @@ Eventually, git is a command-line tool and thus all operations are done within a
 command-line interface (CLI) such as Terminal or (Git) Bash. This looks like this:
 
 <!-- spell-checker:disable -->
-![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. ([geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/), 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed."}
+![Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed in the `$` prefixed lines. ([geeksforgeeks.org](https://www.geeksforgeeks.org/git/what-is-git-commit/), 05.03.2026)](gfg-GitCommit1.jpg){alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." style="filter:invert(0);"}
 <!-- spell-checker:enable -->
 
 This is very efficient and useful when your are already comfortable with the CLI, but it can be intimidating for beginners. 
