@@ -36,7 +36,7 @@ to keep track of what one person did and when.
 Even if you aren't collaborating with other people,
 automated version control is much better than this situation:
 
-!["notFinal.doc" by Jorge Cham, <https://www.phdcomics.com>](phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named crazily"'}
+!["notFinal.doc" by Jorge Cham, <https://www.phdcomics.com>](phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named crazily"'  style="filter:invert(0);"}
 
 We've all been in this situation before: it seems unnecessary to have
 multiple nearly-identical versions of the same document. Some word
@@ -59,7 +59,7 @@ can then think about "playing back" different sets of changes on the base docume
 resulting in different versions of that document. For example, two users can make independent
 sets of changes on the same document.
 
-![](versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document' width="40%"}
+![](versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document' width="40%""}
 
 Unless multiple users make changes to the *same section* (i.e. text row) of the document - which would cause a 
 [conflict](../learners/reference.md) - versioning systems can automatically
