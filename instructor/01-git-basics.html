@@ -383,18 +383,18 @@ then record changes you make each step of the way. You can think of it
 as a recording of your progress: you can rewind to start at the base
 document and play back each change you made, eventually arriving at your
 more recent version.</p>
-<figure><img src="../play-changes.svg" style="filter:invert(0);;width:60.0%" alt="A diagram demonstrating how a single document grows as the result of sequential changes" class="figure mx-auto d-block"></figure><p>Once you think of changes as separate from the document itself, you
+<figure><img src="../play-changes.svg" style="width:60.0%" alt="A diagram demonstrating how a single document grows as the result of sequential changes" class="figure mx-auto d-block"></figure><p>Once you think of changes as separate from the document itself, you
 can then think about “playing back” different sets of changes on the
 base document, ultimately resulting in different versions of that
 document. For example, two users can make independent sets of changes on
 the same document.</p>
-<figure><img src="../versions.svg" style="filter:invert(0);;width:40.0%" alt="A diagram with one source document that has been modified in two different ways to produce two different versions of the document" class="figure mx-auto d-block"></figure><p>Unless multiple users make changes to the <em>same section</em>
+<figure><img src="../versions.svg" style="width:40.0%" alt="A diagram with one source document that has been modified in two different ways to produce two different versions of the document" class="figure mx-auto d-block"></figure><p>Unless multiple users make changes to the <em>same section</em>
 (i.e. text row) of the document - which would cause a <a href="reference.html">conflict</a> - versioning systems can
 automatically incorporate sets of non-conflicting changes into the same
 base document.</p>
-<figure><img src="../merge.svg" style="filter:invert(0);;width:40.0%" alt="A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions" class="figure mx-auto d-block"></figure><p>And this is where git comes into the game!</p>
+<figure><img src="../merge.svg" style="width:40.0%" alt="A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions" class="figure mx-auto d-block"></figure><p>And this is where git comes into the game!</p>
 </section><section><h2 class="section-heading" id="what-is-git">What Is Git?<a class="anchor" aria-label="anchor" href="#what-is-git"></a></h2>
-<hr class="half-width"><!-- spell-checker:disable --><figure><img src="../what-is-git.png" style="filter:invert(0);;width:80.0%" alt="git summary" class="figure mx-auto d-block"><!-- spell-checker:enable --></figure><p><img src="../Git-Logo-2Color.png" alt="git logo" width="80" class="figure"> is a
+<hr class="half-width"><!-- spell-checker:disable --><figure><img src="../what-is-git.png" style="width:80.0%" alt="git summary" class="figure mx-auto d-block"><!-- spell-checker:enable --></figure><p><img src="../Git-Logo-2Color.png" alt="git logo" width="80" class="figure"> is a
 <strong>version control system</strong> — a tool that tracks changes to
 your files over time. Think of it as an “undo history” on steroids: you
 can go back to any previous version, see exactly what changed, and even
@@ -671,7 +671,7 @@ do you actually do these steps in practice?</p>
 done within a command-line interface (CLI) such as Terminal or (Git)
 Bash. This looks like this:</p>
 <!-- spell-checker:disable -->
-<figure><img src="../gfg-GitCommit1.jpg" style="filter:invert(0);" alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." class="figure mx-auto d-block"><!-- spell-checker:enable --></figure><p>This is very efficient and useful when your are already comfortable
+<figure><img src="../gfg-GitCommit1.jpg" alt="Screenshot of a Bash terminal showing git commands 'status' and 'commit' being executed." class="figure mx-auto d-block"><!-- spell-checker:enable --></figure><p>This is very efficient and useful when your are already comfortable
 with the CLI, but it can be intimidating for beginners. Therefore, we
 will use GitHub Desktop, a graphical user interface (GUI) that allows
 you to perform git operations without typing commands. The core loop of
@@ -768,7 +768,7 @@ repository, so you need to commit before you can push.</li>
   Git workflow in RStudio
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Most programming IDEs (including RStudio) have built-in git support
 that allows you to perform the core workflow without leaving the IDE. In
@@ -796,7 +796,7 @@ the staged changes and commit message box.</div>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -871,7 +871,7 @@ and removed (in red) on the right</li>
   RStudio and IDE views
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Similar views are also available in RStudio and other IDEs with git
 support, allowing you to browse the commit history and see diffs of
@@ -889,7 +889,7 @@ changes directly within your coding environment.</p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
 <!-- spell-checker:disable -->
 <div class="codewrapper sourceCode" id="cb2">
@@ -994,7 +994,7 @@ that folder and its subfolders.</p>
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1049,7 +1049,7 @@ terms:</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Commit</strong> — a saved snapshot of changes in my project,
