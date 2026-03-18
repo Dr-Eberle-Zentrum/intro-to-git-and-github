@@ -49,7 +49,7 @@ When the two people edit **different parts** of the **same file**,
 git can usually merge their changes automatically. This is called an
 **auto-merge** and works best with plain-text files (Markdown, code, CSV, XML, HTML, ...).
 
-![](merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions' width="40%" style="filter:invert(0);"}
+![](merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions' width="40%"}
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -77,7 +77,7 @@ In that case, a so called **merge conflict** occurs.
 A **merge conflict** happens when two people change the **same line(s)** of the
 same file. Git cannot decide which version to keep, so it asks *you* to choose.
 
-![](conflict.svg){alt='A diagram that shows two different document versions that both change the same line, resulting in a conflict that cannot be automatically resolved' width="60%" style="filter:invert(0);"}
+![](conflict.svg){alt='A diagram that shows two different document versions that both change the same line, resulting in a conflict that cannot be automatically resolved' width="60%"}
 
 
 ### What a conflict looks like
