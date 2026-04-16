@@ -53,7 +53,7 @@ Thus, request that they ask their IT department for help installing GitHub Deskt
 
 ### 3. Create First Repository on GitHub (20 min)
 
-- Live demo: create a repository with a README.
+- Live demo following [session exercise](session-0-exercises.md): create a repository with a README.
 - Quick Markdown introduction: headings, lists, links.
 - Participants follow along and create their own repo.
 
