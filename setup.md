@@ -22,7 +22,7 @@ for security-relevant settings and is strongly recommended for every account.
 1. After login, go to [github.com/settings/security](https://github.com/settings/security).
 2. Under "Two-factor authentication", click **Enable**.
 3. Follow the prompts (authenticator app or SMS).
-   - We recommend using an authenticator app (e.g. Google Authenticator, Authy) for better security.
+   - We recommend using an authenticator app (e.g. Aegis Authenticator, Google Authenticator, Authy) for better security.
 4. Save your recovery codes in a safe place (e.g. password manager, print-out, ...) in case you lose access to your 2FA device.
 
 At the end, it should look like this:

@@ -118,11 +118,29 @@ Explore these additional features:
    later).
 3. **Settings** — Find where you would add a collaborator.
 
+
+
 ### Level 3 — Repository settings deep dive
 
 1. Disable "Wiki" and "Projects" features in the **Features** section of the **General** Settings.
 2. Find the **Danger Zone** in Settings. What options are available there?
 3. Look at **Settings → Pages** — we will use this in a later session.
+
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### Checkpoint 4
+
+You can navigate the GitHub page, identify where to find commits, issues, and settings, and understand the
+different features available in the repository settings.
+
+**Task to complete before next session:**
+
+Either add the course supervisor as a collaborator to your repository, or 
+make sure your repository is public so that we can see it.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ---
 
