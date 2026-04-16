@@ -119,11 +119,11 @@
   Introduction to git and GitHub using GitHub Desktop
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: NA%" class="percentage">
-    NA%
+<aside class="col-md-12 lesson-progress"><div style="width: %" class="percentage">
+    %
   </div>
   <div class="progress UT">
-    <div class="progress-bar UT" role="progressbar" style="width: NA%" aria-valuenow="NA" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar UT" role="progressbar" style="width: %" aria-valuenow="" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -437,17 +437,17 @@ can pull and see the resolved file.</p>
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># After a conflicting pull</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">git</span> status                <span class="co"># shows conflicted files</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># ... edit the file to resolve ...</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">git</span> add README.md</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict in README"</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co"># After a conflicting pull</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="fu">git</span> status                <span class="co"># shows conflicted files</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="co"># ... edit the file to resolve ...</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="fu">git</span> add README.md</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict in README"</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="fu">git</span> push</span></code></pre>
 </div>
 </div>
 </div>
@@ -528,24 +528,24 @@ approval.</p>
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Create and switch to a new branch</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> add-resources</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># ... make changes and commit ...</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">git</span> add resources.md</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add resources file"</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co"># Push the branch</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin add-resources</span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co"># After merging the PR on GitHub, update local main</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="co"># Create and switch to a new branch</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="fu">git</span> checkout <span class="at">-b</span> add-resources</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="co"># ... make changes and commit ...</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="fu">git</span> add resources.md</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add resources file"</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="co"># Push the branch</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a><span class="fu">git</span> push <span class="at">-u</span> origin add-resources</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a><span class="co"># After merging the PR on GitHub, update local main</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a><span class="fu">git</span> checkout main</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1" aria-label="code-block-3-13"></a><span class="fu">git</span> pull</span></code></pre>
 </div>
 </div>
 </div>
@@ -605,7 +605,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -628,7 +628,7 @@ any links that you are not going to use.
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/instructor/session-2-exercises.html",
   "dateCreated": "2026-03-03",
   "dateModified": "2026-03-03",
-  "datePublished": "2026-04-14"
+  "datePublished": "2026-04-16"
 }
 
   </script><script>

@@ -341,7 +341,7 @@
         <!-- START: inst/pkgdown/templates/content-extra.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <main id="main-content" class="main-content"><div class="container lesson-content">
-        
+        <h1>All in One View</h1>
         
 <section id="aio-01-git-basics"><p>Content from <a href="01-git-basics.html">Git Basics and Single-Person Workflow</a></p>
 <hr>
@@ -878,24 +878,24 @@ the staged changes and commit message box.</div>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Clone a repository</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/USERNAME/REPO.git</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># Check what has changed</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># Stage changes for commit</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">git</span> add filename.md      <span class="co"># stage a specific file</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">git</span> add .                <span class="co"># stage all changes and new files</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co"># Commit with a message</span></span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add goals section to README"</span></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co"># Push commits to GitHub</span></span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="fu">git</span> push</span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Pull changes from GitHub</span></span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co"># Clone a repository</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="fu">git</span> clone https://github.com/USERNAME/REPO.git</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="co"># Check what has changed</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="fu">git</span> status</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="co"># Stage changes for commit</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a><span class="fu">git</span> add filename.md      <span class="co"># stage a specific file</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1" aria-label="code-block-1-9"></a><span class="fu">git</span> add .                <span class="co"># stage all changes and new files</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a><span class="co"># Commit with a message</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1" aria-label="code-block-1-12"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add goals section to README"</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1" aria-label="code-block-1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1" aria-label="code-block-1-14"></a><span class="co"># Push commits to GitHub</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1" aria-label="code-block-1-15"></a><span class="fu">git</span> push</span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1" aria-label="code-block-1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1" aria-label="code-block-1-17"></a><span class="co"># Pull changes from GitHub</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1" aria-label="code-block-1-18"></a><span class="fu">git</span> pull</span></code></pre>
 </div>
 </div>
 </div>
@@ -988,14 +988,14 @@ changes directly within your coding environment.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># View commit history</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Show details of a specific commit</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">git</span> show abc1234</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># Compare working directory with last commit</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co"># View commit history</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="co"># Show details of a specific commit</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="fu">git</span> show abc1234</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a><span class="co"># Compare working directory with last commit</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a><span class="fu">git</span> diff</span></code></pre>
 </div>
 <!-- spell-checker:enable -->
 </div>
@@ -1103,13 +1103,13 @@ that folder and its subfolders.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Create a .gitignore file</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"*.exe"</span> <span class="op">&gt;</span> .gitignore</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co"># Append a new line to the existing .gitignore file</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="bu">echo</span> <span class="st">".DS_Store"</span> <span class="op">&gt;&gt;</span> .gitignore</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># Check which files are ignored</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="fu">git</span> status <span class="at">--ignored</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="co"># Create a .gitignore file</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="bu">echo</span> <span class="st">"*.exe"</span> <span class="op">&gt;</span> .gitignore</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="co"># Append a new line to the existing .gitignore file</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a><span class="bu">echo</span> <span class="st">".DS_Store"</span> <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a><span class="co"># Check which files are ignored</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a><span class="fu">git</span> status <span class="at">--ignored</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1362,18 +1362,18 @@ operations.</strong></p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># After a pull or merge that causes a conflict</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">git</span> status          <span class="co"># shows conflicted files</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># After manually editing the file to resolve the conflict</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">git</span> add filename.md</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict in filename.md"</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co"># After a pull or merge that causes a conflict</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="fu">git</span> status          <span class="co"># shows conflicted files</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="co"># After manually editing the file to resolve the conflict</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="fu">git</span> add filename.md</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict in filename.md"</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a><span class="fu">git</span> push</span></code></pre>
 </div>
 </div>
 </div>
@@ -1530,23 +1530,23 @@ changes to avoid losing work.</strong></p>
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Create and switch to a new branch</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> add-goals</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># List all branches</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">git</span> branch</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co"># Switch to an existing branch</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co"># Merge a branch into main</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="fu">git</span> merge add-goals</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="co"># Create and switch to a new branch</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="fu">git</span> checkout <span class="at">-b</span> add-goals</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="co"># List all branches</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="fu">git</span> branch</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="co"># Switch to an existing branch</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="fu">git</span> checkout main</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a><span class="co"># Merge a branch into main</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a><span class="fu">git</span> checkout main</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a><span class="fu">git</span> merge add-goals</span></code></pre>
 </div>
 </div>
 </div>
@@ -1680,13 +1680,13 @@ GitHub.</strong></p>
   CLI equivalent for pushing a branch
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Push a new branch to GitHub</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin add-goals-section</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="co"># Push a new branch to GitHub</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="fu">git</span> push <span class="at">-u</span> origin add-goals-section</span></code></pre>
 </div>
 <p>After pushing, you create the pull request via the GitHub web
 interface.</p>
@@ -1718,7 +1718,7 @@ interface.</p>
   Key difference
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1850,11 +1850,11 @@ it provides context for collaborators.</li>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Create a directory with a placeholder file</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">mkdir</span> data</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">touch</span> data/.gitkeep</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">git</span> add data/.gitkeep</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add empty data directory with .gitkeep"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co"># Create a directory with a placeholder file</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="fu">mkdir</span> data</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="fu">touch</span> data/.gitkeep</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="fu">git</span> add data/.gitkeep</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add empty data directory with .gitkeep"</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1996,14 +1996,14 @@ conflicts that can arise when reverting multiple commits at once.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Situation 1: Discard changes to a file (before commit)</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--</span> filename.md</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Situation 2: Unstage a file (keep changes but remove from staging)</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">git</span> reset HEAD filename.md</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># Situation 3: Revert the last commit (creates a new commit)</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">git</span> revert HEAD</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co"># Situation 1: Discard changes to a file (before commit)</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="fu">git</span> checkout <span class="at">--</span> filename.md</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="co"># Situation 2: Unstage a file (keep changes but remove from staging)</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="fu">git</span> reset HEAD filename.md</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a><span class="co"># Situation 3: Revert the last commit (creates a new commit)</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a><span class="fu">git</span> revert HEAD</span></code></pre>
 </div>
 </div>
 </div>
@@ -2556,23 +2556,23 @@ the following content:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Workflow to enable spell-checking on pull requests to main</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Spell Check</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="co"> # any PRs on main branch</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="at">  </span><span class="fu">spellcheck</span><span class="kw">:</span><span class="co"> # run the action</span></span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v5</span></span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="at">          </span><span class="fu">persist-credentials</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> streetsidesoftware/cspell-action@v8</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co"># Workflow to enable spell-checking on pull requests to main</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="pp">---</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Spell Check</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="fu">on</span><span class="kw">:</span><span class="co"> # any PRs on main branch</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1" aria-label="code-block-1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a><span class="at">  </span><span class="fu">spellcheck</span><span class="kw">:</span><span class="co"> # run the action</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1" aria-label="code-block-1-12"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1" aria-label="code-block-1-13"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1" aria-label="code-block-1-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v5</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1" aria-label="code-block-1-15"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1" aria-label="code-block-1-16"></a><span class="at">          </span><span class="fu">persist-credentials</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1" aria-label="code-block-1-17"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> streetsidesoftware/cspell-action@v8</span></span></code></pre>
 </div>
 <p>This workflow:</p>
 <ol style="list-style-type: decimal">
@@ -2605,32 +2605,32 @@ testing, linting, deployment, and more.</p>
   CLI equivalent
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Create the workflows directory</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> .github/workflows</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Create the workflow file</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> .github/workflows/spellcheck.yml <span class="op">&lt;&lt; 'EOF'</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="st">name: Spell Check</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="st">on:</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="st">  pull_request:</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="st">    branches: [main]</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="st">jobs:</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="st">  spellcheck:</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="st">    runs-on: ubuntu-latest</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="st">    steps:</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="st">      - uses: actions/checkout@v4</span></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="st">      - uses: streetsidesoftware/cspell-action@v6</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="op">EOF</span></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="fu">git</span> add .github/workflows/spellcheck.yml</span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add spell-check workflow"</span></span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co"># Create the workflows directory</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="fu">mkdir</span> <span class="at">-p</span> .github/workflows</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="co"># Create the workflow file</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="fu">cat</span> <span class="op">&gt;</span> .github/workflows/spellcheck.yml <span class="op">&lt;&lt; 'EOF'</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="st">name: Spell Check</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a><span class="st">on:</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a><span class="st">  pull_request:</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a><span class="st">    branches: [main]</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a><span class="st">jobs:</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a><span class="st">  spellcheck:</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a><span class="st">    runs-on: ubuntu-latest</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a><span class="st">    steps:</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a><span class="st">      - uses: actions/checkout@v4</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1" aria-label="code-block-2-16"></a><span class="st">      - uses: streetsidesoftware/cspell-action@v6</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1" aria-label="code-block-2-17"></a><span class="op">EOF</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1" aria-label="code-block-2-18"></a></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1" aria-label="code-block-2-19"></a><span class="fu">git</span> add .github/workflows/spellcheck.yml</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1" aria-label="code-block-2-20"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add spell-check workflow"</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1" aria-label="code-block-2-21"></a><span class="fu">git</span> push</span></code></pre>
 </div>
 </div>
 </div>
@@ -2660,7 +2660,7 @@ testing, linting, deployment, and more.</p>
   Example answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>A <strong>workflow</strong> is an automated process defined in a
@@ -2695,16 +2695,16 @@ commit, typically used to mark version numbers
   CLI equivalents
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Create an annotated tag</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-a</span> v1.0.0 <span class="at">-m</span> <span class="st">"First stable release"</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Push tags to GitHub</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--tags</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="co"># Create an annotated tag</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="fu">git</span> tag <span class="at">-a</span> v1.0.0 <span class="at">-m</span> <span class="st">"First stable release"</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="co"># Push tags to GitHub</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="fu">git</span> push <span class="at">--tags</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -2909,7 +2909,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -2932,8 +2932,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/aio.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2026-04-14",
-  "datePublished": "2026-04-14"
+  "dateModified": "2026-04-16",
+  "datePublished": "2026-04-16"
 }
 
   </script><script>
