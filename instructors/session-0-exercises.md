@@ -58,7 +58,7 @@ Your README now shows your name and personal information. You should see
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Level 3 — Explore Markdown formatting
+### Step 3 — Explore Markdown formatting
 
 Enhance your README with [additional Markdown features](https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet):
 
