@@ -99,6 +99,16 @@ Explore the following areas of your repository and note what you find:
 2. **Commits** — Click on the commit count to see your commit history.
 3. **Settings** — Find where you can change the repository name or visibility.
 
+### Task
+
+Change the visibility of your project to "private" (if it is currently public) or to "public" (if it is currently private). 
+
+To do this:
+
+- go to "Settings"
+- find the respective option in the "General" section
+- change the visibility and confirm the change by typing the repository name when prompted.
+
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Checkpoint 3
@@ -116,15 +126,42 @@ Explore these additional features:
    description. Close it afterwards.
 2. **Pull requests tab** — Note that it is empty for now (we will use it
    later).
-3. **Settings** — Find where you would add a collaborator.
 
+
+
+### Task 
+
+Open a new issue by spotting a "typo" in your README and describing how to fix it.
+To this end:
+
+- go to "Code"
+- click on your `README.md` file (to show its content)
+- switch from "Preview" to "Code" to see the raw markdown
+- select on of the markdown lines (should be highlighted in yellow)
+- this should trigger the popup of a `...` menu, where you can select "Reference in new issue" to create a new issue with the selected line as content.
+- add a title and description to the issue, and submit it.
 
 
 ### Level 3 — Repository settings deep dive
 
 1. Disable "Wiki" and "Projects" features in the **Features** section of the **General** Settings.
-2. Find the **Danger Zone** in Settings. What options are available there?
-3. Look at **Settings → Pages** — we will use this in a later session.
+2. Find the **Danger Zone** in Settings. What other options are available there?
+3. **Settings** — Find where you would add a collaborator.
+
+
+### Task 
+
+You should add your course supervisor as a collaborator to your repository, 
+so that they can see it and provide feedback. 
+
+To do this:
+
+- go to "Settings"
+- click on "Collaborators" in the left sidebar
+- add the GitHub user name of your course supervisor and click "Add collaborator"
+  - choose "write" permissions for the collaborator, so that they can also edit the repository if needed.
+
+The course supervisor will receive an email invitation to collaborate on your repository, which they need to accept before they can see it.
 
 
 ::::::::::::::::::::::::::::::::::::: callout
