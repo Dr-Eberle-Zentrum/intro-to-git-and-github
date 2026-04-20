@@ -301,7 +301,7 @@ In that case, detailed changes are highlighted in dark hue within the added and 
 ### (3) Committing staged changes
 
 Once you have selected (staged) all files, you are ready to commit to your local repository.
-This is done by writing a short, descriptive **Summary** (commit message) in the box at the bottom left (highlighted by the red (2)) and then clicking the **Commit to main** button.
+This is done by writing a short, descriptive **Summary** (commit message) in the box at the bottom left (highlighted by the red (3)) and then clicking the **Commit to main** button.
 The commit button itself shows the number of staged files for this commit as a final reminder of what you are about to commit.
 
 Longer descriptions can be added in the box below the Summary, but it is recommended to keep the Summary concise and to the point, while using the description for more detailed explanations if necessary.
