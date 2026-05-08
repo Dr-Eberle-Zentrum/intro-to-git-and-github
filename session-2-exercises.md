@@ -51,7 +51,7 @@ conflict.
 
 ### Level 3 — Multiple rounds
 
-Do two more rounds of non-conflicting edits to build confidence and speed with
+Do the same rounds of non-conflicting edits but swap to Person B's repository to build confidence and speed with
 the commit → push → pull → commit → push cycle.
 
 ---
