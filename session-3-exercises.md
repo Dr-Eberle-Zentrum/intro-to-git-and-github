@@ -74,6 +74,7 @@ changes and allows to review and comment before merging.
 ### Understanding the fork workflow
 
 ```text
+      GitHub                     GitHub                     
 Partner's repo (upstream)     Your fork (origin)       Your computer (local)
          │                          │                          │
          │       fork               │                          │
