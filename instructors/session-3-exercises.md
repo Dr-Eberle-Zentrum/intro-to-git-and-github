@@ -65,7 +65,7 @@ branch.
 ### Checkpoint 2
 
 Your partner can see the pull request on their repository. The PR shows your
-changes and allows them to review and comment.
+changes and allows to review and comment before merging.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -77,9 +77,9 @@ changes and allows them to review and comment.
 Partner's repo (upstream)     Your fork (origin)       Your computer (local)
          │                          │                          │
          │       fork               │                          │
-         │◄─────────────────────────│                          │
+         │─────────────────────────►│                          │
          │                          │        clone             │
-         │                          │◄─────────────────────────│
+         │                          │─────────────────────────►│
          │                          │                          │
          │                          │   edit + commit + push   │
          │                          │◄─────────────────────────│
