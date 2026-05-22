@@ -298,7 +298,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Session 4 — Exercises: Publish and Automate</h1>
-        <p>Last updated on 2026-03-12 |
+        <p>Last updated on 2026-05-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/intro-to-git-and-github/edit/main/instructors/session-4-exercises.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -402,30 +402,28 @@ instead of <code>README.md</code>.</p>
 </section><section><h2 class="section-heading" id="task-2-github-actions-spell-check">Task 2: GitHub Actions — Spell Check<a class="anchor" aria-label="anchor" href="#task-2-github-actions-spell-check"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="level-1-add-a-spell-check-workflow">Level 1 — Add a spell-check workflow<a class="anchor" aria-label="anchor" href="#level-1-add-a-spell-check-workflow"></a></h3>
-<ol style="list-style-type: decimal"><li><p>On GitHub, click <strong>Add file → Create new
-file</strong>.</p></li>
-<li><p>Name the file <code>.github/workflows/spellcheck.yml</code>
-(GitHub will create the directories automatically).</p></li>
-<li>
-<p>Paste the following content:</p>
-<div class="codewrapper sourceCode" id="cb3">
+<ol style="list-style-type: decimal"><li>On GitHub, click <strong>Add file → Create new file</strong>.</li>
+<li>Name the file <code>.github/workflows/spellcheck.yml</code> (GitHub
+will create the directories automatically).</li>
+<li>Paste the following content:</li>
+</ol><div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Spell Check</span></span>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">'Spell Check'</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="fu">on</span><span class="kw">:</span></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="at">  </span><span class="fu">spellcheck</span><span class="kw">:</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> streetsidesoftware/cspell-action@v6</span></span></code></pre>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="at">  </span><span class="fu">spellcheck</span><span class="kw">:</span><span class="co"> # run the action</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v5</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a><span class="at">          </span><span class="fu">persist-credentials</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> streetsidesoftware/cspell-action@v8</span></span></code></pre>
 </div>
-</li>
-<li><p>Commit the file with the message
-<code>Add spell-check workflow</code>.</p></li>
+<ol start="4" style="list-style-type: decimal"><li>Commit the file with the message
+<code>Add spell-check workflow</code>.</li>
 </ol><div id="checkpoint-2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -473,7 +471,15 @@ that is expected! You have successfully triggered a GitHub Action.</p>
 <li>Commit and push again.</li>
 <li>The workflow will re-run automatically on the updated PR.</li>
 <li>Verify that the workflow passes (green check mark).</li>
-</ol><div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+</ol></div>
+<div class="section level3">
+<h3 id="level-4-setting-of-spell-checker">Level 4 — Setting of spell checker<a class="anchor" aria-label="anchor" href="#level-4-setting-of-spell-checker"></a></h3>
+<p>In order to change settings of our spell checker, we have to
+investigate the <a href="https://github.com/streetsidesoftware/cspell-action" class="external-link">spell checker
+action’s documentation</a></p>
+<ul><li>setup your spell checker, such that it only checks <code>.md</code>
+and <code>.txt</code> files</li>
+</ul><div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">
@@ -596,8 +602,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/session-4-exercises.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/intro-to-git-and-github/session-4-exercises.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2026-03-12",
-  "datePublished": "2026-05-21"
+  "dateModified": "2026-05-22",
+  "datePublished": "2026-05-22"
 }
 
   </script><script>
