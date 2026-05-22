@@ -86,19 +86,20 @@ Note: if `index.html` exists, GitHub Pages will use it instead of `README.md`.
    directories automatically).
 3. Paste the following content:
 
-   ```yaml
-   name: Spell Check
-   on:
-     pull_request:
-       branches: [main]
-
-   jobs:
-     spellcheck:
-       runs-on: ubuntu-latest
-       steps:
-         - uses: actions/checkout@v4
-         - uses: streetsidesoftware/cspell-action@v6
-   ```
+```yaml
+name: 'Spell Check'
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  spellcheck: # run the action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: streetsidesoftware/cspell-action@v8
+```
 
 4. Commit the file with the message `Add spell-check workflow`.
 
@@ -137,6 +138,14 @@ expected! You have successfully triggered a GitHub Action.
 2. Commit and push again.
 3. The workflow will re-run automatically on the updated PR.
 4. Verify that the workflow passes (green check mark).
+
+
+### Level 4 — Setting of spell checker
+
+In order to change settings of our spell checker, we
+have to investigate the [spell checker action's documentation](https://github.com/streetsidesoftware/cspell-action)
+
+- setup your spell checker, such that it only checks `.md` and `.txt` files
 
 :::::::::::::::: spoiler
 
