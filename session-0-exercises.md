@@ -159,7 +159,7 @@ To do this:
 - go to "Settings"
 - click on "Collaborators" in the left sidebar
 - add the GitHub user name of your course supervisor and click "Add collaborator"
-  - choose "write" permissions for the collaborator, so that they can also edit the repository if needed.
+  - use the supervisor's github name to give him/her access to your repository
 
 The course supervisor will receive an email invitation to collaborate on your repository, which they need to accept before they can see it.
 
