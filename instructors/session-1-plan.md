@@ -85,7 +85,24 @@ Explain briefly:
 
 ---
 
-### 7. Q&A Buffer (10 min)
+### 7. Tour VScode/Rstudio/... vs GH-Desktop (10 min)
+
+- using VScode on the same folder
+  - same git history
+  - changes are also visible in GH-Desktop
+  - commit here = same as in GH-Desktop
+- show in GH-Desktop
+  - commit message from VScode
+  - pushing here instead of VScode
+- Why GH-Desktop and for whom?
+  - provides "missing git software" when normally working without IDE
+  - simple to use and focus on git (no new complex IDE to learn)
+  - starting point > easy to be replaced by IDE later
+  - avoids need for git commandline interface
+
+---
+
+### 8. Q&A Buffer (10 min)
 
 - Open floor for questions.
 - Help anyone who fell behind.
