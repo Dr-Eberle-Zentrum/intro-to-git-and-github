@@ -153,6 +153,7 @@ is merged.
    - **Actual behaviour**
 3. Cross-reference the two issues by mentioning one in the other (e.g.
    "Related to #1").
+4. Reference your already merged pull request (also via `#` notation).
 
 ---
 
